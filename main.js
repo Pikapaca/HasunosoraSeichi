@@ -129,7 +129,7 @@ function renderLatestPlaces() {
  */
 function renderPopularPlaces() {
   const randomPlaces = getRandomItems(
-    candidates,
+    allPlaces,
     HOMEPAGE_ITEM_LIMIT
   );
 
@@ -158,7 +158,7 @@ function renderFoodPlaces() {
     randomPlaces
   );
 }
-}
+
 
 
 /**
@@ -356,7 +356,10 @@ function createPlaceUrl(place) {
   const city = encodeURIComponent(place.city);
   const id = encodeURIComponent(place.id);
 
-  return `./places/${prefecture}/detail.html?city=${city}&id=${id}`;
+  return (
+    `./places/${prefecture}/${city}/` +
+    `detail.html?id=${id}`
+  );
 }
 
 
