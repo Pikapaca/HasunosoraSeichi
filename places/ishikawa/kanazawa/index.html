@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>金泽市圣地｜莲之空圣地部</title>
+
+  <!-- 公共样式 -->
+  <link
+    rel="stylesheet"
+    href="../../../css/style.css"
+  >
+
+  <!-- 金泽页面专用样式 -->
+  <link
+    rel="stylesheet"
+    href="./kanazawa.css"
+  >
+
+  <!-- 金泽页面专用脚本 -->
+  <script
+    src="./kanazawa.js"
+    defer
+  ></script>
+</head>
+
+<body>
+  <!-- 手机端菜单按钮 -->
+  <button
+    class="mobile-menu-button"
+    id="mobile-menu-button"
+    type="button"
+    aria-label="打开导航菜单"
+    aria-controls="sidebar"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- 手机端侧边栏遮罩 -->
+  <div
+    class="sidebar-overlay"
+    id="sidebar-overlay"
+    hidden
+  ></div>
+
+  <!-- 左侧边栏 -->
+  <aside
+    class="sidebar"
+    id="sidebar"
+  >
+    <a
+      class="site-brand"
+      href="../../../index.html"
+    >
+      <span class="brand-icon">蓮</span>
+
+      <span class="brand-text">
+        <strong>莲之空圣地部</strong>
+        <small>HASUNOSORA PILGRIMAGE</small>
+      </span>
+    </a>
+
+    <!-- 全站搜索框 -->
+    <div class="site-search">
+      <label
+        class="visually-hidden"
+        for="site-search-input"
+      >
+        搜索圣地
+      </label>
+
+      <input
+        id="site-search-input"
+        type="search"
+        placeholder="搜索中文名或日文名"
+        autocomplete="off"
+      >
+
+      <div
+        class="search-results"
+        id="search-results"
+        hidden
+      ></div>
+    </div>
+
+    <!-- 侧边栏导航 -->
+    <nav
+      class="sidebar-nav"
+      aria-label="网站主要导航"
+    >
+      <a href="../../../index.html">
+        <span class="nav-number">01</span>
+        <span>主页</span>
+      </a>
+
+      <a
+        class="active"
+        href="../../index.html"
+        aria-current="page"
+      >
+        <span class="nav-number">02</span>
+        <span>圣地列表</span>
+      </a>
+
+      <a href="../../../tips/index.html">
+        <span class="nav-number">03</span>
+        <span>巡礼攻略</span>
+      </a>
+
+      <a href="../../../news/index.html">
+        <span class="nav-number">04</span>
+        <span>石川相关</span>
+      </a>
+
+      <a href="../../../other/index.html">
+        <span class="nav-number">05</span>
+        <span>其他</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>享受莲之空的圣地巡礼吧！</p>
+    </div>
+  </aside>
+
+  <!-- 页面主体 -->
+  <main class="main-content kanazawa-main">
+    <!-- 返回上级和标题 -->
+    <header class="kanazawa-heading">
+      <a
+        class="back-link"
+        href="../../index.html"
+      >
+        ← 返回圣地列表
+      </a>
+
+      <p class="section-label">
+        KANAZAWA PLACES
+      </p>
+
+      <h1>金泽市圣地</h1>
+    </header>
+
+    <!-- 筛选区域 -->
+    <section
+      class="filter-panel"
+      aria-labelledby="filter-title"
+    >
+      <div class="filter-panel-heading">
+        <h2 id="filter-title">筛选地点</h2>
+
+        <button
+          class="reset-filter-button"
+          id="reset-filters"
+          type="button"
+        >
+          清除筛选
+        </button>
+      </div>
+
+      <div class="filter-grid">
+        <!-- 金泽页面内搜索 -->
+        <label class="filter-field filter-keyword">
+          <span class="filter-label">
+            关键词
+          </span>
+
+          <input
+            id="filter-keyword"
+            type="search"
+            placeholder="搜索地点名称、出处或介绍"
+            autocomplete="off"
+          >
+        </label>
+
+        <!-- 巡礼区域 -->
+        <label class="filter-field">
+          <span class="filter-label">
+            巡礼区域
+          </span>
+
+          <select id="filter-guide-area">
+            <option value="">
+              全部区域
+            </option>
+          </select>
+        </label>
+
+        <!-- 地点类别 -->
+        <label class="filter-field">
+          <span class="filter-label">
+            地点类别
+          </span>
+
+          <select id="filter-category">
+            <option value="">
+              全部类别
+            </option>
+          </select>
+        </label>
+
+        <!-- 圣地出处 -->
+        <label class="filter-field">
+          <span class="filter-label">
+            圣地出处
+          </span>
+
+          <select id="filter-source">
+            <option value="">
+              全部出处
+            </option>
+          </select>
+        </label>
+
+        <!-- 涉及角色 -->
+        <label class="filter-field">
+          <span class="filter-label">
+            涉及角色
+          </span>
+
+          <select id="filter-character">
+            <option value="">
+              全部角色
+            </option>
+          </select>
+        </label>
+
+        <!-- 今日营业 -->
+        <label class="today-open-filter">
+          <input
+            id="filter-open-today"
+            type="checkbox"
+          >
+
+          <span class="checkbox-mark"></span>
+
+          <span>
+            今日营业
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <!-- 筛选结果 -->
+    <section
+      class="places-result-section"
+      aria-labelledby="result-title"
+    >
+      <div class="result-heading">
+        <h2
+          class="visually-hidden"
+          id="result-title"
+        >
+          地点筛选结果
+        </h2>
+
+        <p
+          class="result-count"
+          id="result-count"
+        >
+          正在读取地点数据……
+        </p>
+      </div>
+
+      <div
+        class="kanazawa-place-list"
+        id="kanazawa-place-list"
+        aria-live="polite"
+      >
+        <p class="status-message">
+          正在读取地点数据……
+        </p>
+      </div>
+
+      <div class="load-more-area">
+        <button
+          class="load-more-button"
+          id="load-more-button"
+          type="button"
+          hidden
+        >
+          加载更多
+        </button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>莲之空圣地部</p>
+      <p>本网站为非官方粉丝整理项目。</p>
+    </footer>
+  </main>
+</body>
+</html>

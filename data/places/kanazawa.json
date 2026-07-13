@@ -12,6 +12,20 @@
     "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽"
   ],
   "introduction": "往东京方向可拍活动记录同角度图；站台柱子上金色的梯形状物体就是4th石川场中小三角问答环节提到的金箔",
+   "images": [
+      {
+        "src": "images/places/kanazawa/kanazawa-station/01.jpg",
+        "alt": "金泽新干线站台柱子上的金箔"
+      },
+      {
+        "src": "images/places/kanazawa/kanazawa-station/02.jpg",
+        "alt": "金泽站新干线站台实景"
+      }, 
+      {
+        "src": "images/places/kanazawa/kanazawa-station/03.jpg",
+        "alt": "金泽站新干线站台4L场景"
+      }
+    ],
   "updatedAt": "2025-04-27"
 }
 ]

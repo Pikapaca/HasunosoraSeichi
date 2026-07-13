@@ -1,0 +1,414 @@
+/* =========================
+   圣地列表页面主体
+========================= */
+
+.places-main {
+  min-height: 100vh;
+}
+
+
+/* =========================
+   页面标题
+========================= */
+
+.page-heading {
+  padding: 24px 0 32px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+.page-heading h1 {
+  margin: 0;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size:
+    clamp(2.2rem, 4.6vw, 4rem);
+
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================
+   地区列表区域
+========================= */
+
+.region-section {
+  margin-top: 38px;
+}
+
+
+.region-list {
+  display: grid;
+  gap: 18px;
+
+  width: 100%;
+  max-width: 920px;
+}
+
+
+/* =========================
+   都道府县卡片
+========================= */
+
+.region-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+
+  background: var(--surface);
+
+  box-shadow:
+    0 12px 34px rgba(31, 44, 37, 0.05);
+}
+
+
+/* =========================
+   都道府县展开按钮
+========================= */
+
+.region-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  min-height: 92px;
+  padding: 22px 26px;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background-color 160ms ease;
+}
+
+
+.region-toggle:hover,
+.region-toggle:focus-visible {
+  outline: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(220, 233, 226, 0.72),
+      rgba(255, 255, 255, 0)
+    );
+}
+
+
+/* =========================
+   都道府县名称
+========================= */
+
+.region-toggle-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+
+.region-toggle-title strong {
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+
+.region-toggle-title small {
+  color: var(--text-secondary);
+
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+}
+
+
+/* =========================
+   展开和收起图标
+========================= */
+
+.region-toggle-icon {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--background);
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 180ms ease;
+}
+
+
+/* 横线 */
+.region-toggle-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 12px;
+  height: 1.5px;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+  content: "";
+
+  transform:
+    translate(-50%, -50%);
+}
+
+
+/* 竖线 */
+.region-toggle-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 12px;
+  height: 1.5px;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+  content: "";
+
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg);
+}
+
+
+/* 展开时图标旋转 */
+.region-toggle[aria-expanded="true"]
+.region-toggle-icon {
+  border-color:
+    rgba(49, 93, 77, 0.24);
+
+  background: var(--green-light);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================
+   展开后的城市列表
+========================= */
+
+.region-panel {
+  display: grid;
+  gap: 10px;
+
+  padding:
+    0
+    18px
+    18px;
+}
+
+
+.region-panel[hidden] {
+  display: none;
+}
+
+
+/* =========================
+   城市入口
+========================= */
+
+.city-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  min-height: 74px;
+  padding: 15px 18px;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-medium);
+
+  background: var(--background);
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+
+.city-link:hover,
+.city-link:focus-visible {
+  outline: none;
+
+  border-color:
+    rgba(49, 93, 77, 0.26);
+
+  background: var(--surface);
+
+  box-shadow:
+    0 10px 26px rgba(31, 44, 37, 0.08);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   城市中日文名称
+========================= */
+
+.city-name {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  min-width: 0;
+}
+
+
+.city-name strong {
+  overflow: hidden;
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.city-name small {
+  overflow: hidden;
+
+  color: var(--text-secondary);
+
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   城市链接箭头
+========================= */
+
+.city-link-arrow {
+  flex: 0 0 auto;
+
+  color: var(--green);
+
+  font-size: 1.15rem;
+
+  transition:
+    transform 160ms ease;
+}
+
+
+.city-link:hover .city-link-arrow,
+.city-link:focus-visible .city-link-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================
+   平板尺寸
+========================= */
+
+@media (max-width: 1050px) {
+  .region-list {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================
+   手机尺寸
+========================= */
+
+@media (max-width: 760px) {
+  .page-heading {
+    padding:
+      10px
+      0
+      25px;
+  }
+
+
+  .page-heading h1 {
+    font-size:
+      clamp(2rem, 10vw, 3rem);
+  }
+
+
+  .region-section {
+    margin-top: 28px;
+  }
+
+
+  .region-toggle {
+    min-height: 82px;
+    padding: 19px 20px;
+  }
+
+
+  .region-toggle-title strong {
+    font-size: 1.25rem;
+  }
+
+
+  .region-toggle-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .region-panel {
+    padding:
+      0
+      12px
+      12px;
+  }
+
+
+  .city-link {
+    min-height: 68px;
+    padding: 14px 15px;
+  }
+
+
+  .city-name strong {
+    font-size: 0.95rem;
+  }
+}

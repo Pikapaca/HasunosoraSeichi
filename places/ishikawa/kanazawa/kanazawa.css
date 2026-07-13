@@ -1,0 +1,799 @@
+/* =========================
+   金泽页面主体
+========================= */
+
+.kanazawa-main {
+  min-height: 100vh;
+}
+
+
+/* =========================
+   页面标题
+========================= */
+
+.kanazawa-heading {
+  padding:
+    16px
+    0
+    34px;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--green);
+
+  transform: translateX(-3px);
+}
+
+
+.kanazawa-heading h1 {
+  margin: 0;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size:
+    clamp(2.3rem, 4.8vw, 4.2rem);
+
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================
+   筛选面板
+========================= */
+
+.filter-panel {
+  margin-top: 36px;
+  padding: 26px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    var(--radius-large);
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 14px 38px rgba(31, 44, 37, 0.05);
+}
+
+
+.filter-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+
+.filter-panel-heading h2 {
+  margin: 0;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+
+.reset-filter-button {
+  padding: 4px 0;
+
+  border: 0;
+  border-bottom:
+    1px solid currentColor;
+
+  background: transparent;
+  color: var(--green);
+
+  cursor: pointer;
+
+  font-size: 0.8rem;
+
+  transition:
+    color 160ms ease;
+}
+
+
+.reset-filter-button:hover,
+.reset-filter-button:focus-visible {
+  color: var(--pink);
+}
+
+
+/* =========================
+   筛选布局
+========================= */
+
+.filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  min-width: 0;
+}
+
+
+.filter-keyword {
+  grid-column:
+    span 2;
+}
+
+
+.filter-label {
+  color: var(--text-secondary);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+
+.filter-field input,
+.filter-field select {
+  display: block;
+
+  width: 100%;
+  height: 47px;
+
+  padding:
+    0
+    14px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    13px;
+
+  outline: none;
+
+  background:
+    var(--background);
+
+  color:
+    var(--text-primary);
+
+  font-family: inherit;
+  font-size: 0.86rem;
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+
+.filter-field select {
+  padding-right: 37px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--text-light) 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--text-light) 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 17px) 20px,
+    calc(100% - 12px) 20px;
+
+  background-repeat:
+    no-repeat;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  cursor: pointer;
+}
+
+
+.filter-field input::placeholder {
+  color:
+    var(--text-light);
+}
+
+
+.filter-field input:hover,
+.filter-field select:hover {
+  border-color:
+    rgba(49, 93, 77, 0.34);
+
+  background-color:
+    var(--surface);
+}
+
+
+.filter-field input:focus,
+.filter-field select:focus {
+  border-color:
+    var(--green);
+
+  background-color:
+    var(--surface);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(49, 93, 77, 0.1);
+}
+
+
+/* =========================
+   今日营业复选框
+========================= */
+
+.today-open-filter {
+  display: flex;
+  align-items: center;
+  align-self: end;
+  gap: 10px;
+
+  min-height: 47px;
+  padding:
+    0
+    14px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    13px;
+
+  background:
+    var(--background);
+
+  color:
+    var(--text-primary);
+
+  cursor: pointer;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+
+.today-open-filter:hover {
+  border-color:
+    rgba(49, 93, 77, 0.34);
+
+  background:
+    var(--surface);
+}
+
+
+.today-open-filter input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+
+.checkbox-mark {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 19px;
+  height: 19px;
+
+  border:
+    1.5px solid var(--border);
+
+  border-radius:
+    6px;
+
+  background:
+    var(--surface);
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+
+.today-open-filter
+input:checked
++
+.checkbox-mark {
+  border-color:
+    var(--green);
+
+  background:
+    var(--green);
+}
+
+
+.today-open-filter
+input:checked
++
+.checkbox-mark::after {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+
+  width: 4px;
+  height: 8px;
+
+  border:
+    solid white;
+
+  border-width:
+    0
+    2px
+    2px
+    0;
+
+  content: "";
+
+  transform:
+    rotate(45deg);
+}
+
+
+.today-open-filter
+input:focus-visible
++
+.checkbox-mark {
+  box-shadow:
+    0 0 0 3px
+    rgba(49, 93, 77, 0.13);
+}
+
+
+/* =========================
+   筛选结果
+========================= */
+
+.places-result-section {
+  margin-top: 42px;
+}
+
+
+.result-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 17px;
+}
+
+
+.result-count {
+  margin: 0;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.83rem;
+}
+
+
+/* =========================
+   地点列表
+========================= */
+
+.kanazawa-place-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================
+   地点卡片
+========================= */
+
+.kanazawa-place-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: 22px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    var(--radius-large);
+
+  background:
+    var(--surface);
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+
+.kanazawa-place-card:hover,
+.kanazawa-place-card:focus-within {
+  border-color:
+    rgba(49, 93, 77, 0.3);
+
+  box-shadow:
+    0 16px 38px
+    rgba(31, 44, 37, 0.08);
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* 地点标签 */
+.place-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-bottom: 15px;
+}
+
+
+.place-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding:
+    4px
+    9px;
+
+  border-radius:
+    999px;
+
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+
+.place-tag.category {
+  background:
+    rgba(168, 108, 121, 0.13);
+
+  color:
+    var(--pink);
+}
+
+
+/* 地点名称 */
+.place-card-title {
+  margin: 0;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 1.24rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+.place-card-title a {
+  transition:
+    color 160ms ease;
+}
+
+
+.place-card-title a:hover,
+.place-card-title a:focus-visible {
+  color:
+    var(--green);
+}
+
+
+.place-card-name-ja {
+  margin:
+    4px
+    0
+    0;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.76rem;
+}
+
+
+/* 出处和角色 */
+.place-card-information {
+  display: grid;
+  gap: 9px;
+
+  margin:
+    19px
+    0
+    0;
+}
+
+
+.place-information-row {
+  display: grid;
+
+  grid-template-columns:
+    58px
+    minmax(0, 1fr);
+
+  gap: 10px;
+
+  font-size: 0.78rem;
+}
+
+
+.place-information-label {
+  color:
+    var(--text-light);
+
+  font-weight: 700;
+}
+
+
+.place-information-value {
+  color:
+    var(--text-secondary);
+
+  overflow-wrap:
+    anywhere;
+}
+
+
+/* 详情链接 */
+.place-card-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: auto;
+  padding-top: 21px;
+}
+
+
+.place-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color:
+    var(--green);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+
+.place-detail-link:hover,
+.place-detail-link:focus-visible {
+  color:
+    var(--pink);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================
+   加载更多
+========================= */
+
+.load-more-area {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 28px;
+}
+
+
+.load-more-button {
+  min-width: 150px;
+  min-height: 45px;
+
+  padding:
+    9px
+    22px;
+
+  border:
+    1px solid var(--green);
+
+  border-radius:
+    999px;
+
+  background:
+    transparent;
+
+  color:
+    var(--green);
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+
+.load-more-button:hover,
+.load-more-button:focus-visible {
+  background:
+    var(--green);
+
+  color:
+    white;
+
+  box-shadow:
+    0 9px 24px
+    rgba(49, 93, 77, 0.2);
+
+  transform:
+    translateY(-2px);
+}
+
+
+.load-more-button[hidden] {
+  display: none;
+}
+
+
+/* =========================
+   平板尺寸
+========================= */
+
+@media (max-width: 1050px) {
+  .filter-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-keyword {
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+/* =========================
+   手机尺寸
+========================= */
+
+@media (max-width: 760px) {
+  .kanazawa-heading {
+    padding:
+      6px
+      0
+      27px;
+  }
+
+  .back-link {
+    margin-bottom:
+      19px;
+  }
+
+  .kanazawa-heading h1 {
+    font-size:
+      clamp(2.1rem, 11vw, 3.2rem);
+  }
+
+  .filter-panel {
+    margin-top:
+      27px;
+
+    padding:
+      20px 17px;
+
+    border-radius:
+      19px;
+  }
+
+  .filter-panel-heading {
+    margin-bottom:
+      18px;
+  }
+
+  .filter-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      15px;
+  }
+
+  .filter-keyword {
+    grid-column:
+      auto;
+  }
+
+  .today-open-filter {
+    align-self:
+      auto;
+  }
+
+  .places-result-section {
+    margin-top:
+      33px;
+  }
+
+  .kanazawa-place-list {
+    grid-template-columns:
+      1fr;
+  }
+
+  .kanazawa-place-card {
+    padding:
+      19px;
+  }
+}

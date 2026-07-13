@@ -1,0 +1,655 @@
+/* =========================
+   详情页主体
+========================= */
+
+.detail-main {
+  min-height: 100vh;
+}
+
+
+.detail-navigation {
+  padding:
+    14px
+    0
+    24px;
+}
+
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--green);
+
+  transform: translateX(-3px);
+}
+
+
+/* =========================
+   地点详情整体
+========================= */
+
+.place-detail {
+  width: 100%;
+  max-width: 1040px;
+}
+
+
+/* =========================
+   地点标题区域
+========================= */
+
+.detail-header {
+  padding:
+    36px
+    clamp(24px, 5vw, 54px);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    28px;
+
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(168, 108, 121, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 90%,
+      rgba(49, 93, 77, 0.16),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #edf2ee
+    );
+
+  box-shadow:
+    0 18px 45px rgba(31, 44, 37, 0.07);
+}
+
+
+.detail-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+
+.detail-label {
+  display: inline-flex;
+  align-items: center;
+
+  padding:
+    5px
+    10px;
+
+  border-radius:
+    999px;
+
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+
+.detail-label.category {
+  background:
+    rgba(168, 108, 121, 0.13);
+
+  color:
+    var(--pink);
+}
+
+
+.detail-title {
+  margin: 0;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size:
+    clamp(2.15rem, 5vw, 4.2rem);
+
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: 0.01em;
+
+  overflow-wrap: anywhere;
+}
+
+
+.detail-title-ja {
+  margin:
+    9px
+    0
+    0;
+
+  color:
+    var(--text-secondary);
+
+  font-size:
+    clamp(0.9rem, 2vw, 1.08rem);
+
+  letter-spacing: 0.04em;
+
+  overflow-wrap: anywhere;
+}
+
+
+.detail-updated {
+  margin:
+    28px
+    0
+    0;
+
+  color:
+    var(--text-light);
+
+  font-size: 0.74rem;
+}
+
+
+/* =========================
+   详情内容板块
+========================= */
+
+.detail-section {
+  margin-top: 28px;
+  padding:
+    28px
+    30px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    var(--radius-large);
+
+  background:
+    var(--surface);
+}
+
+
+.detail-section-title {
+  margin:
+    0
+    0
+    20px;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 1.32rem;
+  font-weight: 600;
+}
+
+
+/* =========================
+   地点介绍
+========================= */
+
+.detail-introduction {
+  margin: 0;
+
+  color:
+    var(--text-primary);
+
+  font-size: 0.94rem;
+  line-height: 1.9;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   基本资料
+========================= */
+
+.detail-information {
+  display: grid;
+  gap: 0;
+
+  margin: 0;
+}
+
+
+.detail-information-row {
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(0, 1fr);
+
+  gap: 24px;
+
+  padding:
+    17px
+    0;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.detail-information-row:first-child {
+  padding-top: 0;
+}
+
+
+.detail-information-row:last-child {
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+
+
+.detail-information-row dt {
+  color:
+    var(--text-light);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+
+.detail-information-row dd {
+  min-width: 0;
+  margin: 0;
+
+  color:
+    var(--text-primary);
+
+  font-size: 0.88rem;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   出处、角色和其他标签
+========================= */
+
+.detail-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.detail-tag-list li {
+  padding:
+    6px
+    11px;
+
+  border-radius:
+    999px;
+
+  background:
+    var(--background);
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.76rem;
+}
+
+
+.detail-tag-list.sources li {
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+}
+
+
+.detail-tag-list.characters li {
+  background:
+    rgba(168, 108, 121, 0.12);
+
+  color:
+    var(--pink);
+}
+
+
+/* =========================
+   图片区域
+========================= */
+
+.place-gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+.gallery-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+
+.gallery-button {
+  display: block;
+
+  overflow: hidden;
+
+  width: 100%;
+  padding: 0;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    17px;
+
+  background:
+    var(--background);
+
+  cursor: zoom-in;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+
+.gallery-button:hover,
+.gallery-button:focus-visible {
+  outline: none;
+
+  border-color:
+    rgba(49, 93, 77, 0.34);
+
+  box-shadow:
+    0 14px 32px rgba(31, 44, 37, 0.11);
+
+  transform:
+    translateY(-2px);
+}
+
+
+.gallery-button img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+
+  object-fit: cover;
+}
+
+
+.gallery-caption {
+  margin:
+    9px
+    4px
+    0;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+
+/* =========================
+   数据读取错误
+========================= */
+
+.detail-error {
+  padding:
+    44px
+    28px;
+
+  border:
+    1px dashed var(--border);
+
+  border-radius:
+    var(--radius-large);
+
+  color:
+    #8d4050;
+
+  text-align: center;
+}
+
+
+.detail-error h1 {
+  margin:
+    0
+    0
+    12px;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 1.7rem;
+}
+
+
+.detail-error p {
+  margin: 0;
+}
+
+
+/* =========================
+   图片放大窗口
+========================= */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+
+  padding:
+    60px
+    28px
+    30px;
+
+  background:
+    rgba(15, 22, 18, 0.88);
+
+  backdrop-filter:
+    blur(9px);
+
+  -webkit-backdrop-filter:
+    blur(9px);
+}
+
+
+.image-lightbox[hidden] {
+  display: none;
+}
+
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width:
+    min(1200px, 94vw);
+
+  max-height:
+    calc(100vh - 90px);
+}
+
+
+.lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+  max-height:
+    calc(100vh - 150px);
+
+  border-radius:
+    14px;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+.lightbox-caption {
+  margin:
+    14px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.85);
+
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color:
+    white;
+
+  cursor: pointer;
+
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  outline: none;
+
+  background:
+    rgba(255, 255, 255, 0.17);
+}
+
+
+/* =========================
+   手机尺寸
+========================= */
+
+@media (max-width: 760px) {
+  .detail-navigation {
+    padding:
+      5px
+      0
+      20px;
+  }
+
+  .detail-header {
+    padding:
+      29px
+      23px;
+
+    border-radius:
+      22px;
+  }
+
+  .detail-section {
+    margin-top:
+      20px;
+
+    padding:
+      23px
+      20px;
+
+    border-radius:
+      19px;
+  }
+
+  .detail-information-row {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      5px;
+
+    padding:
+      15px
+      0;
+  }
+
+  .place-gallery {
+    grid-template-columns:
+      1fr;
+  }
+
+  .image-lightbox {
+    padding:
+      60px
+      14px
+      24px;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 14px;
+  }
+}
