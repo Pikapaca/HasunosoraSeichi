@@ -1,0 +1,17 @@
+[
+{
+  "id": "kanazawa-shinkansen",
+  "name": "金泽站新干线站台",
+  "nameJa": "金沢駅新幹線のりば",
+  "guideArea": "kanazawa-station",
+  "category": "车站",
+  "sources": [
+    "活动记录"，“live相关”
+  ],
+  "characters": [
+    "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽"
+  ],
+  "introduction": "往东京方向可拍活动记录同角度图；站台柱子上金色的梯形状物体就是4th石川场中小三角问答环节提到的金箔",
+  "updatedAt": "2025-04-27"
+}
+]

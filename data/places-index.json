@@ -1,0 +1,11 @@
+[
+    {
+      "id": "kanazawa-shinkansen",
+      "name": "金泽站新干线站台",
+      "nameJa": "金沢駅新幹線のりば",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2025-04-27"
+    }
+ ]
