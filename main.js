@@ -128,10 +128,6 @@ function renderLatestPlaces() {
  * 从普通地点中随机显示。
  */
 function renderPopularPlaces() {
-  const candidates = allPlaces.filter(
-    (place) => place.category !== "餐饮"
-  );
-
   const randomPlaces = getRandomItems(
     candidates,
     HOMEPAGE_ITEM_LIMIT
@@ -149,7 +145,7 @@ function renderPopularPlaces() {
  */
 function renderFoodPlaces() {
   const candidates = allPlaces.filter(
-    (place) => place.category === "餐饮"
+    (place) => place.isFood === true
   );
 
   const randomPlaces = getRandomItems(
@@ -161,6 +157,7 @@ function renderFoodPlaces() {
     foodContainer,
     randomPlaces
   );
+}
 }
 
 
@@ -355,15 +352,11 @@ function normalizeText(value) {
  * ./places/kanazawa/?id=kanazawa-station
  */
 function createPlaceUrl(place) {
-  const area = encodeURIComponent(
-    place.area
-  );
+  const prefecture = encodeURIComponent(place.prefecture);
+  const city = encodeURIComponent(place.city);
+  const id = encodeURIComponent(place.id);
 
-  const id = encodeURIComponent(
-    place.id
-  );
-
-  return `./places/${area}/?id=${id}`;
+  return `./places/${prefecture}/detail.html?city=${city}&id=${id}`;
 }
 
 
@@ -376,7 +369,8 @@ function isValidPlace(place) {
     place &&
     place.id &&
     place.name &&
-    place.area
+    place.prefecture &&
+    place.city
   );
 }
 
