@@ -1,4 +1,4 @@
-const PLACES_DATA_PATH = "../data/places-index.json";
+const PLACES_DATA_PATH = "./data/places-index.json";
 
 /*
  * 首页三个板块分别设置显示数量。
@@ -399,7 +399,7 @@ function normalizeText(value) {
 
 /**
  * 生成：
- * ../places/kanazawa/?id=kanazawa-station
+ * ./places/kanazawa/?id=kanazawa-station
  */
 function createPlaceUrl(place) {
   const prefecture =
@@ -412,7 +412,7 @@ function createPlaceUrl(place) {
     encodeURIComponent(place.id);
 
   return (
-    `../places/${prefecture}/${city}/` +
+    `./places/${prefecture}/${city}/` +
     `detail.html?id=${id}`
   );
 }
