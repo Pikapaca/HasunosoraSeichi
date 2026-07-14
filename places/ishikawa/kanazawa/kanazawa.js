@@ -9,7 +9,7 @@ const SEARCH_RESULT_LIMIT = 10;
 
 
 /* =========================
-   地点数据
+   数据
 ========================= */
 
 let kanazawaPlaces = [];
@@ -24,12 +24,6 @@ let indexPlacesLoaded = false;
    巡礼区域名称
 ========================= */
 
-/*
- * 如果 kanazawa.json 中包含 guideAreas，
- * 会优先使用 JSON 中的名称。
- *
- * 下面这些名称作为备用。
- */
 const guideAreaLabels = {
   "kanazawa-station":
     "金泽站（站内及周边）",
@@ -82,7 +76,7 @@ const loadMoreButton =
   );
 
 
-/* 金泽页面筛选器 */
+/* 页面内筛选器 */
 
 const keywordFilter =
   document.querySelector(
@@ -134,7 +128,7 @@ const searchResults =
 
 
 /* =========================
-   页面初始化
+   初始化
 ========================= */
 
 document.addEventListener(
@@ -152,27 +146,13 @@ document.addEventListener(
 
 
 /* =========================
-   读取金泽完整地点数据
+   读取金泽地点数据
 ========================= */
 
 async function loadKanazawaPlaces() {
   try {
-    console.log(
-      "实际请求地址：",
-      new URL(
-        KANAZAWA_DATA_PATH,
-        window.location.href
-      ).href
-    );
-
     const response = await fetch(
       KANAZAWA_DATA_PATH
-    );
-
-    console.log(
-      "请求状态：",
-      response.status,
-      response.url
     );
 
     if (!response.ok) {
@@ -181,18 +161,34 @@ async function loadKanazawaPlaces() {
       );
     }
 
-    const data = await response.json();
+    const data =
+      await response.json();
 
-    console.log(
-      "读取到的金泽数据：",
-      data
-    );
+    /*
+     * 支持两种 JSON 格式：
+     *
+     * [
+     *   {...},
+     *   {...}
+     * ]
+     *
+     * 或：
+     *
+     * {
+     *   "guideAreas": [...],
+     *   "places": [...]
+     * }
+     */
+    kanazawaPlaces =
+      Array.isArray(data)
+        ? data
+        : data.places;
 
-    kanazawaPlaces = Array.isArray(data)
-      ? data
-      : data.places;
-
-    if (!Array.isArray(kanazawaPlaces)) {
+    if (
+      !Array.isArray(
+        kanazawaPlaces
+      )
+    ) {
       throw new Error(
         "kanazawa.json 中没有有效的地点数组。"
       );
@@ -200,9 +196,13 @@ async function loadKanazawaPlaces() {
 
     if (
       !Array.isArray(data) &&
-      Array.isArray(data.guideAreas)
+      Array.isArray(
+        data.guideAreas
+      )
     ) {
-      registerGuideAreas(data.guideAreas);
+      registerGuideAreas(
+        data.guideAreas
+      );
     }
 
     kanazawaPlaces =
@@ -239,107 +239,52 @@ async function loadKanazawaPlaces() {
 }
 
 
-    /*
-     * 支持两种格式：
-     *
-     * [
-     *   {...},
-     *   {...}
-     * ]
-     *
-     * 或：
-     *
-     * {
-     *   "guideAreas": [...],
-     *   "places": [...]
-     * }
-     */
-    kanazawaPlaces = Array.isArray(data)
-      ? data
-      : data.places;
+/* =========================
+   巡礼区域注册
+========================= */
 
-    if (!Array.isArray(kanazawaPlaces)) {
-      throw new Error(
-        "kanazawa.json 中没有有效的地点数组。"
-      );
-    }
-
-    /*
-     * 如果 JSON 里写了 guideAreas，
-     * 使用里面的名称和顺序。
-     */
-    if (
-      !Array.isArray(data) &&
-      Array.isArray(data.guideAreas)
-    ) {
-      registerGuideAreas(
-        data.guideAreas
-      );
-    }
-
-    kanazawaPlaces =
-      kanazawaPlaces.filter(
-        isValidKanazawaPlace
+function registerGuideAreas(
+  guideAreas
+) {
+  const sortedAreas =
+    [...guideAreas]
+      .filter((area) => {
+        return (
+          area &&
+          area.id &&
+          area.name
+        );
+      })
+      .sort(
+        (areaA, areaB) => {
+          return (
+            Number(
+              areaA.order || 0
+            ) -
+            Number(
+              areaB.order || 0
+            )
+          );
+        }
       );
 
-    buildFilterOptions();
-    applyFilters();
-  } catch (error) {
-    console.error(error);
+  guideAreaOrder =
+    sortedAreas.map(
+      (area) => area.id
+    );
 
-    if (resultCount) {
-      resultCount.textContent =
-        "地点数据读取失败";
+  sortedAreas.forEach(
+    (area) => {
+      guideAreaLabels[
+        area.id
+      ] = area.name;
     }
-
-    if (placeList) {
-      placeList.innerHTML = `
-        <p class="status-message error">
-          无法读取金泽地点数据。
-          请检查 kanazawa.json 的路径和格式。
-        </p>
-      `;
-    }
-
-    if (loadMoreButton) {
-      loadMoreButton.hidden = true;
-    }
-  }
-}
-
-
-/**
- * 读取 JSON 中的巡礼区域名称。
- */
-function registerGuideAreas(guideAreas) {
-  const sortedAreas = [...guideAreas]
-    .filter((area) => {
-      return (
-        area &&
-        area.id &&
-        area.name
-      );
-    })
-    .sort((areaA, areaB) => {
-      return (
-        Number(areaA.order || 0) -
-        Number(areaB.order || 0)
-      );
-    });
-
-  guideAreaOrder = sortedAreas.map(
-    (area) => area.id
   );
-
-  sortedAreas.forEach((area) => {
-    guideAreaLabels[area.id] =
-      area.name;
-  });
 }
 
 
 /* =========================
-   读取全站搜索索引
+   读取全站地点索引
 ========================= */
 
 async function loadPlaceIndex() {
@@ -354,13 +299,19 @@ async function loadPlaceIndex() {
       );
     }
 
-    const data = await response.json();
+    const data =
+      await response.json();
 
-    allIndexPlaces = Array.isArray(data)
-      ? data
-      : data.places;
+    allIndexPlaces =
+      Array.isArray(data)
+        ? data
+        : data.places;
 
-    if (!Array.isArray(allIndexPlaces)) {
+    if (
+      !Array.isArray(
+        allIndexPlaces
+      )
+    ) {
       throw new Error(
         "places-index.json 中没有有效地点数组。"
       );
@@ -373,10 +324,6 @@ async function loadPlaceIndex() {
 
     indexPlacesLoaded = true;
 
-    /*
-     * 数据加载前用户已经输入内容时，
-     * 加载后重新搜索。
-     */
     if (
       searchInput &&
       searchInput.value.trim()
@@ -388,8 +335,8 @@ async function loadPlaceIndex() {
   } catch (error) {
     console.error(error);
 
-    indexPlacesLoaded = true;
     allIndexPlaces = [];
+    indexPlacesLoaded = true;
   }
 }
 
@@ -402,14 +349,27 @@ function buildFilterOptions() {
   const guideAreas =
     getUniqueValues(
       kanazawaPlaces.map(
-        (place) => place.guideArea
+        (place) =>
+          place.guideArea
       )
     );
 
+  /*
+   * category 同时支持：
+   *
+   * "category": "车站"
+   *
+   * 以及：
+   *
+   * "category": ["车站", "交通设施"]
+   */
   const categories =
     getUniqueValues(
-      kanazawaPlaces.map(
-        (place) => place.category
+      kanazawaPlaces.flatMap(
+        (place) =>
+          toStringArray(
+            place.category
+          )
       )
     );
 
@@ -417,7 +377,9 @@ function buildFilterOptions() {
     getUniqueValues(
       kanazawaPlaces.flatMap(
         (place) =>
-          toStringArray(place.sources)
+          toStringArray(
+            place.sources
+          )
       )
     );
 
@@ -425,14 +387,12 @@ function buildFilterOptions() {
     getUniqueValues(
       kanazawaPlaces.flatMap(
         (place) =>
-          toStringArray(place.characters)
+          toStringArray(
+            place.characters
+          )
       )
     );
 
-
-  /*
-   * 巡礼区域按照设定顺序排列。
-   */
   guideAreas.sort(
     compareGuideAreas
   );
@@ -450,6 +410,9 @@ function buildFilterOptions() {
   );
 
 
+  /*
+   * 巡礼区域继续使用单选。
+   */
   fillSelectOptions(
     guideAreaFilter,
     guideAreas,
@@ -457,28 +420,32 @@ function buildFilterOptions() {
     getGuideAreaLabel
   );
 
-  fillSelectOptions(
+
+  /*
+   * 以下三项改为复选框多选。
+   */
+  fillCheckboxOptions(
     categoryFilter,
     categories,
-    "全部类别"
+    "category"
   );
 
-  fillSelectOptions(
+  fillCheckboxOptions(
     sourceFilter,
     sources,
-    "全部出处"
+    "source"
   );
 
-  fillSelectOptions(
+  fillCheckboxOptions(
     characterFilter,
     characters,
-    "全部角色"
+    "character"
   );
 }
 
 
 /**
- * 向 select 写入选项。
+ * 生成单选下拉菜单选项。
  */
 function fillSelectOptions(
   selectElement,
@@ -493,9 +460,12 @@ function fillSelectOptions(
   selectElement.innerHTML = "";
 
   const emptyOption =
-    document.createElement("option");
+    document.createElement(
+      "option"
+    );
 
   emptyOption.value = "";
+
   emptyOption.textContent =
     emptyLabel;
 
@@ -503,10 +473,11 @@ function fillSelectOptions(
     emptyOption
   );
 
-
   values.forEach((value) => {
     const option =
-      document.createElement("option");
+      document.createElement(
+        "option"
+      );
 
     option.value = value;
 
@@ -522,31 +493,154 @@ function fillSelectOptions(
 }
 
 
+/**
+ * 生成多选复选框。
+ */
+function fillCheckboxOptions(
+  container,
+  values,
+  groupName
+) {
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+  if (values.length === 0) {
+    const emptyMessage =
+      document.createElement(
+        "p"
+      );
+
+    emptyMessage.className =
+      "multi-filter-empty";
+
+    emptyMessage.textContent =
+      "暂无选项";
+
+    container.appendChild(
+      emptyMessage
+    );
+
+    return;
+  }
+
+  values.forEach(
+    (value, index) => {
+      const inputId =
+        `filter-${groupName}-option-${index}`;
+
+      const label =
+        document.createElement(
+          "label"
+        );
+
+      label.className =
+        "multi-filter-option";
+
+      label.htmlFor =
+        inputId;
+
+      const input =
+        document.createElement(
+          "input"
+        );
+
+      input.type =
+        "checkbox";
+
+      input.id =
+        inputId;
+
+      input.value =
+        value;
+
+      const text =
+        document.createElement(
+          "span"
+        );
+
+      text.textContent =
+        value;
+
+      label.append(
+        input,
+        text
+      );
+
+      container.appendChild(
+        label
+      );
+    }
+  );
+}
+
+
 /* =========================
    筛选事件
 ========================= */
 
 function setupLocalFilters() {
-  const selectFilters = [
-    guideAreaFilter,
-    categoryFilter,
-    sourceFilter,
-    characterFilter,
-    openTodayFilter
-  ];
-
-  selectFilters.forEach((element) => {
-    if (!element) {
-      return;
-    }
-
-    element.addEventListener(
+  /*
+   * 巡礼区域：单选。
+   */
+  if (guideAreaFilter) {
+    guideAreaFilter.addEventListener(
       "change",
       applyFilters
     );
-  });
+  }
 
 
+  /*
+   * 今日营业。
+   */
+  if (openTodayFilter) {
+    openTodayFilter.addEventListener(
+      "change",
+      applyFilters
+    );
+  }
+
+
+  /*
+   * 多选筛选器。
+   *
+   * 使用事件代理，以便动态生成的
+   * checkbox 也能触发筛选。
+   */
+  const multipleFilters = [
+    categoryFilter,
+    sourceFilter,
+    characterFilter
+  ];
+
+  multipleFilters.forEach(
+    (container) => {
+      if (!container) {
+        return;
+      }
+
+      container.addEventListener(
+        "change",
+        (event) => {
+          if (
+            event.target.matches(
+              'input[type="checkbox"]'
+            )
+          ) {
+            applyFilters();
+          }
+        }
+      );
+    }
+  );
+
+
+  /*
+   * 关键词搜索。
+   */
   if (keywordFilter) {
     keywordFilter.addEventListener(
       "input",
@@ -558,6 +652,9 @@ function setupLocalFilters() {
   }
 
 
+  /*
+   * 清除筛选。
+   */
   if (resetFiltersButton) {
     resetFiltersButton.addEventListener(
       "click",
@@ -567,35 +664,56 @@ function setupLocalFilters() {
 }
 
 
-/**
- * 执行全部筛选。
+/* =========================
+   执行筛选
+========================= */
+
+/*
+ * 筛选规则：
+ *
+ * 同一组内：
+ * 选中多个选项时，满足任意一个即可。
+ *
+ * 不同组之间：
+ * 必须同时满足。
+ *
+ * 例如：
+ *
+ * 类别选择“车站”和“餐饮”，
+ * 角色选择“花帆”和“梢”。
+ *
+ * 则地点需要：
+ *
+ * 类别属于车站或餐饮，
+ * 并且角色包含花帆或梢。
  */
 function applyFilters() {
-  const keyword = normalizeText(
-    keywordFilter
-      ? keywordFilter.value
-      : ""
-  );
+  const keyword =
+    normalizeText(
+      keywordFilter
+        ? keywordFilter.value
+        : ""
+    );
 
   const selectedGuideArea =
     guideAreaFilter
       ? guideAreaFilter.value
       : "";
 
-  const selectedCategory =
-    categoryFilter
-      ? categoryFilter.value
-      : "";
+  const selectedCategories =
+    getCheckedValues(
+      categoryFilter
+    );
 
-  const selectedSource =
-    sourceFilter
-      ? sourceFilter.value
-      : "";
+  const selectedSources =
+    getCheckedValues(
+      sourceFilter
+    );
 
-  const selectedCharacter =
-    characterFilter
-      ? characterFilter.value
-      : "";
+  const selectedCharacters =
+    getCheckedValues(
+      characterFilter
+    );
 
   const requireOpenToday =
     openTodayFilter
@@ -604,54 +722,52 @@ function applyFilters() {
 
 
   filteredPlaces =
-    kanazawaPlaces.filter((place) => {
-      const keywordMatched =
-        !keyword ||
-        doesPlaceMatchKeyword(
-          place,
-          keyword
+    kanazawaPlaces.filter(
+      (place) => {
+        const keywordMatched =
+          !keyword ||
+          doesPlaceMatchKeyword(
+            place,
+            keyword
+          );
+
+        const guideAreaMatched =
+          !selectedGuideArea ||
+          place.guideArea ===
+            selectedGuideArea;
+
+        const categoryMatched =
+          matchesAnySelectedValue(
+            place.category,
+            selectedCategories
+          );
+
+        const sourceMatched =
+          matchesAnySelectedValue(
+            place.sources,
+            selectedSources
+          );
+
+        const characterMatched =
+          matchesAnySelectedValue(
+            place.characters,
+            selectedCharacters
+          );
+
+        const openTodayMatched =
+          !requireOpenToday ||
+          isOpenToday(place);
+
+        return (
+          keywordMatched &&
+          guideAreaMatched &&
+          categoryMatched &&
+          sourceMatched &&
+          characterMatched &&
+          openTodayMatched
         );
-
-      const guideAreaMatched =
-        !selectedGuideArea ||
-        place.guideArea ===
-          selectedGuideArea;
-
-      const categoryMatched =
-        !selectedCategory ||
-        place.category ===
-          selectedCategory;
-
-      const sourceMatched =
-        !selectedSource ||
-        toStringArray(
-          place.sources
-        ).includes(
-          selectedSource
-        );
-
-      const characterMatched =
-        !selectedCharacter ||
-        toStringArray(
-          place.characters
-        ).includes(
-          selectedCharacter
-        );
-
-      const openTodayMatched =
-        !requireOpenToday ||
-        isOpenToday(place);
-
-      return (
-        keywordMatched &&
-        guideAreaMatched &&
-        categoryMatched &&
-        sourceMatched &&
-        characterMatched &&
-        openTodayMatched
-      );
-    });
-
+      }
+    );
 
   visibleCount =
     ITEMS_PER_BATCH;
@@ -660,9 +776,10 @@ function applyFilters() {
 }
 
 
-/**
- * 清除全部筛选。
- */
+/* =========================
+   清除筛选
+========================= */
+
 function resetFilters() {
   if (keywordFilter) {
     keywordFilter.value = "";
@@ -672,20 +789,21 @@ function resetFilters() {
     guideAreaFilter.value = "";
   }
 
-  if (categoryFilter) {
-    categoryFilter.value = "";
-  }
+  clearCheckedValues(
+    categoryFilter
+  );
 
-  if (sourceFilter) {
-    sourceFilter.value = "";
-  }
+  clearCheckedValues(
+    sourceFilter
+  );
 
-  if (characterFilter) {
-    characterFilter.value = "";
-  }
+  clearCheckedValues(
+    characterFilter
+  );
 
   if (openTodayFilter) {
-    openTodayFilter.checked = false;
+    openTodayFilter.checked =
+      false;
   }
 
   applyFilters();
@@ -693,7 +811,7 @@ function resetFilters() {
 
 
 /* =========================
-   页面内关键词匹配
+   关键词匹配
 ========================= */
 
 function doesPlaceMatchKeyword(
@@ -705,12 +823,19 @@ function doesPlaceMatchKeyword(
     place.nameJa,
     place.address,
     place.introduction,
+
+    ...toStringArray(
+      place.category
+    ),
+
     ...toStringArray(
       place.sources
     ),
+
     ...toStringArray(
       place.characters
     ),
+
     ...toStringArray(
       place.other
     )
@@ -731,7 +856,10 @@ function doesPlaceMatchKeyword(
 ========================= */
 
 function renderPlaces() {
-  if (!placeList || !resultCount) {
+  if (
+    !placeList ||
+    !resultCount
+  ) {
     return;
   }
 
@@ -765,20 +893,24 @@ function renderPlaces() {
 
   placeList.innerHTML =
     visiblePlaces
-      .map(createPlaceCard)
+      .map(
+        createPlaceCard
+      )
       .join("");
 
 
   if (loadMoreButton) {
     loadMoreButton.hidden =
-      visibleCount >= totalCount;
+      visibleCount >=
+      totalCount;
   }
 }
 
 
-/**
- * 生成一个地点卡片。
- */
+/* =========================
+   生成地点卡片
+========================= */
+
 function createPlaceCard(place) {
   const guideAreaTag =
     place.guideArea
@@ -793,16 +925,23 @@ function createPlaceCard(place) {
       `
       : "";
 
-  const categoryTag =
-    place.category
-      ? `
-        <span class="place-tag category">
-          ${escapeHtml(
-            place.category
-          )}
-        </span>
-      `
-      : "";
+
+  /*
+   * category 支持字符串或数组。
+   */
+  const categoryTags =
+    toStringArray(
+      place.category
+    )
+      .map((category) => {
+        return `
+          <span class="place-tag category">
+            ${escapeHtml(category)}
+          </span>
+        `;
+      })
+      .join("");
+
 
   const japaneseName =
     place.nameJa
@@ -815,6 +954,7 @@ function createPlaceCard(place) {
       `
       : "";
 
+
   const sourceRow =
     createInformationRow(
       "出处",
@@ -822,6 +962,7 @@ function createPlaceCard(place) {
         place.sources
       ).join("、")
     );
+
 
   const characterRow =
     createInformationRow(
@@ -831,14 +972,16 @@ function createPlaceCard(place) {
       ).join("、")
     );
 
+
   const detailUrl =
     createDetailUrl(place);
+
 
   return `
     <article class="kanazawa-place-card">
       <div class="place-card-tags">
         ${guideAreaTag}
-        ${categoryTag}
+        ${categoryTags}
       </div>
 
       <h2 class="place-card-title">
@@ -860,7 +1003,9 @@ function createPlaceCard(place) {
           href="${detailUrl}"
         >
           查看详细信息
-          <span aria-hidden="true">→</span>
+          <span aria-hidden="true">
+            →
+          </span>
         </a>
       </div>
     </article>
@@ -894,12 +1039,14 @@ function createInformationRow(
 
 
 /**
- * 生成地点详情页链接。
+ * 生成详情页链接。
  */
 function createDetailUrl(place) {
   return (
     "./detail.html?id=" +
-    encodeURIComponent(place.id)
+    encodeURIComponent(
+      place.id
+    )
   );
 }
 
@@ -929,32 +1076,24 @@ function setupLoadMore() {
    今日营业判断
 ========================= */
 
-/*
- * closedDays 可以写成：
- *
- * ["tuesday"]
- *
- * ["周二"]
- *
- * ["星期二"]
- *
- * ["火曜日"]
- *
- * 没有 closedDays 时，
- * 会视为今天可以显示。
- */
 function isOpenToday(place) {
   const closedDays =
     toStringArray(
       place.closedDays
     );
 
+  /*
+   * 没写 closedDays 时，
+   * 默认允许显示。
+   */
   if (closedDays.length === 0) {
     return true;
   }
 
   const normalizedClosedDays =
-    closedDays.map(normalizeText);
+    closedDays.map(
+      normalizeText
+    );
 
 
   const alwaysOpenWords = [
@@ -965,25 +1104,25 @@ function isOpenToday(place) {
     "無休"
   ];
 
+
   const isAlwaysOpen =
     normalizedClosedDays.some(
       (value) => {
         return alwaysOpenWords.some(
-          (word) =>
-            value.includes(
+          (word) => {
+            return value.includes(
               normalizeText(word)
-            )
+            );
+          }
         );
       }
     );
+
 
   if (isAlwaysOpen) {
     return true;
   }
 
-
-  const todayIndex =
-    new Date().getDay();
 
   const weekdayAliases = [
     [
@@ -1047,9 +1186,15 @@ function isOpenToday(place) {
   ];
 
 
+  const todayIndex =
+    new Date().getDay();
+
   const todayAliases =
-    weekdayAliases[todayIndex]
-      .map(normalizeText);
+    weekdayAliases[
+      todayIndex
+    ].map(
+      normalizeText
+    );
 
 
   const closedToday =
@@ -1059,7 +1204,9 @@ function isOpenToday(place) {
           (alias) => {
             return (
               closedDay === alias ||
-              closedDay.includes(alias)
+              closedDay.includes(
+                alias
+              )
             );
           }
         );
@@ -1071,11 +1218,14 @@ function isOpenToday(place) {
 
 
 /* =========================
-   全站侧边栏搜索
+   全站搜索
 ========================= */
 
 function setupGlobalSearch() {
-  if (!searchInput || !searchResults) {
+  if (
+    !searchInput ||
+    !searchResults
+  ) {
     return;
   }
 
@@ -1083,9 +1233,10 @@ function setupGlobalSearch() {
   searchInput.addEventListener(
     "input",
     () => {
-      const keyword = normalizeText(
-        searchInput.value
-      );
+      const keyword =
+        normalizeText(
+          searchInput.value
+        );
 
       if (!keyword) {
         hideSearchResults();
@@ -1212,14 +1363,17 @@ function renderGlobalSearchResults(
       )
       .join("");
 
-  searchResults.hidden = false;
+  searchResults.hidden =
+    false;
 }
 
 
 /**
- * 生成一条全站搜索结果。
+ * 生成全站搜索结果。
  */
-function createGlobalSearchItem(place) {
+function createGlobalSearchItem(
+  place
+) {
   const japaneseName =
     place.nameJa
       ? `
@@ -1247,7 +1401,7 @@ function createGlobalSearchItem(place) {
 
 
 /**
- * 从当前金泽页面生成全站地点链接。
+ * 从金泽页面生成其他地点详情页链接。
  */
 function createGlobalPlaceUrl(place) {
   const prefecture =
@@ -1273,7 +1427,9 @@ function createGlobalPlaceUrl(place) {
 }
 
 
-function renderSearchMessage(message) {
+function renderSearchMessage(
+  message
+) {
   if (!searchResults) {
     return;
   }
@@ -1284,7 +1440,8 @@ function renderSearchMessage(message) {
     </p>
   `;
 
-  searchResults.hidden = false;
+  searchResults.hidden =
+    false;
 }
 
 
@@ -1293,8 +1450,11 @@ function hideSearchResults() {
     return;
   }
 
-  searchResults.hidden = true;
-  searchResults.innerHTML = "";
+  searchResults.hidden =
+    true;
+
+  searchResults.innerHTML =
+    "";
 }
 
 
@@ -1332,7 +1492,8 @@ function setupMobileMenu() {
       "open"
     );
 
-    overlay.hidden = false;
+    overlay.hidden =
+      false;
 
     menuButton.setAttribute(
       "aria-expanded",
@@ -1349,7 +1510,8 @@ function setupMobileMenu() {
       "open"
     );
 
-    overlay.hidden = true;
+    overlay.hidden =
+      true;
 
     menuButton.setAttribute(
       "aria-expanded",
@@ -1364,12 +1526,11 @@ function setupMobileMenu() {
   menuButton.addEventListener(
     "click",
     () => {
-      const isOpen =
+      if (
         sidebar.classList.contains(
           "open"
-        );
-
-      if (isOpen) {
+        )
+      ) {
         closeSidebar();
       } else {
         openSidebar();
@@ -1426,10 +1587,12 @@ function setupMobileMenu() {
 
 
 /* =========================
-   数据检查
+   数据验证
 ========================= */
 
-function isValidKanazawaPlace(place) {
+function isValidKanazawaPlace(
+  place
+) {
   return Boolean(
     place &&
     place.id &&
@@ -1438,7 +1601,9 @@ function isValidKanazawaPlace(place) {
 }
 
 
-function isValidIndexPlace(place) {
+function isValidIndexPlace(
+  place
+) {
   return Boolean(
     place &&
     place.id &&
@@ -1453,9 +1618,13 @@ function isValidIndexPlace(place) {
    巡礼区域工具
 ========================= */
 
-function getGuideAreaLabel(areaId) {
+function getGuideAreaLabel(
+  areaId
+) {
   return (
-    guideAreaLabels[areaId] ||
+    guideAreaLabels[
+      areaId
+    ] ||
     areaId ||
     "未分类区域"
   );
@@ -1467,10 +1636,14 @@ function compareGuideAreas(
   areaB
 ) {
   const indexA =
-    guideAreaOrder.indexOf(areaA);
+    guideAreaOrder.indexOf(
+      areaA
+    );
 
   const indexB =
-    guideAreaOrder.indexOf(areaB);
+    guideAreaOrder.indexOf(
+      areaB
+    );
 
   if (
     indexA !== -1 &&
@@ -1495,6 +1668,76 @@ function compareGuideAreas(
 
 
 /* =========================
+   多选筛选工具
+========================= */
+
+/**
+ * 获取复选框组中已选中的值。
+ */
+function getCheckedValues(
+  container
+) {
+  if (!container) {
+    return [];
+  }
+
+  return Array.from(
+    container.querySelectorAll(
+      'input[type="checkbox"]:checked'
+    )
+  ).map((input) => {
+    return input.value;
+  });
+}
+
+
+/**
+ * 清除复选框组的选择。
+ */
+function clearCheckedValues(
+  container
+) {
+  if (!container) {
+    return;
+  }
+
+  container
+    .querySelectorAll(
+      'input[type="checkbox"]'
+    )
+    .forEach((input) => {
+      input.checked = false;
+    });
+}
+
+
+/**
+ * 没有选择时代表全部。
+ *
+ * 有选择时，地点只要命中
+ * 任意一个已选值即可。
+ */
+function matchesAnySelectedValue(
+  placeValue,
+  selectedValues
+) {
+  if (
+    selectedValues.length === 0
+  ) {
+    return true;
+  }
+
+  return toStringArray(
+    placeValue
+  ).some((value) => {
+    return selectedValues.includes(
+      value
+    );
+  });
+}
+
+
+/* =========================
    通用工具
 ========================= */
 
@@ -1508,9 +1751,9 @@ function toStringArray(value) {
           String(item).trim() !== ""
         );
       })
-      .map((item) =>
-        String(item)
-      );
+      .map((item) => {
+        return String(item);
+      });
   }
 
   if (
@@ -1546,7 +1789,9 @@ function compareChineseText(
   valueA,
   valueB
 ) {
-  return String(valueA).localeCompare(
+  return String(
+    valueA
+  ).localeCompare(
     String(valueB),
     "zh-CN"
   );
@@ -1554,7 +1799,9 @@ function compareChineseText(
 
 
 function normalizeText(value) {
-  return String(value || "")
+  return String(
+    value || ""
+  )
     .trim()
     .toLocaleLowerCase();
 }
@@ -1567,7 +1814,9 @@ function debounce(
   let timerId;
 
   return (...argumentsList) => {
-    clearTimeout(timerId);
+    clearTimeout(
+      timerId
+    );
 
     timerId = setTimeout(
       () => {
@@ -1583,9 +1832,24 @@ function debounce(
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
 }

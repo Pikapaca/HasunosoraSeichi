@@ -164,7 +164,8 @@
 
 
 .filter-label {
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
   font-size: 0.76rem;
   font-weight: 700;
@@ -172,8 +173,14 @@
 }
 
 
-.filter-field input,
-.filter-field select {
+/*
+ * 只设置筛选区域直属的
+ * 输入框和下拉菜单。
+ *
+ * 这样不会影响多选区域内部的 checkbox。
+ */
+.filter-field > input,
+.filter-field > select {
   display: block;
 
   width: 100%;
@@ -207,7 +214,8 @@
 }
 
 
-.filter-field select {
+/* 下拉菜单箭头 */
+.filter-field > select {
   padding-right: 37px;
 
   appearance: none;
@@ -240,14 +248,14 @@
 }
 
 
-.filter-field input::placeholder {
+.filter-field > input::placeholder {
   color:
     var(--text-light);
 }
 
 
-.filter-field input:hover,
-.filter-field select:hover {
+.filter-field > input:hover,
+.filter-field > select:hover {
   border-color:
     rgba(49, 93, 77, 0.34);
 
@@ -256,8 +264,8 @@
 }
 
 
-.filter-field input:focus,
-.filter-field select:focus {
+.filter-field > input:focus,
+.filter-field > select:focus {
   border-color:
     var(--green);
 
@@ -269,6 +277,308 @@
     rgba(49, 93, 77, 0.1);
 }
 
+
+/* =========================
+   多选筛选框
+========================= */
+
+/*
+ * 地点类别、圣地出处、涉及角色
+ * 外层容器。
+ */
+.multi-filter-options {
+  display: grid;
+  gap: 5px;
+
+  min-height: 47px;
+  max-height: 190px;
+
+  padding: 7px;
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    13px;
+
+  background:
+    var(--background);
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(49, 93, 77, 0.28)
+    transparent;
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+
+.multi-filter-options:hover {
+  border-color:
+    rgba(49, 93, 77, 0.34);
+
+  background:
+    var(--surface);
+}
+
+
+.multi-filter-options:focus-within {
+  border-color:
+    var(--green);
+
+  background:
+    var(--surface);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(49, 93, 77, 0.1);
+}
+
+
+/* Chrome、Edge、Safari 滚动条 */
+.multi-filter-options::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+.multi-filter-options::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+.multi-filter-options::-webkit-scrollbar-thumb {
+  border:
+    2px solid transparent;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(49, 93, 77, 0.25);
+
+  background-clip:
+    padding-box;
+}
+
+
+/* 每个多选项目 */
+.multi-filter-option {
+  position: relative;
+
+  display: block;
+
+  min-width: 0;
+
+  cursor: pointer;
+}
+
+
+/*
+ * 隐藏浏览器默认 checkbox，
+ * 仍保留键盘操作和无障碍功能。
+ */
+.multi-filter-option input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  margin: 0;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* 复选框文字区域 */
+.multi-filter-option span {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 36px;
+
+  padding:
+    7px
+    10px
+    7px
+    35px;
+
+  border:
+    1px solid transparent;
+
+  border-radius:
+    10px;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  overflow-wrap:
+    anywhere;
+
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+
+/* 自定义方形 checkbox */
+.multi-filter-option span::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+
+  width: 17px;
+  height: 17px;
+
+  border:
+    1.5px solid var(--border);
+
+  border-radius:
+    5px;
+
+  background:
+    var(--surface);
+
+  content: "";
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
+}
+
+
+/* 勾选标记 */
+.multi-filter-option span::after {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+
+  width: 4px;
+  height: 8px;
+
+  border:
+    solid white;
+
+  border-width:
+    0
+    2px
+    2px
+    0;
+
+  content: "";
+
+  opacity: 0;
+
+  transform:
+    translateY(-58%)
+    rotate(45deg);
+
+  transition:
+    opacity 120ms ease;
+}
+
+
+/* 鼠标经过 */
+.multi-filter-option:hover span {
+  border-color:
+    rgba(49, 93, 77, 0.12);
+
+  background:
+    rgba(49, 93, 77, 0.06);
+
+  color:
+    var(--text-primary);
+}
+
+
+/* 已选中 */
+.multi-filter-option
+input:checked
++
+span {
+  border-color:
+    rgba(49, 93, 77, 0.2);
+
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+
+  font-weight: 700;
+}
+
+
+.multi-filter-option
+input:checked
++
+span::before {
+  border-color:
+    var(--green);
+
+  background:
+    var(--green);
+}
+
+
+.multi-filter-option
+input:checked
++
+span::after {
+  opacity: 1;
+}
+
+
+/* 键盘焦点 */
+.multi-filter-option
+input:focus-visible
++
+span {
+  border-color:
+    var(--green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(49, 93, 77, 0.13);
+}
+
+
+/* 没有筛选选项时 */
+.multi-filter-empty {
+  margin: 0;
+
+  padding:
+    8px
+    10px;
+
+  color:
+    var(--text-light);
+
+  font-size: 0.8rem;
+}
+
+  .multi-filter-options {
+    max-height: 220px;
+  }
 
 /* =========================
    今日营业复选框
