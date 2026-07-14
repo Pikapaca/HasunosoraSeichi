@@ -661,6 +661,117 @@ input:focus-visible
   font-size: 0.8rem;
 }
 
+/* =========================
+   巡礼区域单选下拉框
+========================= */
+
+/*
+ * 隐藏原生 select。
+ * JavaScript 仍然会使用它保存筛选值。
+ */
+.single-select-native {
+  display: none !important;
+}
+
+
+/* 自定义单选下拉框外层 */
+.single-select {
+  position: relative;
+
+  min-width: 0;
+}
+
+
+/* 展开状态 */
+.single-select.open
+.multi-select-button {
+  border-color:
+    var(--green);
+
+  background:
+    var(--surface);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(201, 121, 137, 0.1);
+}
+
+
+/* 展开时旋转箭头 */
+.single-select.open
+.multi-select-arrow {
+  border-color:
+    var(--green);
+
+  transform:
+    translateY(2px)
+    rotate(225deg);
+}
+
+
+/* 已选择具体区域时的按钮文字 */
+.single-select.has-selection
+.multi-select-text {
+  color:
+    var(--green);
+
+  font-weight: 700;
+}
+
+
+/* 单个区域选项 */
+.single-select-option {
+  display: block;
+
+  width: 100%;
+  min-height: 38px;
+
+  padding:
+    8px
+    10px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-align: left;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+
+/* 鼠标经过和键盘焦点 */
+.single-select-option:hover,
+.single-select-option:focus-visible {
+  outline: none;
+
+  background:
+    rgba(201, 121, 137, 0.07);
+
+  color:
+    var(--text-primary);
+}
+
+
+/* 当前选中的区域 */
+.single-select-option.is-selected {
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+
+  font-weight: 700;
+}
 
 /* =========================
    今日营业复选框
