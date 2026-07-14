@@ -66,22 +66,22 @@
   background:
     radial-gradient(
       circle at 88% 18%,
-      rgba(168, 108, 121, 0.15),
+      rgba(217, 149, 135, 0.15),
       transparent 30%
     ),
     radial-gradient(
       circle at 75% 90%,
-      rgba(49, 93, 77, 0.16),
+      rgba(201, 121, 137, 0.16),
       transparent 36%
     ),
     linear-gradient(
       135deg,
       #ffffff,
-      #edf2ee
+      #fff0f2
     );
 
   box-shadow:
-    0 18px 45px rgba(31, 44, 37, 0.07);
+    0 18px 45px rgba(91, 61, 69, 0.07);
 }
 
 
@@ -118,7 +118,7 @@
 
 .detail-label.category {
   background:
-    rgba(168, 108, 121, 0.13);
+    rgba(217, 149, 135, 0.13);
 
   color:
     var(--pink);
@@ -338,7 +338,7 @@
 
 .detail-tag-list.characters li {
   background:
-    rgba(168, 108, 121, 0.12);
+    rgba(217, 149, 135, 0.12);
 
   color:
     var(--pink);
@@ -402,11 +402,11 @@
 .gallery-button:hover,
 .gallery-button:focus-visible {
   border-color:
-    rgba(49, 93, 77, 0.35);
+    rgba(201, 121, 137, 0.35);
 
   box-shadow:
     0 10px 26px
-    rgba(31, 44, 37, 0.1);
+    rgba(91, 61, 69, 0.1);
 
   transform:
     translateY(-2px);

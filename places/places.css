@@ -66,7 +66,7 @@
   background: var(--surface);
 
   box-shadow:
-    0 12px 34px rgba(31, 44, 37, 0.05);
+    0 12px 34px rgba(91, 61, 69, 0.05);
 }
 
 
@@ -105,7 +105,7 @@
   background:
     linear-gradient(
       90deg,
-      rgba(220, 233, 226, 0.72),
+      rgba(254, 226, 230, 0.72),
       rgba(255, 255, 255, 0)
     );
 }
@@ -211,7 +211,7 @@
 .region-toggle[aria-expanded="true"]
 .region-toggle-icon {
   border-color:
-    rgba(49, 93, 77, 0.24);
+    rgba(201, 121, 137, 0.24);
 
   background: var(--green-light);
 
@@ -270,12 +270,12 @@
   outline: none;
 
   border-color:
-    rgba(49, 93, 77, 0.26);
+    rgba(201, 121, 137, 0.26);
 
   background: var(--surface);
 
   box-shadow:
-    0 10px 26px rgba(31, 44, 37, 0.08);
+    0 10px 26px rgba(91, 61, 69, 0.08);
 
   transform: translateX(3px);
 }

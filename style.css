@@ -1021,21 +1021,7 @@ button {
       27px;
   }
 
-  .hero {
-    min-height: auto;
-    padding: 46px 27px;
-
-    border-radius: 23px;
-  }
-
-  .hero h1 {
-    font-size:
-      clamp(2.1rem, 11vw, 3.35rem);
-  }
-
-  .hero-decoration-two {
-    display: none;
-  }
+ 
 
   .place-grid {
     grid-template-columns: 1fr;
