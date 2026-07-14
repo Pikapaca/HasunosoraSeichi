@@ -1,6 +1,23 @@
 const PLACES_DATA_PATH = "./data/places-index.json";
-const HOMEPAGE_ITEM_LIMIT = 6;
+
+/*
+ * 首页三个板块分别设置显示数量。
+ */
+const LATEST_ITEM_LIMIT = 5;
+const POPULAR_ITEM_LIMIT = 2;
+const FOOD_ITEM_LIMIT = 2;
+
 const SEARCH_RESULT_LIMIT = 10;
+
+/*
+ * 城市文件夹名称与页面显示名称的对应关系。
+ *
+ * 左侧必须与 places-index.json 的 city 完全一致；
+ * 右侧是首页需要显示的中文名称。
+ */
+const CITY_LABELS = {
+  kanazawa: "金泽"
+};
 
 let allPlaces = [];
 
@@ -105,7 +122,7 @@ function renderHomepage() {
 
 
 /**
- * 按 updatedAt 从新到旧显示。
+ * 按 updatedAt 从新到旧显示 5 个地点。
  */
 function renderLatestPlaces() {
   const latestPlaces = [...allPlaces]
@@ -115,7 +132,7 @@ function renderLatestPlaces() {
         getDateNumber(placeA.updatedAt)
       );
     })
-    .slice(0, HOMEPAGE_ITEM_LIMIT);
+    .slice(0, LATEST_ITEM_LIMIT);
 
   renderPlaceLinks(
     latestContainer,
@@ -125,12 +142,12 @@ function renderLatestPlaces() {
 
 
 /**
- * 从普通地点中随机显示。
+ * 从全部地点中随机显示 2 个。
  */
 function renderPopularPlaces() {
   const randomPlaces = getRandomItems(
     allPlaces,
-    HOMEPAGE_ITEM_LIMIT
+    POPULAR_ITEM_LIMIT
   );
 
   renderPlaceLinks(
@@ -141,7 +158,7 @@ function renderPopularPlaces() {
 
 
 /**
- * 从餐饮类别中随机显示。
+ * 从餐饮类别中随机显示 2 个。
  */
 function renderFoodPlaces() {
   const candidates = allPlaces.filter(
@@ -150,7 +167,7 @@ function renderFoodPlaces() {
 
   const randomPlaces = getRandomItems(
     candidates,
-    HOMEPAGE_ITEM_LIMIT
+    FOOD_ITEM_LIMIT
   );
 
   renderPlaceLinks(
@@ -160,9 +177,8 @@ function renderFoodPlaces() {
 }
 
 
-
 /**
- * 在主页板块中生成地点名称链接。
+ * 在主页板块中生成地点卡片。
  */
 function renderPlaceLinks(container, places) {
   if (!container) {
@@ -185,15 +201,49 @@ function renderPlaceLinks(container, places) {
 }
 
 
+/**
+ * 生成单张首页地点卡片。
+ */
 function createHomepagePlaceLink(place) {
+  const location =
+    getHomepagePlaceLocation(place);
+
+  const locationHtml = location
+    ? `
+      <span class="homepage-place-location">
+        ${escapeHtml(location)}
+      </span>
+    `
+    : "";
+
   return `
     <a
       class="homepage-place-link"
       href="${createPlaceUrl(place)}"
     >
-      ${escapeHtml(place.name)}
+      <span class="homepage-place-name">
+        ${escapeHtml(place.name)}
+      </span>
+
+      ${locationHtml}
     </a>
   `;
+}
+
+
+/**
+ * 获取首页地点卡片右侧显示的所在地。
+ *
+function getHomepagePlaceLocation(place) {
+  const cityKey = String(place.city || "")
+    .trim()
+    .toLocaleLowerCase();
+
+  if (!cityKey) {
+    return "";
+  }
+
+  return CITY_LABELS[cityKey] || place.city;
 }
 
 
@@ -352,9 +402,14 @@ function normalizeText(value) {
  * ./places/kanazawa/?id=kanazawa-station
  */
 function createPlaceUrl(place) {
-  const prefecture = encodeURIComponent(place.prefecture);
-  const city = encodeURIComponent(place.city);
-  const id = encodeURIComponent(place.id);
+  const prefecture =
+    encodeURIComponent(place.prefecture);
+
+  const city =
+    encodeURIComponent(place.city);
+
+  const id =
+    encodeURIComponent(place.id);
 
   return (
     `./places/${prefecture}/${city}/` +

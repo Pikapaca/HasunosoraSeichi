@@ -101,7 +101,7 @@
   
 
     <!-- 最新圣地 -->
-    <section class="homepage-section">
+    <section class="homepage-section latest-section">
       <div class="section-header">
         <div>
           <p class="section-label">NEW PLACES</p>
@@ -120,53 +120,58 @@
       </div>
     </section>
 
-    <!-- 热门地点 -->
-    <section class="homepage-section">
-      <div class="section-header">
-        <div>
-          <p class="section-label">DISCOVER</p>
-          <h2>热门地点</h2>
-        </div>
+  <!-- 热门地点与美食圣地 -->
+<div class="homepage-section-row">
 
-        <button
-          class="section-button"
-          id="shuffle-popular"
-          type="button"
-        >
-          换一组
-        </button>
+  <!-- 热门地点 -->
+  <section class="homepage-section popular-section">
+    <div class="section-header">
+      <div>
+        <p class="section-label">DISCOVER</p>
+        <h2>热门地点</h2>
       </div>
 
-      <div
-        class="place-grid"
-        id="popular-places"
-        aria-live="polite"
-      ></div>
-    </section>
+      <button
+        class="section-button"
+        id="shuffle-popular"
+        type="button"
+      >
+        换一组
+      </button>
+    </div>
 
-    <!-- 美食圣地 -->
-    <section class="homepage-section">
-      <div class="section-header">
-        <div>
-          <p class="section-label">FOOD SPOTS</p>
-          <h2>金泽美食圣地</h2>
-        </div>
+    <div
+      class="place-grid"
+      id="popular-places"
+      aria-live="polite"
+    ></div>
+  </section>
 
-        <button
-          class="section-button"
-          id="shuffle-food"
-          type="button"
-        >
-          换一组
-        </button>
+  <!-- 美食圣地 -->
+  <section class="homepage-section food-section">
+    <div class="section-header">
+      <div>
+        <p class="section-label">FOOD SPOTS</p>
+        <h2>金泽美食圣地</h2>
       </div>
 
-      <div
-        class="place-grid"
-        id="food-places"
-        aria-live="polite"
-      ></div>
-    </section>
+      <button
+        class="section-button"
+        id="shuffle-food"
+        type="button"
+      >
+        换一组
+      </button>
+    </div>
+
+    <div
+      class="place-grid"
+      id="food-places"
+      aria-live="polite"
+    ></div>
+  </section>
+
+</div>
 
     <footer class="site-footer">
       <p>莲之空圣地部</p>
