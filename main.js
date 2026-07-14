@@ -233,7 +233,7 @@ function createHomepagePlaceLink(place) {
 
 /**
  * 获取首页地点卡片右侧显示的所在地。
- *
+ */
 function getHomepagePlaceLocation(place) {
   const cityKey = String(place.city || "")
     .trim()
