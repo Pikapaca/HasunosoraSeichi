@@ -30,6 +30,105 @@
 </head>
 
 <body>
+
+ <!-- 手机端菜单按钮 -->
+  <button
+    class="mobile-menu-button"
+    id="mobile-menu-button"
+    type="button"
+    aria-label="打开导航菜单"
+    aria-controls="sidebar"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- 手机端侧边栏遮罩 -->
+  <div
+    class="sidebar-overlay"
+    id="sidebar-overlay"
+    hidden
+  ></div>
+
+  <!-- 左侧边栏 -->
+  <aside class="sidebar" id="sidebar">
+    <!-- 从 places 文件夹返回仓库根目录 -->
+<a class="site-brand" href="../index.html">
+  <span class="brand-icon" aria-hidden="true">
+    <img
+      src="../images/site-icon.png"
+      alt=""
+    >
+  </span>
+
+  <span class="brand-text">
+    <strong>莲之空圣地部</strong>
+    <small>HASUNOSORA PILGRIMAGE ARCHIVE</small>
+  </span>
+</a>
+
+    <!-- 搜索框 -->
+    <div class="site-search">
+      <label
+        class="visually-hidden"
+        for="site-search-input"
+      >
+        搜索圣地
+      </label>
+
+      <input
+        id="site-search-input"
+        type="search"
+        placeholder="搜索中文名或日文名"
+        autocomplete="off"
+      >
+
+      <div
+        class="search-results"
+        id="search-results"
+        hidden
+      ></div>
+    </div>
+
+    <!-- 侧边栏导航 -->
+    <nav
+      class="sidebar-nav"
+      aria-label="网站主要导航"
+    >
+      <a href="../index.html">
+        <span>主页</span>
+      </a>
+
+      <!-- 当前页面的 active 放在这里 -->
+      <a
+        class="active"
+        href="./index.html"
+        aria-current="page"
+      >
+        <span>圣地列表</span>
+      </a>
+
+      <a href="../tips/index.html">
+        <span>巡礼攻略</span>
+      </a>
+
+      <a href="../news/index.html">
+        <span>石川相关</span>
+      </a>
+
+      <a href="../other/index.html">
+        <span>其他</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>一起享受在莲之空的圣地巡礼吧！</p>
+    </div>
+  </aside>
+
+  <!-- 页面主体 -->
   <main class="main-content detail-main">
     <a
       class="back-link"
