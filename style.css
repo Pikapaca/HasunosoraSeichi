@@ -156,7 +156,7 @@ button {
 
   color: var(--text-secondary);
 
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   letter-spacing: 0.08em;
   white-space: nowrap;
 }
@@ -545,145 +545,6 @@ button {
 }
 
 
-/* =========================
-   顶部介绍区域
-========================= */
-
-.hero {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-
-  min-height: 390px;
-  padding:
-    62px
-    clamp(30px, 7vw, 92px);
-
-  border: 1px solid rgba(201, 121, 137, 0.12);
-  border-radius: 30px;
-
-  background:
-    radial-gradient(
-      circle at 82% 20%,
-      rgba(168, 108, 121, 0.2),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 77% 86%,
-      rgba(201, 121, 137, 0.19),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #edf2ee 100%
-    );
-
-  box-shadow: var(--shadow);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-label,
-.section-label {
-  margin: 0 0 10px;
-
-  color: var(--pink);
-
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.17em;
-}
-
-.hero h1 {
-  max-width: 780px;
-  margin: 0;
-
-  font-family:
-    "Noto Serif SC",
-    "Songti SC",
-    serif;
-
-  font-size:
-    clamp(2.4rem, 5.3vw, 4.8rem);
-
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: 0.01em;
-}
-
-.hero-description {
-  max-width: 560px;
-
-  margin: 24px 0 31px;
-
-  color: var(--text-secondary);
-
-  font-size: 1rem;
-}
-
-.primary-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  min-height: 46px;
-  padding: 10px 21px;
-
-  border-radius: 999px;
-
-  background: var(--green);
-  color: white;
-
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  transition:
-    background-color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease;
-}
-
-.primary-button:hover,
-.primary-button:focus-visible {
-  background: var(--green-dark);
-
-  box-shadow:
-    0 9px 24px rgba(201, 121, 137, 0.23);
-
-  transform: translateY(-2px);
-}
-
-.hero-decoration {
-  position: absolute;
-
-  border: 1px solid rgba(201, 121, 137, 0.14);
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-.hero-decoration-one {
-  right: -70px;
-  bottom: -115px;
-
-  width: 330px;
-  height: 330px;
-}
-
-.hero-decoration-two {
-  right: 120px;
-  top: -80px;
-
-  width: 190px;
-  height: 190px;
-}
 
 
 /* =========================
@@ -691,16 +552,37 @@ button {
 ========================= */
 
 .homepage-section {
-  margin-top: 60px;
+  position: relative;
+
+  margin-top: 28px;
+  padding:
+    28px
+    clamp(22px, 3vw, 34px)
+    32px;
+
+  border: 1px solid var(--border);
+  border-radius: 26px;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 12px 34px rgba(91, 61, 69, 0.07);
+}
+
+.main-content > .homepage-section:first-of-type {
+  margin-top: 0;
 }
 
 .section-header {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 20px;
 
-  margin-bottom: 21px;
+  margin-bottom: 22px;
+  padding-bottom: 17px;
+
+  border-bottom: 1px solid var(--border);
 }
 
 .section-header h2 {
@@ -712,9 +594,10 @@ button {
     serif;
 
   font-size:
-    clamp(1.7rem, 3vw, 2.3rem);
+    clamp(1.45rem, 2.5vw, 1.9rem);
 
   font-weight: 600;
+  line-height: 1.35;
 }
 
 .section-link,
@@ -757,10 +640,10 @@ button {
   overflow: hidden;
   min-width: 0;
 
-  border: 1px solid var(--border);
+  border: 1px solid #f3dfe2;
   border-radius: var(--radius-large);
 
-  background: var(--surface);
+  background: #fffafa;
 
   transition:
     border-color 180ms ease,
@@ -1088,9 +971,14 @@ button {
 
   .homepage-section {
   margin-top: 20px;
-  padding: 20px 16px;
+  padding: 22px 16px 24px;
 
   border-radius: 21px;
+}
+
+.homepage-section::before {
+  left: 22px;
+  width: 58px;
 }
 
 .section-header {
