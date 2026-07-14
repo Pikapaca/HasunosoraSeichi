@@ -194,49 +194,119 @@
           </select>
         </label>
 
-<!-- 地点类别：多选 -->
+<!-- 地点类别：下拉多选 -->
 <div class="filter-field">
   <span class="filter-label">
     地点类别
   </span>
 
   <div
-    class="multi-filter-options"
+    class="multi-select"
     id="filter-category"
-    role="group"
-    aria-label="地点类别，可多选"
-  ></div>
-</div>        
+    data-placeholder="全部类别"
+  >
+    <button
+      class="multi-select-button"
+      type="button"
+      aria-expanded="false"
+    >
+      <span class="multi-select-text">
+        全部类别
+      </span>
 
-<!-- 圣地出处：多选 -->
+      <span
+        class="multi-select-arrow"
+        aria-hidden="true"
+      ></span>
+    </button>
+
+    <div
+      class="multi-select-panel"
+      hidden
+    >
+      <div
+        class="multi-select-options"
+        data-multi-options
+      ></div>
+    </div>
+  </div>
+</div>      
+
+<!-- 圣地出处：下拉多选 -->
 <div class="filter-field">
   <span class="filter-label">
     圣地出处
   </span>
 
   <div
-    class="multi-filter-options"
+    class="multi-select"
     id="filter-source"
-    role="group"
-    aria-label="圣地出处，可多选"
-  ></div>
+    data-placeholder="全部出处"
+  >
+    <button
+      class="multi-select-button"
+      type="button"
+      aria-expanded="false"
+    >
+      <span class="multi-select-text">
+        全部出处
+      </span>
+
+      <span
+        class="multi-select-arrow"
+        aria-hidden="true"
+      ></span>
+    </button>
+
+    <div
+      class="multi-select-panel"
+      hidden
+    >
+      <div
+        class="multi-select-options"
+        data-multi-options
+      ></div>
+    </div>
+  </div>
 </div>
 
-
-<!-- 涉及角色：多选 -->
+<!-- 涉及角色：下拉多选 -->
 <div class="filter-field">
   <span class="filter-label">
     涉及角色
   </span>
 
   <div
-    class="multi-filter-options"
+    class="multi-select"
     id="filter-character"
-    role="group"
-    aria-label="涉及角色，可多选"
-  ></div>
-</div>
+    data-placeholder="全部角色"
+  >
+    <button
+      class="multi-select-button"
+      type="button"
+      aria-expanded="false"
+    >
+      <span class="multi-select-text">
+        全部角色
+      </span>
 
+      <span
+        class="multi-select-arrow"
+        aria-hidden="true"
+      ></span>
+    </button>
+
+    <div
+      class="multi-select-panel"
+      hidden
+    >
+      <div
+        class="multi-select-options"
+        data-multi-options
+      ></div>
+    </div>
+  </div>
+</div>
 
         <!-- 今日营业 -->
         <label class="today-open-filter">

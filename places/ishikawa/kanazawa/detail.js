@@ -326,11 +326,11 @@ function renderPlaceDetail(place) {
       ${updatedDate}
     </header>
 
-    ${gallerySection}
-    ${introductionSection}
     ${informationSection}
     ${sourceSection}
     ${characterSection}
+    ${introductionSection}
+    ${gallerySection}
     ${otherSection}
   `;
 

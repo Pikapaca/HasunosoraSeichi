@@ -494,7 +494,7 @@ function fillSelectOptions(
 
 
 /**
- * 生成多选复选框。
+ * 向下拉多选框生成复选项。
  */
 function fillCheckboxOptions(
   container,
@@ -505,13 +505,20 @@ function fillCheckboxOptions(
     return;
   }
 
-  container.innerHTML = "";
+  const optionsContainer =
+    container.querySelector(
+      "[data-multi-options]"
+    );
+
+  if (!optionsContainer) {
+    return;
+  }
+
+  optionsContainer.innerHTML = "";
 
   if (values.length === 0) {
     const emptyMessage =
-      document.createElement(
-        "p"
-      );
+      document.createElement("p");
 
     emptyMessage.className =
       "multi-filter-empty";
@@ -519,8 +526,12 @@ function fillCheckboxOptions(
     emptyMessage.textContent =
       "暂无选项";
 
-    container.appendChild(
+    optionsContainer.appendChild(
       emptyMessage
+    );
+
+    updateMultiSelectLabel(
+      container
     );
 
     return;
@@ -556,26 +567,46 @@ function fillCheckboxOptions(
       input.value =
         value;
 
+      const checkboxMark =
+        document.createElement(
+          "span"
+        );
+
+      checkboxMark.className =
+        "multi-filter-checkbox";
+
+      checkboxMark.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
       const text =
         document.createElement(
           "span"
         );
+
+      text.className =
+        "multi-filter-option-text";
 
       text.textContent =
         value;
 
       label.append(
         input,
+        checkboxMark,
         text
       );
 
-      container.appendChild(
+      optionsContainer.appendChild(
         label
       );
     }
   );
-}
 
+  updateMultiSelectLabel(
+    container
+  );
+}
 
 /* =========================
    筛选事件
@@ -583,7 +614,7 @@ function fillCheckboxOptions(
 
 function setupLocalFilters() {
   /*
-   * 巡礼区域：单选。
+   * 巡礼区域。
    */
   if (guideAreaFilter) {
     guideAreaFilter.addEventListener(
@@ -605,10 +636,7 @@ function setupLocalFilters() {
 
 
   /*
-   * 多选筛选器。
-   *
-   * 使用事件代理，以便动态生成的
-   * checkbox 也能触发筛选。
+   * 下拉多选筛选器。
    */
   const multipleFilters = [
     categoryFilter,
@@ -622,16 +650,69 @@ function setupLocalFilters() {
         return;
       }
 
+      const button =
+        container.querySelector(
+          ".multi-select-button"
+        );
+
+      const panel =
+        container.querySelector(
+          ".multi-select-panel"
+        );
+
+      if (!button || !panel) {
+        return;
+      }
+
+
+      /*
+       * 点击按钮展开或收起。
+       */
+      button.addEventListener(
+        "click",
+        () => {
+          const isOpen =
+            !panel.hidden;
+
+          closeAllMultiSelects(
+            container
+          );
+
+          panel.hidden =
+            isOpen;
+
+          button.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+          );
+
+          container.classList.toggle(
+            "open",
+            !isOpen
+          );
+        }
+      );
+
+
+      /*
+       * 勾选项目后更新文字并筛选。
+       */
       container.addEventListener(
         "change",
         (event) => {
           if (
-            event.target.matches(
+            !event.target.matches(
               'input[type="checkbox"]'
             )
           ) {
-            applyFilters();
+            return;
           }
+
+          updateMultiSelectLabel(
+            container
+          );
+
+          applyFilters();
         }
       );
     }
@@ -639,7 +720,37 @@ function setupLocalFilters() {
 
 
   /*
-   * 关键词搜索。
+   * 点击下拉框外部时收起。
+   */
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (
+        !event.target.closest(
+          ".multi-select"
+        )
+      ) {
+        closeAllMultiSelects();
+      }
+    }
+  );
+
+
+  /*
+   * 按 Escape 收起。
+   */
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") {
+        closeAllMultiSelects();
+      }
+    }
+  );
+
+
+  /*
+   * 关键词筛选。
    */
   if (keywordFilter) {
     keywordFilter.addEventListener(
@@ -653,7 +764,7 @@ function setupLocalFilters() {
 
 
   /*
-   * 清除筛选。
+   * 清除全部筛选。
    */
   if (resetFiltersButton) {
     resetFiltersButton.addEventListener(
@@ -663,6 +774,121 @@ function setupLocalFilters() {
   }
 }
 
+/**
+ * 关闭全部下拉多选框。
+ *
+ * exceptContainer 用于保留当前
+ * 正在操作的下拉框。
+ */
+function closeAllMultiSelects(
+  exceptContainer = null
+) {
+  document
+    .querySelectorAll(
+      ".multi-select"
+    )
+    .forEach((container) => {
+      if (
+        container ===
+        exceptContainer
+      ) {
+        return;
+      }
+
+      const button =
+        container.querySelector(
+          ".multi-select-button"
+        );
+
+      const panel =
+        container.querySelector(
+          ".multi-select-panel"
+        );
+
+      if (panel) {
+        panel.hidden = true;
+      }
+
+      if (button) {
+        button.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+      }
+
+      container.classList.remove(
+        "open"
+      );
+    });
+}
+
+
+/**
+ * 更新下拉框按钮文字。
+ */
+function updateMultiSelectLabel(
+  container
+) {
+  if (!container) {
+    return;
+  }
+
+  const textElement =
+    container.querySelector(
+      ".multi-select-text"
+    );
+
+  if (!textElement) {
+    return;
+  }
+
+  const placeholder =
+    container.dataset.placeholder ||
+    "全部";
+
+  const selectedValues =
+    getCheckedValues(
+      container
+    );
+
+  if (
+    selectedValues.length === 0
+  ) {
+    textElement.textContent =
+      placeholder;
+
+    container.classList.remove(
+      "has-selection"
+    );
+
+    return;
+  }
+
+  container.classList.add(
+    "has-selection"
+  );
+
+  if (
+    selectedValues.length === 1
+  ) {
+    textElement.textContent =
+      selectedValues[0];
+
+    return;
+  }
+
+  if (
+    selectedValues.length === 2
+  ) {
+    textElement.textContent =
+      selectedValues.join("、");
+
+    return;
+  }
+
+  textElement.textContent =
+    `已选择 ${selectedValues.length} 项`;
+}
 
 /* =========================
    执行筛选
@@ -1708,6 +1934,10 @@ function clearCheckedValues(
     .forEach((input) => {
       input.checked = false;
     });
+    updateMultiSelectLabel(
+    container
+  );  
+
 }
 
 
