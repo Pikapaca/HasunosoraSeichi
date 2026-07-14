@@ -157,8 +157,22 @@ document.addEventListener(
 
 async function loadKanazawaPlaces() {
   try {
+    console.log(
+      "实际请求地址：",
+      new URL(
+        KANAZAWA_DATA_PATH,
+        window.location.href
+      ).href
+    );
+
     const response = await fetch(
       KANAZAWA_DATA_PATH
+    );
+
+    console.log(
+      "请求状态：",
+      response.status,
+      response.url
     );
 
     if (!response.ok) {
@@ -168,6 +182,62 @@ async function loadKanazawaPlaces() {
     }
 
     const data = await response.json();
+
+    console.log(
+      "读取到的金泽数据：",
+      data
+    );
+
+    kanazawaPlaces = Array.isArray(data)
+      ? data
+      : data.places;
+
+    if (!Array.isArray(kanazawaPlaces)) {
+      throw new Error(
+        "kanazawa.json 中没有有效的地点数组。"
+      );
+    }
+
+    if (
+      !Array.isArray(data) &&
+      Array.isArray(data.guideAreas)
+    ) {
+      registerGuideAreas(data.guideAreas);
+    }
+
+    kanazawaPlaces =
+      kanazawaPlaces.filter(
+        isValidKanazawaPlace
+      );
+
+    buildFilterOptions();
+    applyFilters();
+  } catch (error) {
+    console.error(
+      "金泽页面实际错误：",
+      error
+    );
+
+    if (resultCount) {
+      resultCount.textContent =
+        `错误：${error.name} - ${error.message}`;
+    }
+
+    if (placeList) {
+      placeList.innerHTML = `
+        <p class="status-message error">
+          ${escapeHtml(error.name)}：
+          ${escapeHtml(error.message)}
+        </p>
+      `;
+    }
+
+    if (loadMoreButton) {
+      loadMoreButton.hidden = true;
+    }
+  }
+}
+
 
     /*
      * 支持两种格式：
