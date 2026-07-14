@@ -346,21 +346,30 @@
 
 
 /* =========================
-   图片区域
+   现场图片
 ========================= */
 
 .place-gallery {
   display: grid;
 
+  /*
+   * 每张图片宽度控制在约 180–240px，
+   * 一行可以根据空间自动排列多张。
+   */
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(
+      auto-fit,
+      minmax(180px, 240px)
+    );
 
-  gap: 16px;
+  justify-content: start;
+
+  gap: 14px;
 }
 
 
 .gallery-figure {
-  min-width: 0;
+  width: 100%;
   margin: 0;
 }
 
@@ -368,16 +377,15 @@
 .gallery-button {
   display: block;
 
-  overflow: hidden;
-
   width: 100%;
   padding: 0;
+
+  overflow: hidden;
 
   border:
     1px solid var(--border);
 
-  border-radius:
-    17px;
+  border-radius: 13px;
 
   background:
     var(--background);
@@ -393,13 +401,12 @@
 
 .gallery-button:hover,
 .gallery-button:focus-visible {
-  outline: none;
-
   border-color:
-    rgba(49, 93, 77, 0.34);
+    rgba(49, 93, 77, 0.35);
 
   box-shadow:
-    0 14px 32px rgba(31, 44, 37, 0.11);
+    0 10px 26px
+    rgba(31, 44, 37, 0.1);
 
   transform:
     translateY(-2px);
@@ -410,26 +417,29 @@
   display: block;
 
   width: 100%;
-  height: auto;
-  max-height: 520px;
+
+  /*
+   * 固定缩略图比例，避免图片高度过大。
+   */
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
 }
 
 
+/* 图片说明 */
 .gallery-caption {
   margin:
-    9px
-    4px
+    8px
+    2px
     0;
 
   color:
     var(--text-secondary);
 
-  font-size: 0.74rem;
-  line-height: 1.55;
+  font-size: 0.76rem;
+  line-height: 1.5;
 }
-
 
 /* =========================
    数据读取错误
