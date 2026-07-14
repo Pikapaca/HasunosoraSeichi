@@ -178,18 +178,67 @@
           >
         </label>
 
-        <!-- 巡礼区域 -->
-        <label class="filter-field">
-          <span class="filter-label">
-            巡礼区域
-          </span>
+<!-- 巡礼区域：自定义单选下拉框 -->
+<div class="filter-field">
+  <span class="filter-label">
+    巡礼区域
+  </span>
 
-          <select id="filter-guide-area">
-            <option value="">
-              全部区域
-            </option>
-          </select>
-        </label>
+  <!--
+    保留原来的 select。
+    现有 JavaScript 仍然通过它读取当前选中的区域。
+  -->
+  <select
+    class="single-select-native"
+    id="filter-guide-area"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    <option value="">
+      全部区域
+    </option>
+  </select>
+
+  <!-- 页面上实际显示的单选下拉框 -->
+  <div
+    class="single-select"
+    id="filter-guide-area-custom"
+  >
+    <button
+      class="multi-select-button"
+      id="filter-guide-area-button"
+      type="button"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-controls="filter-guide-area-panel"
+    >
+      <span
+        class="multi-select-text"
+        id="filter-guide-area-text"
+      >
+        全部区域
+      </span>
+
+      <span
+        class="multi-select-arrow"
+        aria-hidden="true"
+      ></span>
+    </button>
+
+    <div
+      class="multi-select-panel"
+      id="filter-guide-area-panel"
+      hidden
+    >
+      <div
+        class="multi-select-options single-select-options"
+        id="filter-guide-area-options"
+        role="listbox"
+        aria-label="巡礼区域"
+      ></div>
+    </div>
+  </div>
+</div>
 
 <!-- 地点类别：下拉多选 -->
 <div class="filter-field">

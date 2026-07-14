@@ -88,6 +88,34 @@ const guideAreaFilter =
     "#filter-guide-area"
   );
 
+/*
+ * 巡礼区域自定义单选下拉框。
+ */
+const guideAreaSingleSelect =
+  document.querySelector(
+    "#filter-guide-area-custom"
+  );
+
+const guideAreaSingleButton =
+  document.querySelector(
+    "#filter-guide-area-button"
+  );
+
+const guideAreaSingleText =
+  document.querySelector(
+    "#filter-guide-area-text"
+  );
+
+const guideAreaSinglePanel =
+  document.querySelector(
+    "#filter-guide-area-panel"
+  );
+
+const guideAreaSingleOptions =
+  document.querySelector(
+    "#filter-guide-area-options"
+  );
+
 const categoryFilter =
   document.querySelector(
     "#filter-category"
@@ -137,13 +165,13 @@ document.addEventListener(
     setupMobileMenu();
     setupGlobalSearch();
     setupLocalFilters();
+    setupGuideAreaSingleSelect();
     setupLoadMore();
 
     loadPlaceIndex();
     loadKanazawaPlaces();
   }
 );
-
 
 /* =========================
    读取金泽地点数据
@@ -420,6 +448,7 @@ function buildFilterOptions() {
     getGuideAreaLabel
   );
 
+buildGuideAreaSingleSelectOptions();
 
   /*
    * 以下三项改为复选框多选。
@@ -492,6 +521,264 @@ function fillSelectOptions(
   });
 }
 
+/* =========================
+   巡礼区域自定义单选下拉框
+========================= */
+
+/**
+ * 设置巡礼区域单选下拉框的打开、关闭事件。
+ */
+function setupGuideAreaSingleSelect() {
+  if (
+    !guideAreaFilter ||
+    !guideAreaSingleSelect ||
+    !guideAreaSingleButton ||
+    !guideAreaSinglePanel
+  ) {
+    return;
+  }
+
+
+  guideAreaSingleButton.addEventListener(
+    "click",
+    () => {
+      const isOpen =
+        guideAreaSingleSelect.classList
+          .contains("open");
+
+      if (isOpen) {
+        closeGuideAreaSingleSelect();
+      } else {
+        openGuideAreaSingleSelect();
+      }
+    }
+  );
+
+
+  /*
+   * 原生 select 的值发生变化时，
+   * 同步按钮文字和选中状态。
+   */
+  guideAreaFilter.addEventListener(
+    "change",
+    syncGuideAreaSingleSelect
+  );
+
+
+  /*
+   * 点击下拉框外部时关闭。
+   */
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (
+        !guideAreaSingleSelect.contains(
+          event.target
+        )
+      ) {
+        closeGuideAreaSingleSelect();
+      }
+    }
+  );
+
+
+  /*
+   * 按 Escape 时关闭。
+   */
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") {
+        closeGuideAreaSingleSelect();
+      }
+    }
+  );
+}
+
+
+/**
+ * 根据原生 select 中的 option，
+ * 生成自定义单选选项。
+ */
+function buildGuideAreaSingleSelectOptions() {
+  if (
+    !guideAreaFilter ||
+    !guideAreaSingleOptions
+  ) {
+    return;
+  }
+
+  guideAreaSingleOptions.innerHTML = "";
+
+  Array.from(
+    guideAreaFilter.options
+  ).forEach((option) => {
+    const optionButton =
+      document.createElement("button");
+
+    optionButton.type = "button";
+
+    optionButton.className =
+      "single-select-option";
+
+    optionButton.dataset.value =
+      option.value;
+
+    optionButton.textContent =
+      option.textContent;
+
+    optionButton.setAttribute(
+      "role",
+      "option"
+    );
+
+
+    optionButton.addEventListener(
+      "click",
+      () => {
+        /*
+         * 将自定义选项的值同步给
+         * 原来的 select。
+         */
+        guideAreaFilter.value =
+          option.value;
+
+        /*
+         * 触发现有的 change 事件，
+         * 因此原来的 applyFilters()
+         * 会继续正常执行。
+         */
+        guideAreaFilter.dispatchEvent(
+          new Event(
+            "change",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+        closeGuideAreaSingleSelect();
+
+        guideAreaSingleButton.focus();
+      }
+    );
+
+
+    guideAreaSingleOptions.appendChild(
+      optionButton
+    );
+  });
+
+
+  syncGuideAreaSingleSelect();
+}
+
+
+/**
+ * 根据当前选中的区域，
+ * 更新按钮文字和选项样式。
+ */
+function syncGuideAreaSingleSelect() {
+  if (
+    !guideAreaFilter ||
+    !guideAreaSingleSelect ||
+    !guideAreaSingleText ||
+    !guideAreaSingleOptions
+  ) {
+    return;
+  }
+
+  const selectedOption =
+    guideAreaFilter.options[
+      guideAreaFilter.selectedIndex
+    ];
+
+  guideAreaSingleText.textContent =
+    selectedOption
+      ? selectedOption.textContent
+      : "全部区域";
+
+
+  /*
+   * 选择“全部区域”时不使用强调文字；
+   * 选择具体区域时使用主题色。
+   */
+  guideAreaSingleSelect.classList.toggle(
+    "has-selection",
+    Boolean(guideAreaFilter.value)
+  );
+
+
+  guideAreaSingleOptions
+    .querySelectorAll(
+      ".single-select-option"
+    )
+    .forEach((optionButton) => {
+      const isSelected =
+        optionButton.dataset.value ===
+        guideAreaFilter.value;
+
+      optionButton.classList.toggle(
+        "is-selected",
+        isSelected
+      );
+
+      optionButton.setAttribute(
+        "aria-selected",
+        String(isSelected)
+      );
+    });
+}
+
+
+/**
+ * 打开巡礼区域单选框。
+ */
+function openGuideAreaSingleSelect() {
+  if (
+    !guideAreaSingleSelect ||
+    !guideAreaSingleButton ||
+    !guideAreaSinglePanel
+  ) {
+    return;
+  }
+
+  guideAreaSingleSelect.classList.add(
+    "open"
+  );
+
+  guideAreaSinglePanel.hidden = false;
+
+  guideAreaSingleButton.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+}
+
+
+/**
+ * 关闭巡礼区域单选框。
+ */
+function closeGuideAreaSingleSelect() {
+  if (
+    !guideAreaSingleSelect ||
+    !guideAreaSingleButton ||
+    !guideAreaSinglePanel
+  ) {
+    return;
+  }
+
+  guideAreaSingleSelect.classList.remove(
+    "open"
+  );
+
+  guideAreaSinglePanel.hidden = true;
+
+  guideAreaSingleButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+}
 
 /**
  * 向下拉多选框生成复选项。
@@ -1011,9 +1298,11 @@ function resetFilters() {
     keywordFilter.value = "";
   }
 
-  if (guideAreaFilter) {
-    guideAreaFilter.value = "";
-  }
+if (guideAreaFilter) {
+  guideAreaFilter.value = "";
+
+  syncGuideAreaSingleSelect();
+}
 
   clearCheckedValues(
     categoryFilter
