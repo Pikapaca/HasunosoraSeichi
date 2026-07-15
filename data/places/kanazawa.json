@@ -15,17 +15,105 @@
    "images": [
       {
         "src": "images/places/kanazawa/kanazawa-station/01.jpg",
-        "alt": "金泽新干线站台柱子上的金箔"
+        "alt": "金泽新干线站台柱子上的金箔", 
+        "caption":"金泽新干线站台柱子上的金箔"
       },
       {
         "src": "images/places/kanazawa/kanazawa-station/02.jpg",
-        "alt": "金泽站新干线站台实景"
+        "alt": "金泽站新干线站台实景",
+        "caption":"金泽站新干线站台实景"
       }, 
       {
         "src": "images/places/kanazawa/kanazawa-station/03.jpg",
-        "alt": "金泽站新干线站台4L场景"
+        "alt": "金泽站新干线站台4L场景",
+        "caption":"金泽站新干线站台4L场景"
       }
     ],
   "updatedAt": "2025-04-27"
+}, 
+{
+  "id": "taiyaki-tsuchiku",
+  "name": "鲷鱼烧工房土九 金泽站Anto西店",
+  "nameJa": "たい焼き工房土九 金沢駅あんと西店",
+  "guideArea": "kanazawa-station",
+  "category": "甜品",
+  "sources": [
+    "With×Meets", "杂志"
+  ],
+  "characters": [
+    "大泽瑠璃乃", "藤岛慈","安养寺姬芽"
+  ],
+  "businessHours": "9:00－20:00",
+  "introduction": "在2024/05/06WxM中提到，mcp在黄金周去吃的鲷鱼烧。在2025/8发售的LLdaysるるぶ联动杂志的P24也有提到。\n点单内容：瑠璃乃：五郎島金時；藤岛慈：能登大納言＆白玉入り抹茶クリーム；安养寺姬芽：りんごカスタード\n有q版角色标识以及部分日期联动；厨房内部也有很多莲之空相关物件，买了等做的时候可以看看\n【2026年更新：店内莲之空相关已消失】",
+  "other": [],
+  "website": "https://www.instagram.com/tsuchiku_antnishi/"
+  "updatedAt": "2024-05-06"
+}, 
+{
+  "id": "hachiban-kanazawaeki",
+  "name": "8番拉面 金泽站店",
+  "nameJa": "８番らーめん 金沢駅店",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市石川県金沢市木ノ新保町1-1　金沢百番街あんと内",
+  "category": "正餐",
+  "sources": [
+    "杂志", "联动"
+  ],
+  "characters": [
+    "徒町小铃", "大泽瑠璃乃"
+  ],
+  "businessHours": "10:00－20:00",
+  "introduction": "LLdays（2025年10月号）中，小铃吃的8番拉面所在地（吃的应该是盐味拉面）；\n同时也是2025年8月莲之空×8番拉面联动时，瑠璃乃立牌的所在地",
+  "other": [],
+  "updatedAt": "2025-08-01"
+}, 
+{
+  "id": "kanazawa-sake",
+  "name": "金泽地酒藏",
+  "nameJa": "金沢地酒蔵",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市石川県金沢市木ノ新保町1-1　金沢百番街あんと内",
+  "category": "饮料",
+  "sources": [
+    "其他"
+  ],
+  "businessHours": "8:30－20:00, L.O. 19:30",
+  "introduction": "店内吧台附近以及货架上方有莲之空相关角色画，经常会更换",
+   "images": [
+      {
+        "src": "images/places/kanazawa/kanazawa-station/04.jpg",
+        "alt": "",
+        "caption":"2025年6月摄"
+      },
+      {
+        "src": "images/places/kanazawa/kanazawa-station/05.jpg",
+        "alt": "",
+        "caption":"2026年4月摄"
+      }, 
+      {
+        "src": "images/places/kanazawa/kanazawa-station/06.jpg",
+        "alt": "",
+        "caption":"2026年4月摄"
+      }
+    ],  
+  "other": [],
+  "website": "https://zizakegura.com/"
+  "updatedAt": "2025-06-08"
+}, 
+{
+  "id": "ishikawa-orchestra-hall",
+  "name": "石川县立音乐堂",
+  "nameJa": "石川県立音楽堂",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市昭和町20番1号",
+  "category": "景点",
+  "sources": [
+    "活动记录"
+  ],
+  "businessHours": "以演出时间为准",
+  "introduction": "石川县立音乐堂的演奏大厅为4L中早期Fes×Live会场 音楽堂ライブステージ 的原型；仅有演出时间可以进入",
+  "other": [],
+  "website": "https://ongakudo.jp/"
+  "updatedAt": "2023-07-08"
 }
 ]

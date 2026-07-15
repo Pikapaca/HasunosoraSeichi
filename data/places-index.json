@@ -7,5 +7,41 @@
       "city": "kanazawa",
       "isFood": false,
       "updatedAt": "2025-04-27"
+    }, 
+    {
+      "id": "taiyaki-tsuchiku",
+      "name": "鲷鱼烧工房土九 金泽站Anto西店",
+      "nameJa": "たい焼き工房土九 金沢駅あんと西店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2024-05-06"
+    }, 
+    {
+      "id": "hachiban-kanazawaeki",
+      "name": "8番拉面 金泽站店",
+      "nameJa": "８番らーめん 金沢駅店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-08-01"
+    }, 
+    {
+      "id": "kanazawa-sake",
+      "name": "金泽地酒藏",
+      "nameJa": "金沢地酒蔵",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-06-08"
+    }, 
+    {
+      "id": "ishikawa-orchestra-hall",
+      "name": "石川县立音乐堂",
+      "nameJa": "石川県立音楽堂",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-07-08"
     }
  ]
