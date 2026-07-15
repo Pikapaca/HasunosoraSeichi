@@ -452,7 +452,7 @@ function createWebsiteInformationRow(
   return `
     <div class="detail-information-row">
       <dt>
-        官方网站
+        网站
       </dt>
 
       <dd>
@@ -462,7 +462,7 @@ function createWebsiteInformationRow(
           target="_blank"
           rel="noopener noreferrer"
         >
-          打开官方网站
+          ${escapeHtml(websiteUrl)}
           <span aria-hidden="true">↗</span>
         </a>
       </dd>
