@@ -142,7 +142,7 @@
     "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽", "桂城泉", "塞拉斯·柳田·利林费尔德"
   ],
   "businessHours": "10:00-20:00",
-  "introduction": "别名：莲之空gamers；除了莲之空谷子之外，店内还有声优的签名以及写过的色纸等。声优和角色生日时还会有特殊布置。/n准备莲104期#34（13:30~）以及准备莲105期#36（08:30~）中声优有来过，由于103期来的时候还是位于4F的临时店址，因此不算在内",
+  "introduction": "别名：莲之空gamers；除了莲之空谷子之外，店内还有声优的签名以及写过的色纸等。声优和角色生日时还会有特殊布置。\n准备莲104期#34（13:30~）以及准备莲105期#36（08:30~）中声优有来过，由于103期来的时候还是位于4F的临时店址，因此不算在内",
   "other": [],
   "website": "https://www.gamers.co.jp/shop/detail.php?id=22",
   "updatedAt": "2023-10-01"
@@ -203,7 +203,7 @@
 }, 
 {
   "id": "aeon-cinema-forus",
-  "name": "aeon电影院金泽forus店",
+  "name": "AEON电影院金泽forus店",
   "nameJa": "イオンシネマ金沢フォーラス",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス7F",
@@ -285,7 +285,7 @@
 }, 
 {
   "id": "game-paradise",
-  "name": "game paradise",
+  "name": "Game Paradise",
   "nameJa": "ゲーム・パラダイス",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町5-1 アミューズメントスクエア3F",
@@ -300,5 +300,152 @@
   "introduction": "LLdays（2023年4月号）中，瑠璃慈插图的所在地\n（2024/1/1地震后机厅布局有变动，可能无法拍到相同照片）",
   "other": [],
   "updatedAt": "2023-02-28"
+}, 
+{
+  "id": "ushijyu-teraoka",
+  "name": "牛重 寺冈",
+  "nameJa": "うし重 てらおか",
+  "guideArea": "musashigatsuji-omicho",
+  "address": "石川県金沢市安江町12-4",
+  "category": "正餐",
+  "sources": [
+    "准备莲"
+  ],
+   "characters": [
+       "日野下花帆", "乙宗梢", "百生吟子"
+  ],
+  "businessHours": "11:00-14:30，17:30-20:00；周一仅午市营业",
+  "closedDays": [
+    "周二"
+  ],
+  "introduction": "准备莲104期#40中，cb组吃的能登牛便当\n点单内容：榆井希实：梅，花宫初奈&樱井阳菜：葵",
+  "other": [],
+  "website": "https://www.notoushi.com/ushijyu/",
+  "updatedAt": "2025-02-21"
+}, 
+{
+  "id": "mizuhiki-kanazawakurumi",
+  "name": "水引饰品工房 金泽KURUMI",
+  "nameJa": "水引アクセサリー工房 金澤くるみ",
+  "guideArea": "musashigatsuji-omicho",
+  "address": "石川県金沢市安江町1-15金澤表参道（新保屋内）",
+  "category": "体验",
+  "sources": [
+    "准备莲"
+  ],
+   "characters": [
+       "村野沙耶香", "夕雾缀理", "徒町小铃"
+  ],
+  "businessHours": "仅在周五、周六、周日、节假日有预约时营业",
+  "closedDays": [
+    "周一", "周二", "周三", "周四"
+  ],
+  "introduction": "准备莲104期#41中，dc组进行水引体验的地点",
+  "other": [],
+  "website": "https://kanazawa-kurumi.com/mizuhiki",
+  "updatedAt": "2025-02-28"
+}, 
+{
+  "id": "teahouse-sakura",
+  "name": "TeaHouse SAKURA",
+  "nameJa": "ティーハウスサクラ",
+  "guideArea": "musashigatsuji-omicho",
+  "address": "石川県金沢市武蔵町9-15",
+  "category": "咖啡馆",
+  "sources": [
+    "漫画"
+  ],
+   "characters": [
+       "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈"
+  ],
+  "businessHours": "11:30-20:30, L.O 19:30",
+  "closedDays": [
+    "周二"
+  ],
+  "introduction": "莲之空flowers漫画第18话中，成员们前往的“咖啡”馆",
+  "other": ["虽说是咖啡馆，但是不提供咖啡，仅有红茶和甜品"],
+  "website": "https://teahousesakura2014.wixsite.com/tea-house-sakura",
+  "updatedAt": "2025-05-19"
+}, 
+{
+  "id": "kouya",
+  "name": "香屋",
+  "nameJa": "加賀の薫香 香屋",
+  "guideArea": "musashigatsuji-omicho",
+  "address": "石川県金沢市武蔵町10-1",
+  "category": "体验",
+  "sources": [
+    "准备莲"
+  ],
+   "characters": [
+       "日野下花帆", "乙宗梢"
+  ],
+  "businessHours": "9:30-17:30",
+  "closedDays": [
+    "周二"
+  ],
+  "introduction": "准备莲103期#31中，cb组进行香道体验的地点",
+  "other": [],
+  "website": "https://www.ko-ya.shop/",
+  "updatedAt": "2023-11-10"
+}, 
+{
+  "id": "musashigatsuji",
+  "name": "武藏十字路口",
+  "nameJa": "武蔵ヶ辻",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "景点",
+  "sources": [
+    "活动记录"
+  ],
+  "introduction": "经常在活动记录出现的场景（尤其和dc相关），需要站在十字路口往百万石通（近江町市场方向）拍摄；\n图为活动记录105期第4话part5",
+ "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/01.jpg",
+        "alt": "", 
+        "caption":"活动记录中画面"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/02.jpg",
+        "alt": "", 
+        "caption":"2025/8拍摄"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2025-07-15"
+}, 
+{
+  "id": "hakomachi",
+  "name": "金泽箱町",
+  "nameJa": "かなざわはこまち",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "购物",
+  "sources": [
+    "杂志"
+  ],
+   "characters": [
+       "乙宗梢", "村野沙耶香"
+  ],
+  "businessHours": "10:00-20:00",
+  "introduction": "LLdays（2023年7月号）中插图",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/03.jpg",
+        "alt": "", 
+        "caption":"LLdays插图"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/04.jpg",
+        "alt": "", 
+        "caption":"2024/9拍摄"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/05.jpg",
+        "alt": "", 
+        "caption":"商场全貌，图片来源于Kanazawa Film Commission"
+      }      
+    ],
+  "other": [],
+  "updatedAt": "2023-05-31"
 }
 ]

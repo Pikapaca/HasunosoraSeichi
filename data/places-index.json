@@ -82,7 +82,7 @@
     }, 
     {
       "id": "aeon-cinema-forus",
-      "name": "aeon电影院金泽forus店",
+      "name": "AEON电影院金泽forus店",
       "nameJa": "イオンシネマ金沢フォーラス",
       "prefecture": "ishikawa",
       "city": "kanazawa",
@@ -109,11 +109,65 @@
     }, 
     {
       "id": "game-paradise",
-      "name": "game paradise",
+      "name": "Game Paradise",
       "nameJa": "ゲーム・パラダイス",
       "prefecture": "ishikawa",
       "city": "kanazawa",
       "isFood": false,
       "updatedAt": "2023-02-28"
-    }
+    }, 
+    {
+      "id": "ushijyu-teraoka",
+      "name": "牛重 寺冈",
+      "nameJa": "うし重 てらおか",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-02-21"
+    }, 
+    {
+      "id": "mizuhiki-kanazawakurumi",
+      "name": "水引饰品工房 金泽KURUMI",
+      "nameJa": "水引アクセサリー工房 金澤くるみ",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2025-02-28"
+    }, 
+    {
+      "id": "teahouse-sakura",
+      "name": "TeaHouse SAKURA",
+      "nameJa": "ティーハウスサクラ",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-05-19"
+    }, 
+    {
+      "id": "kouya",
+      "name": "香屋",
+      "nameJa": "加賀の薫香 香屋",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-11-10"
+    }, 
+    {
+      "id": "musashigatsuji",
+      "name": "武藏十字路口",
+      "nameJa": "武蔵ヶ辻",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2025-07-15"
+    }, 
+    {
+      "id": "hakomachi",
+      "name": "金泽箱町",
+      "nameJa": "かなざわはこまち",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-05-31"
+    } 
  ]
