@@ -388,6 +388,10 @@ function createInformationSection(place) {
       formatDisplayValue(
         place.closedDays
       )
+    ), 
+
+       createWebsiteInformationRow(
+      place.website
     )
   ].filter(Boolean);
 
@@ -432,6 +436,74 @@ function createInformationRow(
   `;
 }
 
+/**
+ * 生成官方网站链接。
+ */
+function createWebsiteInformationRow(
+  website
+) {
+  const websiteUrl =
+    normalizeExternalUrl(website);
+
+  if (!websiteUrl) {
+    return "";
+  }
+
+  return `
+    <div class="detail-information-row">
+      <dt>
+        官方网站
+      </dt>
+
+      <dd>
+        <a
+          class="detail-external-link"
+          href="${escapeAttribute(websiteUrl)}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          打开官方网站
+          <span aria-hidden="true">↗</span>
+        </a>
+      </dd>
+    </div>
+  `;
+}
+
+
+/**
+ * 检查外部链接是否为有效的
+ * HTTP 或 HTTPS 地址。
+ */
+function normalizeExternalUrl(value) {
+  const text =
+    String(value || "").trim();
+
+  if (!text) {
+    return "";
+  }
+
+  try {
+    const url =
+      new URL(text);
+
+    if (
+      url.protocol !== "http:" &&
+      url.protocol !== "https:"
+    ) {
+      return "";
+    }
+
+    return url.href;
+  } catch (error) {
+    console.warn(
+      "无效的网站地址：",
+      value
+    );
+
+    return "";
+  }
+}
 
 /* =========================
    出处、角色及其他标签
