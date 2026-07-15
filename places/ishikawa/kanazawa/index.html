@@ -354,19 +354,57 @@
   </div>
 </div>
 
-        <!-- 今日营业 -->
-        <label class="today-open-filter">
-          <input
-            id="filter-open-today"
-            type="checkbox"
-          >
+<!-- 今日营业 -->
+<div class="today-open-control">
+  <label
+    class="today-open-filter"
+    for="filter-open-today"
+  >
+    <input
+      id="filter-open-today"
+      type="checkbox"
+    >
 
-          <span class="checkbox-mark"></span>
+    <span
+      class="checkbox-mark"
+      aria-hidden="true"
+    ></span>
 
-          <span>
-            今日营业
-          </span>
-        </label>
+    <span>
+      今日营业
+    </span>
+  </label>
+
+  <div class="open-today-help">
+    <button
+      class="open-today-help-button"
+      id="open-today-help-button"
+      type="button"
+      aria-label="查看今日营业筛选说明"
+      aria-controls="open-today-help-popup"
+      aria-expanded="false"
+    >
+      ?
+    </button>
+
+    <div
+      class="open-today-help-popup"
+      id="open-today-help-popup"
+      role="note"
+    >
+      <strong>
+        关于“今日营业”
+      </strong>
+
+      <p>
+        此筛选仅根据已登记的固定休息日进行判断。
+        不定休会被归入营业；节假日特别营业、
+        补休及临时停业等情况可能无法反映，
+        出发前请查询圣地官网。
+      </p>
+    </div>
+  </div>
+</div>
       </div>
     </section>
 

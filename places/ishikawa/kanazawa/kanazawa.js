@@ -166,6 +166,7 @@ document.addEventListener(
     setupGlobalSearch();
     setupLocalFilters();
     setupGuideAreaSingleSelect();
+    setupOpenTodayHelp();
     setupLoadMore();
 
     loadPlaceIndex();
@@ -892,6 +893,138 @@ function fillCheckboxOptions(
 
   updateMultiSelectLabel(
     container
+  );
+}
+
+/* =========================
+   今日营业说明弹窗
+========================= */
+
+function setupOpenTodayHelp() {
+  const helpContainer =
+    document.querySelector(
+      ".open-today-help"
+    );
+
+  const helpButton =
+    document.querySelector(
+      "#open-today-help-button"
+    );
+
+  const helpPopup =
+    document.querySelector(
+      "#open-today-help-popup"
+    );
+
+  if (
+    !helpContainer ||
+    !helpButton ||
+    !helpPopup
+  ) {
+    return;
+  }
+
+
+  /**
+   * 统一设置弹窗的打开状态。
+   */
+  function setHelpOpen(isOpen) {
+    helpContainer.classList.toggle(
+      "is-open",
+      isOpen
+    );
+
+    helpButton.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    helpPopup.setAttribute(
+      "aria-hidden",
+      String(!isOpen)
+    );
+  }
+
+
+  /*
+   * 页面初始化时保持关闭。
+   */
+  setHelpOpen(false);
+
+
+  /*
+   * 点击问号时打开或关闭。
+   */
+  helpButton.addEventListener(
+    "click",
+    (event) => {
+      /*
+       * 防止点击事件继续传给 document，
+       * 导致弹窗刚打开又被关闭。
+       */
+      event.stopPropagation();
+
+      const isOpen =
+        helpContainer.classList.contains(
+          "is-open"
+        );
+
+      setHelpOpen(!isOpen);
+    }
+  );
+
+
+  /*
+   * 点击弹窗内部时保持打开。
+   */
+  helpPopup.addEventListener(
+    "click",
+    (event) => {
+      event.stopPropagation();
+    }
+  );
+
+
+  /*
+   * 点击弹窗外部时关闭。
+   */
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (
+        !helpContainer.contains(
+          event.target
+        )
+      ) {
+        setHelpOpen(false);
+      }
+    }
+  );
+
+
+  /*
+   * 按 Escape 时关闭，并把焦点
+   * 放回问号按钮。
+   */
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key !== "Escape") {
+        return;
+      }
+
+      const isOpen =
+        helpContainer.classList.contains(
+          "is-open"
+        );
+
+      if (!isOpen) {
+        return;
+      }
+
+      setHelpOpen(false);
+      helpButton.focus();
+    }
   );
 }
 
