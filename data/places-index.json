@@ -43,5 +43,77 @@
       "city": "kanazawa",
       "isFood": false,
       "updatedAt": "2023-07-08"
+    }, 
+    {
+      "id": "kanazawa-gamers",
+      "name": "金泽gamers",
+      "nameJa": "金沢ゲーマーズ",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-10-01"
+    }, 
+    {
+      "id": "shiawase-pancake-forus",
+      "name": "幸福的PANCAKE 金泽forus店【已停业】",
+      "nameJa": "幸せのパンケーキ 金沢フォーラス店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2024-09-05"
+    }, 
+    {
+      "id": "gelato-pique-forus",
+      "name": "Gelato pique cafe 金泽forus店",
+      "nameJa": "ジェラートピケカフェ 金沢フォーラス店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-05-03"
+    }, 
+    {
+      "id": "lemonade-lemonica-forus",
+      "name": "Lemonade by Lemonica 金泽forus店",
+      "nameJa": "レモネードbyレモニカ 金沢フォーラス店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-05-03"
+    }, 
+    {
+      "id": "aeon-cinema-forus",
+      "name": "aeon电影院金泽forus店",
+      "nameJa": "イオンシネマ金沢フォーラス",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-03-15"
+    }, 
+    {
+      "id": "tsuzumimon",
+      "name": "鼓门",
+      "nameJa": "鼓門",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-04-01"
+    }, 
+    {
+      "id": "underground-sign",
+      "name": "金泽站地下广场地下通道签名色纸",
+      "nameJa": "金沢駅もてなしドーム地下広場地下道サイン色紙",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2025-04-27"
+    }, 
+    {
+      "id": "game-paradise",
+      "name": "game paradise",
+      "nameJa": "ゲーム・パラダイス",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-02-28"
     }
  ]

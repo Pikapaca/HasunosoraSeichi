@@ -1743,6 +1743,37 @@ function isOpenToday(place) {
       normalizeText
     );
 
+  /*
+   * 已闭店或永久停业的地点，
+   * 不进入“今日营业”结果。
+   */
+  const permanentlyClosedWords = [
+    "已闭店",
+    "永久闭店",
+    "已停业",
+    "永久停业",
+    "閉店",
+    "閉業"
+  ];
+
+
+  const isPermanentlyClosed =
+    normalizedClosedDays.some(
+      (value) => {
+        return permanentlyClosedWords.some(
+          (word) => {
+            return value.includes(
+              normalizeText(word)
+            );
+          }
+        );
+      }
+    );
+
+
+  if (isPermanentlyClosed) {
+    return false;
+  }
 
   const alwaysOpenWords = [
     "全年无休",

@@ -43,7 +43,7 @@
   "characters": [
     "大泽瑠璃乃", "藤岛慈","安养寺姬芽"
   ],
-  "businessHours": "9:00－20:00",
+  "businessHours": "9:00-20:00",
   "introduction": "在2024/05/06WxM中提到，mcp在黄金周去吃的鲷鱼烧。在2025/8发售的LLdaysるるぶ联动杂志的P24也有提到。\n点单内容：瑠璃乃：五郎島金時；藤岛慈：能登大納言＆白玉入り抹茶クリーム；安养寺姬芽：りんごカスタード\n有q版角色标识以及部分日期联动；厨房内部也有很多莲之空相关物件，买了等做的时候可以看看\n【2026年更新：店内莲之空相关已消失】",
   "other": [],
   "website": "https://www.instagram.com/tsuchiku_antnishi/",
@@ -77,7 +77,7 @@
   "sources": [
     "其他"
   ],
-  "businessHours": "8:30－20:00, L.O. 19:30",
+  "businessHours": "8:30-20:00, L.O. 19:30",
   "introduction": "店内吧台附近以及货架上方有莲之空相关角色画，经常会更换",
    "images": [
       {
@@ -111,9 +111,189 @@
     "活动记录"
   ],
   "businessHours": "以演出时间为准",
-  "introduction": "石川县立音乐堂的演奏大厅为4L中早期Fes×Live会场 音楽堂ライブステージ 的原型；仅有演出时间可以进入",
+  "introduction": "石川县立音乐堂的演奏厅为4L中Fes×Live会场 第2音乐堂（八重咲舞台）的原型；仅有演出时间可以进入",
+     "images": [
+      {
+        "src": "images/places/kanazawa/kanazawa-station/07.jpg",
+        "alt": "",
+        "caption":"莲之空女学院第2音乐堂（八重咲舞台）"
+      },
+      {
+        "src": "images/places/kanazawa/kanazawa-station/08.jpg",
+        "alt": "",
+        "caption":"石川县立音乐堂 演奏厅"
+      }
+    ],  
   "other": [],
   "website": "https://ongakudo.jp/",
   "updatedAt": "2023-07-08"
+}, 
+{
+  "id": "kanazawa-gamers",
+  "name": "金泽gamers",
+  "nameJa": "金沢ゲーマーズ",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市堀川新町3−1 金沢フォーラス5F",
+  "category": "商店",
+  "sources": [
+    "准备莲"，“其他”
+  ],
+  "characters": [
+    "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽", "桂城泉", "塞拉斯·柳田·利林费尔德"
+  ],
+  "businessHours": "10:00-20:00",
+  "introduction": "别名：莲之空gamers；除了莲之空谷子之外，店内还有声优的签名以及写过的色纸等。声优和角色生日时还会有特殊布置。/n准备莲104期#34（13:30~）以及准备莲105期#36（08:30~）中声优有来过，由于103期来的时候还是位于4F的临时店址，因此不算在内",
+  "other": [],
+  "website": "https://www.gamers.co.jp/shop/detail.php?id=22",
+  "updatedAt": "2023-10-01"
+}, 
+{
+  "id": "shiawase-pancake-forus",
+  "name": "幸福的PANCAKE 金泽forus店【已停业】",
+  "nameJa": "幸せのパンケーキ 金沢フォーラス店",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市堀川新町3−1 金沢フォーラス6F",
+  "category": "咖啡馆",
+  "sources": [
+    "With×Meets"
+  ],
+  "characters": [
+       "百生吟子", "徒町小铃", "安养寺姬芽"
+  ],
+  "businessHours": "平日：10:00-20:00；土日祝：11:00-20:30",
+  "closedDays": [
+    "已停业"
+  ],
+  "introduction": "在2024/09/05WxM中提到，小三角三人去吃的金泽限定口味松饼（已于2025年12月停业）",
+  "other": [],
+  "updatedAt": "2024-09-05"
+}, 
+{
+  "id": "gelato-pique-forus",
+  "name": "Gelato pique cafe 金泽forus店",
+  "nameJa": "ジェラートピケカフェ 金沢フォーラス店",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市堀川新町3−1 金沢フォーラス1F",
+  "category": "咖啡馆",
+  "sources": [
+    "四格"
+  ],
+  "characters": [
+       "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理"
+  ],
+  "businessHours": "平日：10:00-20:00；土日祝：11:00-20:30",
+  "introduction": "四格（りんく！らいふ！ラブライブ！）103期#24第二格中的可丽饼店",
+  "other": [],
+  "updatedAt": "2023-05-03"
+}, 
+{
+  "id": "lemonade-lemonica-forus",
+  "name": "Lemonade by Lemonica 金泽forus店",
+  "nameJa": "レモネードbyレモニカ 金沢フォーラス店",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市堀川新町3−1 金沢フォーラス1F",
+  "category": "饮料",
+  "sources": [
+    "联动"
+  ],
+  "businessHours": "10:00-20:00",
+  "introduction": "2024年4月-5月曾经和莲之空联动过，有过联动贴纸；原本forus有两家，6F店随着2025年12月的楼层更新停业，仅剩1F的一家",
+  "other": [],
+  "updatedAt": "2024-04-06"
+}, 
+{
+  "id": "aeon-cinema-forus",
+  "name": "aeon电影院金泽forus店",
+  "nameJa": "イオンシネマ金沢フォーラス",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市堀川新町3−1 金沢フォーラス7F",
+  "category": "娱乐",
+  "sources": [
+    "活动记录", "卡面"
+  ],
+   "characters": [
+       "大泽瑠璃乃", "藤岛慈"
+  ],
+
+  "businessHours": "见电影排片表",
+  "introduction": "在活动记录103期第18话part6中出现，是慈包场的电影院；在SR[抱きしめる花びら]大泽瑠璃乃中的电影放映室就是这家电影院的\n莲之空剧场版上映时也有特殊布置",
+  "other": [],
+  "updatedAt": "2024-03-15"
+}, 
+{
+  "id": "tsuzumimon",
+  "name": "鼓门",
+  "nameJa": "鼓門",
+  "guideArea": "kanazawa-station",
+  "category": "景点",
+  "sources": [
+    "四格", "活动记录", "PV", "准备莲", "卡面", "歌曲", "CD封面"
+  ],
+  "characters": [
+        "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽", "桂城泉", "塞拉斯·柳田·利林费尔德"
+  ],
+  "introduction": "在各种场合中都有出现过的鼓门，就不多赘述了。一般可以拍的就是正面角度，以及特典曲フリジア封面的角度",
+  "images": [
+      {
+        "src": "images/places/kanazawa/kanazawa-station/09.jpg",
+        "alt": "", 
+        "caption":"フリジアCD封面", 
+      {
+        "src": "images/places/kanazawa/kanazawa-station/10.jpg",
+        "alt": "", 
+        "caption":"フリジアCD封面实拍", 
+      {
+        "src": "images/places/kanazawa/kanazawa-station/11.jpg",
+        "alt": "", 
+        "caption":"活动记录中鼓门正面", 
+      {
+        "src": "images/places/kanazawa/kanazawa-station/12.jpg",
+        "alt": "正面实拍"
+      }
+    ],  
+  "other": [],
+  "updatedAt": "2023-04-01"
+}, 
+{
+  "id": "underground-sign",
+  "name": "金泽站地下广场地下通道签名色纸",
+  "nameJa": "金沢駅もてなしドーム地下広場地下道サイン色紙",
+  "guideArea": "kanazawa-station",
+  "address": "从金泽站出来乘电梯向下，沿着指示牌方向向A-6、7口走，签名色纸在上楼梯之前右转通道内",
+  "category": "路边",
+  "sources": [
+    "其他"
+  ],
+  "characters": [
+        "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽", "桂城泉", "塞拉斯·柳田·利林费尔德"
+  ],
+  "businessHours": "05:30-23:30",
+  "introduction": "在石川场后留下的11人的签名色纸；橱窗内摆设经常更换，除色纸、海报之外还有娃和立牌（2025/12）",
+  "images": [
+      {
+        "src": "images/places/kanazawa/kanazawa-station/13.jpg",
+        "alt": "", 
+        "caption":"地下通道，摄于2025年12月", 
+    ],  
+  "other": [],
+  "updatedAt": "2025-04-27"
+}, 
+{
+  "id": "game-paradise",
+  "name": "game paradise",
+  "nameJa": "ゲーム・パラダイス",
+  "guideArea": "kanazawa-station",
+  "address": "石川県金沢市堀川新町5-1 アミューズメントスクエア3F",
+  "category": "娱乐",
+  "sources": [
+    "杂志"
+  ],
+   "characters": [
+       "大泽瑠璃乃", "藤岛慈"
+  ],
+  "businessHours": "10:00-22:00",
+  "introduction": "LLdays（2023年4月号）中，瑠璃慈插图的所在地\n（2024/1/1地震后机厅布局有变动，可能无法拍到相同照片）",
+  "other": [],
+  "updatedAt": "2023-02-28"
 }
 ]
