@@ -136,7 +136,7 @@
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス5F",
   "category": "商店",
   "sources": [
-    "准备莲"，“其他”
+    "准备莲", "其他"
   ],
   "characters": [
     "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽", "桂城泉", "塞拉斯·柳田·利林费尔德"
@@ -237,15 +237,18 @@
       {
         "src": "images/places/kanazawa/kanazawa-station/09.jpg",
         "alt": "", 
-        "caption":"フリジアCD封面", 
+        "caption":"フリジアCD封面"
+      }, 
       {
         "src": "images/places/kanazawa/kanazawa-station/10.jpg",
         "alt": "", 
-        "caption":"フリジアCD封面实拍", 
+        "caption":"フリジアCD封面实拍"
+      },
       {
         "src": "images/places/kanazawa/kanazawa-station/11.jpg",
         "alt": "", 
-        "caption":"活动记录中鼓门正面", 
+        "caption":"活动记录中鼓门正面"
+      },
       {
         "src": "images/places/kanazawa/kanazawa-station/12.jpg",
         "alt": "", 
@@ -275,6 +278,7 @@
         "src": "images/places/kanazawa/kanazawa-station/13.jpg",
         "alt": "", 
         "caption":"地下通道，摄于2025年12月" 
+      }
     ],  
   "other": [],
   "updatedAt": "2025-04-27"
