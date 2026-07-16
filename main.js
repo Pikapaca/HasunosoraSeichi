@@ -3,9 +3,9 @@ const PLACES_DATA_PATH = "./data/places-index.json";
 /*
  * 首页三个板块分别设置显示数量。
  */
-const LATEST_ITEM_LIMIT = 5;
-const POPULAR_ITEM_LIMIT = 2;
-const FOOD_ITEM_LIMIT = 2;
+const LATEST_ITEM_LIMIT = 6;
+const POPULAR_ITEM_LIMIT = 3;
+const FOOD_ITEM_LIMIT = 3;
 
 const SEARCH_RESULT_LIMIT = 10;
 
