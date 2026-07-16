@@ -483,31 +483,6 @@
   "sources": [
     "卡面"
   ],
-  "introduction": "SR[抱きしめる花びら]村野沙耶香 卡面中的地点",
-  "images": [
-      {
-        "src": "images/places/kanazawa/musashigatsuji-omicho/08.jpg",
-        "alt": "", 
-        "caption":"SR[抱きしめる花びら]村野沙耶香"
-      },
-      {
-        "src": "images/places/kanazawa/musashigatsuji-omicho/09.jpg",
-        "alt": "", 
-        "caption":"2024/5拍摄"
-      }
-    ],
-  "other": [],
-  "updatedAt": "2024-03-29"
-}, 
-{
-  "id": "omicho-kaimono",
-  "name": "近江町市场买物通口",
-  "nameJa": "近江町市場買物通り口",
-  "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
-  "sources": [
-    "卡面"
-  ],
    "characters": [
        "村野沙耶香", "夕雾缀理"
   ],
@@ -576,9 +551,6 @@
   "sources": [
     "PV/MV"
   ],
-   "characters": [
-       "村野沙耶香"
-  ],
   "businessHours": "9:00-17:00；卖完即止",
   "closedDays": [
     "周三"
@@ -607,6 +579,9 @@
   "category": "咖啡馆",
   "sources": [
     "With×MEETS"
+  ],
+   "characters": [
+       "村野沙耶香"
   ],
   "address": "石川県金沢市十間町42",
   "businessHours": "9:00-18:00",
