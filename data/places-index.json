@@ -286,5 +286,104 @@
       "city": "kanazawa",
       "isFood": true,
       "updatedAt": "2025-03-16"
+    }, 
+    {
+      "id": "oyamajinja",
+      "name": "尾山神社",
+      "nameJa": "尾山神社",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2025-01-17"
+    },  
+    {
+      "id": "central-tourist-center",
+      "name": "金泽中央观光案内所",
+      "nameJa": "金沢中央観光案内所",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-07-29"
+    },  
+    {
+      "id": "temari-mariya",
+      "name": "加贺手球 毬屋",
+      "nameJa": "加賀てまり 毬屋",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-11-30"
+    },  
+    {
+      "id": "cafe-de-h",
+      "name": "CAFE DE H【已停业】",
+      "nameJa": "カフェ ドゥ アッシュ",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2026-07-13"
+    },  
+    {
+      "id": "kanazawaya-coffee",
+      "name": "金泽屋咖啡店",
+      "nameJa": "金澤屋珈琲店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-08-02"
+    },  
+    {
+      "id": "kanazawa-castle-nezumitamon",
+      "name": "金泽城鼠多门",
+      "nameJa": "金沢城鼠多門",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2025-01-12"
+    },  
+    {
+      "id": "gyokusen-inmaru",
+      "name": "玉泉院丸庭园",
+      "nameJa": "玉泉院丸庭園",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2026-07-13"
+    },  
+    {
+      "id": "shinmaru-hiroba",
+      "name": "金泽城新丸广场",
+      "nameJa": "新丸広場",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-02-28"
+    },  
+    {
+      "id": "hishiyagura",
+      "name": "菱橹·五十间长屋",
+      "nameJa": "菱櫓・五十間長屋",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-11-28"
+    },  
+    {
+      "id": "ishikawamon",
+      "name": "金泽城石川门",
+      "nameJa": "石川門",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-02-17"
+    },  
+    {
+      "id": "hyakukenbori",
+      "name": "金泽城公园下步道（百间堀园地）",
+      "nameJa": "百間堀園地",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-11-10"
     }  
- ]
+]
