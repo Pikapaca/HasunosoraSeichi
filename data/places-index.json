@@ -169,5 +169,122 @@
       "city": "kanazawa",
       "isFood": false,
       "updatedAt": "2023-05-31"
-    } 
+    }, 
+    {
+      "id": "omicho-mza",
+      "name": "近江町市场M'za口",
+      "nameJa": "近江町市場エムザ口",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-10-20"
+    },    
+    {
+      "id": "omicho-kaimono",
+      "name": "近江町市场买物通口",
+      "nameJa": "近江町市場買物通り口",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-03-29"
+    },   
+    {
+      "id": "omicho-parking",
+      "name": "近江町市场停车场口",
+      "nameJa": "近江町市場パーキング口",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-10-13"
+    },   
+    {
+      "id": "omicho-ichibakan",
+      "name": "近江町市场市场馆广场",
+      "nameJa": "近江町市場 いちば館広場",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-07-29"
+    },   
+    {
+      "id": "kawakishoten",
+      "name": "川木商店",
+      "nameJa": "川木商店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-03-16"
+    },   
+    {
+      "id": "higashide-coffee",
+      "name": "东出咖啡店",
+      "nameJa": "東出珈琲店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-07-24"
+    },   
+    {
+      "id": "omicho-shindori",
+      "name": "新通",
+      "nameJa": "新通り",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-05-14"
+    },   
+    {
+      "id": "omicho-croquette",
+      "name": "近江町可乐饼",
+      "nameJa": "近江町コロッケ",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-08-15"
+    },   
+    {
+      "id": "maki-fruit",
+      "name": "牧果实店",
+      "nameJa": "牧果実店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-10-20"
+    },   
+    {
+      "id": "omicho-hiraidon",
+      "name": "近江町海鲜丼家平井 市场馆店",
+      "nameJa": "近江町海鮮丼家ひら井 いちば館店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-10-13"
+    },   
+    {
+      "id": "ippukuya",
+      "name": "近江町市场 金泽关东煮 IPPUKUYA",
+      "nameJa": "：近江町市場 金沢おでん いっぷくや",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-10-13"
+    },   
+    {
+      "id": "omicho-fureai",
+      "name": "近江町交流馆",
+      "nameJa": "近江町ふれあい館",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-04-05"
+    },   
+    {
+      "id": "omicho-ichibasushi",
+      "name": "近江町市场寿司 支店",
+      "nameJa": "近江町市場寿し 支店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-03-16"
+    }  
  ]

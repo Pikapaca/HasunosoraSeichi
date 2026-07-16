@@ -6,7 +6,7 @@
   "guideArea": "kanazawa-station",
   "category": "车站",
   "sources": [
-    "活动记录", "live相关"
+    "活动记录", "live相关", "Fes×LIVE"
   ],
   "characters": [
     "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽"
@@ -36,15 +36,15 @@
   "name": "鲷鱼烧工房土九 金泽站Anto西店",
   "nameJa": "たい焼き工房土九 金沢駅あんと西店",
   "guideArea": "kanazawa-station",
-  "category": "甜品",
+  "category": "甜食/酒水/饮料/小吃",
   "sources": [
-    "With×Meets", "杂志"
+    "With×MEETS", "杂志"
   ],
   "characters": [
     "大泽瑠璃乃", "藤岛慈","安养寺姬芽"
   ],
   "businessHours": "9:00-20:00",
-  "introduction": "在2024/05/06WxM中提到，mcp在黄金周去吃的鲷鱼烧。在2025/8发售的LLdaysるるぶ联动杂志的P24也有提到。\n点单内容：瑠璃乃：五郎島金時；藤岛慈：能登大納言＆白玉入り抹茶クリーム；安养寺姬芽：りんごカスタード\n有q版角色标识以及部分日期联动；厨房内部也有很多莲之空相关物件，买了等做的时候可以看看\n【2026年更新：店内莲之空相关已消失】",
+  "introduction": "在2024/05/06WxM中提到，mcp在黄金周去吃的鲷鱼烧。在2025/8发售的LLdaysるるぶ特别刊的P24也有提到。\n点单内容：瑠璃乃：五郎島金時；藤岛慈：能登大納言＆白玉入り抹茶クリーム；安养寺姬芽：りんごカスタード\n有q版角色标识以及部分日期联动；厨房内部也有很多莲之空相关物件，买了等做的时候可以看看\n【2026年更新：店内莲之空相关已消失】",
   "other": [],
   "website": "https://www.instagram.com/tsuchiku_antnishi/",
   "updatedAt": "2024-05-06"
@@ -73,7 +73,7 @@
   "nameJa": "金沢地酒蔵",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市石川県金沢市木ノ新保町1-1　金沢百番街あんと内",
-  "category": "饮料",
+  "category": "甜食/酒水/饮料/小吃",
   "sources": [
     "其他"
   ],
@@ -108,10 +108,10 @@
   "address": "石川県金沢市昭和町20番1号",
   "category": "景点",
   "sources": [
-    "活动记录"
+    "活动记录", "Fes×LIVE"
   ],
   "businessHours": "以演出时间为准",
-  "introduction": "石川县立音乐堂的演奏厅为4L中Fes×Live会场 第2音乐堂（八重咲舞台）的原型；仅有演出时间可以进入",
+  "introduction": "石川县立音乐堂的演奏厅为4L中Fes×LIVE会场 第2音乐堂（八重咲舞台）的原型；仅有演出时间可以进入",
      "images": [
       {
         "src": "images/places/kanazawa/kanazawa-station/07.jpg",
@@ -192,7 +192,7 @@
   "nameJa": "レモネードbyレモニカ 金沢フォーラス店",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス1F",
-  "category": "饮料",
+  "category": "甜食/酒水/饮料/小吃",
   "sources": [
     "联动"
   ],
@@ -216,7 +216,7 @@
   ],
 
   "businessHours": "见电影排片表",
-  "introduction": "在活动记录103期第18话part6中出现，是慈包场的电影院；在SR[抱きしめる花びら]大泽瑠璃乃中的电影放映室就是这家电影院的\n莲之空剧场版上映时也有特殊布置",
+  "introduction": "在活动记录103期第18话part6中出现，是慈包场的电影院；在 SR[抱きしめる花びら]大泽瑠璃乃 中的电影放映室就是这家电影院的\n莲之空剧场版上映时也有特殊布置",
   "other": [],
   "updatedAt": "2024-03-15"
 }, 
@@ -227,7 +227,7 @@
   "guideArea": "kanazawa-station",
   "category": "景点",
   "sources": [
-    "四格", "活动记录", "PV", "准备莲", "卡面", "歌曲", "CD封面"
+    "四格", "活动记录", "PV/MV", "准备莲", "卡面", "歌曲", "CD封面"
   ],
   "characters": [
         "日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽", "桂城泉", "塞拉斯·柳田·利林费尔德"
@@ -419,6 +419,7 @@
   "name": "金泽箱町",
   "nameJa": "かなざわはこまち",
   "guideArea": "musashigatsuji-omicho",
+  "address": "石川県金沢市袋町1番1号 かなざわはこまち",
   "category": "商店",
   "sources": [
     "杂志"
@@ -447,5 +448,378 @@
     ],
   "other": [],
   "updatedAt": "2023-05-31"
+}, 
+{
+  "id": "omicho-mza",
+  "name": "近江町市场M'za口",
+  "nameJa": "近江町市場エムザ口",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "活动记录"
+  ],
+  "introduction": "经常在活动记录出现的场景（尤其和dc相关）",
+ "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/06.jpg",
+        "alt": "", 
+        "caption":"活动记录中画面"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/07.jpg",
+        "alt": "", 
+        "caption":"2024/9拍摄"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2023-10-20"
+}, 
+{
+  "id": "omicho-kaimono",
+  "name": "近江町市场买物通口",
+  "nameJa": "近江町市場買物通り口",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "卡面"
+  ],
+  "introduction": "SR[抱きしめる花びら]村野沙耶香 卡面中的地点",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/08.jpg",
+        "alt": "", 
+        "caption":"SR[抱きしめる花びら]村野沙耶香"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/09.jpg",
+        "alt": "", 
+        "caption":"2024/5拍摄"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2024-03-29"
+}, 
+{
+  "id": "omicho-kaimono",
+  "name": "近江町市场买物通口",
+  "nameJa": "近江町市場買物通り口",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "卡面"
+  ],
+   "characters": [
+       "村野沙耶香", "夕雾缀理"
+  ],
+  "introduction": "SR[抱きしめる花びら]村野沙耶香 卡面中的地点",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/08.jpg",
+        "alt": "", 
+        "caption":"SR[抱きしめる花びら]村野沙耶香"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/09.jpg",
+        "alt": "", 
+        "caption":"2024/5拍摄"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2024-03-29"
+}, 
+{
+  "id": "omicho-parking",
+  "name": "近江町市场停车场口",
+  "nameJa": "近江町市場パーキング口",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "准备莲"
+  ],
+   "characters": [
+       "村野沙耶香", "夕雾缀理"
+  ],
+  "introduction": "准备莲103期#27中dc进近江町市场的口（摸冰的地方）",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/10.jpg",
+        "alt": "", 
+        "caption":"准备莲103期#27"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2023-10-13"
+}, 
+{
+  "id": "omicho-ichibakan",
+  "name": "近江町市场市场馆广场",
+  "nameJa": "近江町市場 いちば館広場",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "联动"
+  ],
+   "characters": [
+       "村野沙耶香"
+  ],
+  "introduction": "石川县×莲之空第一次联动 沙耶立牌所在地",
+  "other": [],
+  "updatedAt": "2023-07-29"
+}, 
+{
+  "id": "kawakishoten",
+  "name": "川木商店",
+  "nameJa": "川木商店",
+  "guideArea": "musashigatsuji-omicho",
+  "address": "石川県金沢市青草町88番地 近江町いちば館1F",
+  "category": "甜食/酒水/饮料/小吃",
+  "sources": [
+    "PV/MV"
+  ],
+   "characters": [
+       "村野沙耶香"
+  ],
+  "businessHours": "9:00-17:00；卖完即止",
+  "closedDays": [
+    "周三"
+  ],
+  "introduction": "石川大观光试听视频MV中出现（川木商店吃海鲜的桌子）",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/11.jpg",
+        "alt": "", 
+        "caption":"MV截图"
+      },
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/12.jpg",
+        "alt": "", 
+        "caption":"2025/4拍摄"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2025-03-16"
+}, 
+{
+  "id": "higashide-coffee",
+  "name": "东出咖啡店",
+  "nameJa": "東出珈琲店",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "咖啡馆",
+  "sources": [
+    "With×MEETS"
+  ],
+  "address": "石川県金沢市十間町42",
+  "businessHours": "9:00-18:00",
+  "closedDays": [
+    "周三", "周日", "祝日"
+  ],
+  "introduction": "沙耶香在W×M（2023/07/24）中推荐的咖啡店，着重提到了焦糖布丁和咖啡",
+  "other": [],
+  "website": "https://www.instagram.com/higashide_coffee/",
+  "updatedAt": "2023-07-24"
+}, 
+{
+  "id": "omicho-shindori",
+  "name": "新通",
+  "nameJa": "新通り",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "活动记录"
+  ],
+  "introduction": "活动记录中经常出现的近江町市场位置（例如103期第5话），拍照定位可搜 世界の食品ダイヤモンドLⅡ这个地方，向另外一头拍照即可打卡",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/13.jpg",
+        "alt": "",
+        "caption":"活动记录103期第5话中场景"
+      }, 
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/14.jpg",
+        "alt": "",
+        "caption":"2024/9拍摄"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2023-05-09"
+}, 
+{
+  "id": "omicho-croquette",
+  "name": "近江町可乐饼",
+  "nameJa": "近江町コロッケ",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "甜食/酒水/饮料/小吃",
+  "sources": [
+    "杂志"
+  ],
+  "address": "石川県金沢市下近江町24",
+  "businessHours": "08:00-15:30",
+  "closedDays": [
+    "不定休"
+  ],
+  "introduction": "在2025/8发售的LLdaysるるぶ特别刊中的食物推荐部分提及（p20）",
+  "other": [],
+  "website": "https://www.instagram.com/omichocroquette_official/",
+  "updatedAt": "2025-08-15"
+},
+{
+  "id": "daimatsusuisan",
+  "name": "大松水产",
+  "nameJa": "大松水産",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "甜食/酒水/饮料/小吃",
+  "sources": [
+    "活动记录"
+  ],
+  "characters": [
+    "村野沙耶香"
+  ],
+  "address": "石川県金沢市上近江町21-1",
+  "businessHours": "8:00-16:00；卖完即止",
+  "closedDays": [
+    "周三"
+  ],
+  "introduction": "活动记录103期第5话中出现的背景",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/15.jpg",
+        "alt": "",
+        "caption":"活动记录103期第5话"
+      }
+    ],
+  "other": [],
+  "updatedAt": "2023-05-09"
+},
+{
+  "id": "maki-fruit",
+  "name": "牧果实店",
+  "nameJa": "牧果実店",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "甜食/酒水/饮料/小吃",
+  "sources": [
+    "准备莲"
+  ],
+  "characters": [
+    "大泽瑠璃乃", "藤岛慈"
+  ],
+  "address": "石川県金沢市青草町88",
+  "businessHours": "8:00-17:30；可能会早关门",
+  "closedDays": [
+    "不定休"
+  ],
+  "introduction": "准备莲103期#28中，mcp买葡萄的水果店",
+  "other": [],
+  "updatedAt": "2023-10-20"
+},
+{
+  "id": "omicho-hiraidon",
+  "name": "近江町海鲜丼家平井 市场馆店",
+  "nameJa": "近江町海鮮丼家ひら井 いちば館店",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "正餐",
+  "sources": [
+    "准备莲", "活动记录"
+  ],
+  "characters": [
+    "大泽瑠璃乃", "藤岛慈"
+  ],
+  "address": "石川県金沢市青草町８８（近江町いちば館２F）",
+  "businessHours": "11:00-17:00（周三11:00-15:30，土日祝10:30-17:00）",
+  "closedDays": [
+    "元日"
+  ],
+  "introduction": "准备莲103期27-28中mcp吃海鲜丼的店（点单：菅叶和：能登丼，月音瑚奈：金枪鱼大腹丼）\n叶和自己去的时候点的是近江町市场丼\n店门口画框内的海报上有签名\n活动记录中，沙耶在此店打工，背景中有店内的金色壶",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/16.jpg",
+        "alt": "",
+        "caption":"活动记录中沙耶打工场景"
+      }
+    ],
+  "other": [],
+  "website": "https://www.kaisen-hirai.com/ichibakan.html",
+  "updatedAt": "2026-10-20"
+},
+{
+  "id": "ippukuya",
+  "name": "近江町市场 金泽关东煮 IPPUKUYA",
+  "nameJa": "近江町市場 金沢おでん いっぷくや",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "正餐",
+  "sources": [
+    "准备莲","活动记录","卡面"
+  ],
+  "characters": [
+    "村野沙耶香", "夕雾缀理", "徒町小铃"
+  ],
+  "address": "石川県金沢市上近江町50",
+  "businessHours": "9:00-17:00",
+  "closedDays": [
+    "周二", "周三"
+  ],
+  "introduction": "准备莲103期#27-28中dc吃关东煮的店，点单内容：赤卷&ふかし&车麸&梅贝\n活动记录103期第5话中也出现过\nSR[AWOKE] 夕雾缀理 和 UR[COMPASS] 徒町小铃 的卡面地点也位于此\n店内有声优签名与莲之空相关谷子",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/17.jpg",
+        "alt": "",
+        "caption":"活动记录中画面"
+      }, 
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/18.jpg",
+        "alt": "",
+        "caption":"SR[AWOKE] 夕雾缀理 卡面"
+      }, 
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/19.jpg",
+        "alt": "",
+        "caption":"UR[COMPASS] 徒町小铃 卡面"
+      }
+    ],
+  "other": [],
+  "website": "https://kachigumi.co.jp/ippukuya/",
+  "updatedAt": "2023-10-13"
+}, 
+{
+  "id": "omicho-fureai",
+  "name": "近江町交流馆",
+  "nameJa": "近江町ふれあい館",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "路边",
+  "sources": [
+    "联动"
+  ],
+   "characters": [
+       "村野沙耶香"
+  ],
+  "address": "石川県金沢市上近江町50-1",
+  "introduction": "石川县×莲之空第二次联动（加贺友禅第一次联动） 沙耶立牌所在地",
+  "other": [],
+  "updatedAt": "2024-04-05"
+}, 
+{
+  "id": "omicho-ichibasushi",
+  "name": "近江町市场寿司 支店",
+  "nameJa": "近江町市場寿し 支店",
+  "guideArea": "musashigatsuji-omicho",
+  "category": "正餐",
+  "sources": [
+    "PV/MV"
+  ],
+  "address": "石川県金沢市上近江町32-6",
+  "businessHours": "8:30-20:00, L.O 19:30",
+  "closedDays": [
+    "不定休"
+  ],
+  "introduction": "石川大观光试听视频mv中出现，mv中出现的套餐为のど黒・ウニ入りぜいたく握り",
+  "images": [
+      {
+        "src": "images/places/kanazawa/musashigatsuji-omicho/20.jpg",
+        "alt": "",
+        "caption":"图中上排最中间"
+      }
+    ],
+  "other": [],
+  "website": "https://www.ichibazushi.co.jp/",
+  "updatedAt": "2025-03-16"
 }
 ]
