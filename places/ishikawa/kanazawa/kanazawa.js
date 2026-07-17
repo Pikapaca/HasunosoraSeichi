@@ -240,9 +240,18 @@ async function loadKanazawaPlaces() {
         isValidKanazawaPlace
       );
 
-    buildFilterOptions();
-    restoreFilterState();
-    applyFilters();
+buildFilterOptions();
+
+if (cameFromDetailPage()) {
+  restoreFilterState();
+} else {
+  sessionStorage.removeItem(
+    FILTER_STORAGE_KEY
+  );
+}
+
+applyFilters();
+
   } catch (error) {
     console.error(
       "金泽页面实际错误：",
@@ -1033,6 +1042,35 @@ function setupOpenTodayHelp() {
 /* =========================
    保存和恢复筛选状态
 ========================= */
+/**
+ * 判断是否从当前城市的详情页进入列表。
+ */
+function cameFromDetailPage() {
+  if (!document.referrer) {
+    return false;
+  }
+
+  try {
+    const previousUrl =
+      new URL(document.referrer);
+
+    const detailUrl =
+      new URL(
+        "./detail.html",
+        window.location.href
+      );
+
+    return (
+      previousUrl.origin ===
+        detailUrl.origin &&
+      previousUrl.pathname ===
+        detailUrl.pathname
+    );
+  } catch (error) {
+    return false;
+  }
+}
+
 
 /**
  * 保存当前筛选状态。
