@@ -43,6 +43,7 @@
   "characters": [
     "大泽瑠璃乃", "藤岛慈","安养寺姬芽"
   ],
+  "navigation": "たい焼き工房土九 金沢駅あんと西店",
   "businessHours": "9:00-20:00",
   "introduction": "在2024/05/06WxM中提到，mcp在黄金周去吃的鲷鱼烧。在2025/8发售的LLdaysるるぶ特别刊的P24也有提到。\n点单内容：瑠璃乃：五郎島金時；藤岛慈：能登大納言＆白玉入り抹茶クリーム；安养寺姬芽：りんごカスタード\n有q版角色标识以及部分日期联动；厨房内部也有很多莲之空相关物件，买了等做的时候可以看看\n【2026年更新：店内莲之空相关已消失】",
   "other": [],
@@ -55,6 +56,7 @@
   "nameJa": "８番らーめん 金沢駅店",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市石川県金沢市木ノ新保町1-1　金沢百番街あんと内",
+  "navigation": "８番らーめん 金沢駅店",
   "category": "正餐",
   "sources": [
     "杂志", "联动"
@@ -73,6 +75,7 @@
   "nameJa": "金沢地酒蔵",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市石川県金沢市木ノ新保町1-1　金沢百番街あんと内",
+  "navigation": "金沢地酒蔵",
   "category": "甜食/酒水/饮料/小吃",
   "sources": [
     "其他"
@@ -106,6 +109,7 @@
   "nameJa": "石川県立音楽堂",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市昭和町20番1号",
+  "navigation": "石川県立音楽堂",
   "category": "景点",
   "sources": [
     "活动记录", "Fes×LIVE"
@@ -134,6 +138,7 @@
   "nameJa": "金沢ゲーマーズ",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス5F",
+  "navigation": "金沢ゲーマーズ",
   "category": "商店",
   "sources": [
     "准备莲", "其他"
@@ -153,6 +158,7 @@
   "nameJa": "幸せのパンケーキ 金沢フォーラス店",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス6F",
+  "navigation": "幸せのパンケーキ 金沢フォーラス店",
   "category": "咖啡馆",
   "sources": [
     "With×Meets"
@@ -174,6 +180,7 @@
   "nameJa": "ジェラートピケカフェ 金沢フォーラス店",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス1F",
+  "navigation": "ジェラートピケカフェ 金沢フォーラス店",
   "category": "咖啡馆",
   "sources": [
     "四格"
@@ -192,6 +199,7 @@
   "nameJa": "レモネードbyレモニカ 金沢フォーラス店",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス1F",
+  "navigation": "レモネードbyレモニカ 金沢フォーラス店",
   "category": "甜食/酒水/饮料/小吃",
   "sources": [
     "联动"

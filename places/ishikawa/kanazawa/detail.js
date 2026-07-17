@@ -376,6 +376,10 @@ function createInformationSection(place) {
       place.address
     ),
 
+    createNavigationInformationRow(
+      place.navigation
+    ),
+
     createInformationRow(
       "营业时间",
       formatDisplayValue(
@@ -409,6 +413,48 @@ function createInformationSection(place) {
         ${rows.join("")}
       </dl>
     </section>
+  `;
+}
+
+function createNavigationInformationRow(
+  navigation
+) {
+  if (!navigation) {
+    return "";
+  }
+
+  const url = new URL(
+    "https://www.google.com/maps/dir/"
+  );
+
+  url.searchParams.set(
+    "api",
+    "1"
+  );
+
+  url.searchParams.set(
+    "destination",
+    navigation
+  );
+
+  return `
+    <div class="detail-information-row">
+      <dt>
+        导航
+      </dt>
+
+      <dd>
+        <a
+          class="detail-external-link"
+          href="${escapeAttribute(url.toString())}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          在 Google Maps 中打开
+          <span aria-hidden="true">↗</span>
+        </a>
+      </dd>
+    </div>
   `;
 }
 
