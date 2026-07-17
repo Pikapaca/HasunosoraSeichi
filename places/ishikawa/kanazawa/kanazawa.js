@@ -8,6 +8,17 @@ const ITEMS_PER_BATCH = 30;
 const SEARCH_RESULT_LIMIT = 10;
 const FILTER_STORAGE_KEY =
   "kanazawa-filter-state";
+const FILTER_RETURN_KEY =
+  "kanazawa-return-from-detail";
+
+const shouldRestoreFilterState =
+  sessionStorage.getItem(
+    FILTER_RETURN_KEY
+  ) === "true";
+
+sessionStorage.removeItem(
+  FILTER_RETURN_KEY
+);
 
 /* =========================
    数据
@@ -175,6 +186,17 @@ document.addEventListener(
   }
 );
 
+window.addEventListener(
+  "pageshow",
+  (event) => {
+    if (event.persisted) {
+      sessionStorage.removeItem(
+        FILTER_RETURN_KEY
+      );
+    }
+  }
+);
+
 /* =========================
    读取金泽地点数据
 ========================= */
@@ -242,7 +264,7 @@ async function loadKanazawaPlaces() {
 
 buildFilterOptions();
 
-if (cameFromDetailPage()) {
+if (shouldRestoreFilterState) {
   restoreFilterState();
 } else {
   sessionStorage.removeItem(
@@ -1042,34 +1064,6 @@ function setupOpenTodayHelp() {
 /* =========================
    保存和恢复筛选状态
 ========================= */
-/**
- * 判断是否从当前城市的详情页进入列表。
- */
-function cameFromDetailPage() {
-  if (!document.referrer) {
-    return false;
-  }
-
-  try {
-    const previousUrl =
-      new URL(document.referrer);
-
-    const detailUrl =
-      new URL(
-        "./detail.html",
-        window.location.href
-      );
-
-    return (
-      previousUrl.origin ===
-        detailUrl.origin &&
-      previousUrl.pathname ===
-        detailUrl.pathname
-    );
-  } catch (error) {
-    return false;
-  }
-}
 
 
 /**
@@ -1215,7 +1209,35 @@ function restoreFilterState() {
 ========================= */
 
 function setupLocalFilters() {
+  
   /*
+   * 从圣地列表点击详情页时，
+   * 允许下一次返回列表恢复筛选。
+   */
+  if (placeList) {
+    placeList.addEventListener(
+      "click",
+      (event) => {
+        const detailLink =
+          event.target.closest(
+            ".kanazawa-place-card a"
+          );
+
+        if (!detailLink) {
+          return;
+        }
+
+        saveFilterState();
+
+        sessionStorage.setItem(
+          FILTER_RETURN_KEY,
+          "true"
+        );
+      }
+    );
+  }
+
+/*
    * 巡礼区域。
    */
   if (guideAreaFilter) {
