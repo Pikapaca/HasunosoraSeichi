@@ -279,6 +279,11 @@ function renderPlaceDetail(place) {
       `
       : "";
 
+  const navigationLink =
+  createNavigationLink(
+    place.navigation
+  );
+
   const introductionSection =
     createIntroductionSection(
       place.introduction
@@ -324,6 +329,7 @@ function renderPlaceDetail(place) {
 
       ${japaneseName}
       ${updatedDate}
+      ${navigationLink}
     </header>
 
     ${informationSection}
@@ -376,10 +382,6 @@ function createInformationSection(place) {
       place.address
     ),
 
-    createNavigationInformationRow(
-      place.navigation
-    ),
-
     createInformationRow(
       "营业时间",
       formatDisplayValue(
@@ -416,10 +418,13 @@ function createInformationSection(place) {
   `;
 }
 
-function createNavigationInformationRow(
+function createNavigationLink(
   navigation
 ) {
-  if (!navigation) {
+  const destination =
+    String(navigation || "").trim();
+
+  if (!destination) {
     return "";
   }
 
@@ -434,30 +439,21 @@ function createNavigationInformationRow(
 
   url.searchParams.set(
     "destination",
-    navigation
+    destination
   );
 
   return `
-    <div class="detail-information-row">
-      <dt>
-        导航
-      </dt>
-
-      <dd>
-        <a
-          class="detail-external-link"
-          href="${escapeAttribute(url.toString())}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          在 Google Maps 中打开
-          <span aria-hidden="true">↗</span>
-        </a>
-      </dd>
-    </div>
+    <a
+      class="detail-navigation-link"
+      href="${escapeAttribute(url.toString())}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      导航
+      <span aria-hidden="true">↗</span>
+    </a>
   `;
 }
-
 
 function createInformationRow(
   label,
