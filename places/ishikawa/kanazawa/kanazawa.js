@@ -6,7 +6,8 @@ const PLACES_INDEX_PATH =
 
 const ITEMS_PER_BATCH = 30;
 const SEARCH_RESULT_LIMIT = 10;
-
+const FILTER_STORAGE_KEY =
+  "kanazawa-filter-state";
 
 /* =========================
    数据
@@ -240,6 +241,7 @@ async function loadKanazawaPlaces() {
       );
 
     buildFilterOptions();
+    restoreFilterState();
     applyFilters();
   } catch (error) {
     console.error(
@@ -1029,6 +1031,148 @@ function setupOpenTodayHelp() {
 }
 
 /* =========================
+   保存和恢复筛选状态
+========================= */
+
+/**
+ * 保存当前筛选状态。
+ */
+function saveFilterState() {
+  const filterState = {
+    keyword:
+      keywordFilter
+        ? keywordFilter.value
+        : "",
+
+    guideArea:
+      guideAreaFilter
+        ? guideAreaFilter.value
+        : "",
+
+    categories:
+      getCheckedValues(
+        categoryFilter
+      ),
+
+    sources:
+      getCheckedValues(
+        sourceFilter
+      ),
+
+    characters:
+      getCheckedValues(
+        characterFilter
+      ),
+
+    openToday:
+      openTodayFilter
+        ? openTodayFilter.checked
+        : false
+  };
+
+  sessionStorage.setItem(
+    FILTER_STORAGE_KEY,
+    JSON.stringify(filterState)
+  );
+}
+
+
+/**
+ * 恢复复选框组的选择。
+ */
+function restoreCheckedValues(
+  container,
+  savedValues
+) {
+  if (!container) {
+    return;
+  }
+
+  const valueSet =
+    new Set(
+      Array.isArray(savedValues)
+        ? savedValues
+        : []
+    );
+
+  container
+    .querySelectorAll(
+      'input[type="checkbox"]'
+    )
+    .forEach((input) => {
+      input.checked =
+        valueSet.has(input.value);
+    });
+
+  updateMultiSelectLabel(
+    container
+  );
+}
+
+
+/**
+ * 恢复之前保存的筛选状态。
+ */
+function restoreFilterState() {
+  const savedText =
+    sessionStorage.getItem(
+      FILTER_STORAGE_KEY
+    );
+
+  if (!savedText) {
+    return;
+  }
+
+  try {
+    const filterState =
+      JSON.parse(savedText);
+
+    if (keywordFilter) {
+      keywordFilter.value =
+        filterState.keyword || "";
+    }
+
+    if (guideAreaFilter) {
+      guideAreaFilter.value =
+        filterState.guideArea || "";
+
+      syncGuideAreaSingleSelect();
+    }
+
+    restoreCheckedValues(
+      categoryFilter,
+      filterState.categories
+    );
+
+    restoreCheckedValues(
+      sourceFilter,
+      filterState.sources
+    );
+
+    restoreCheckedValues(
+      characterFilter,
+      filterState.characters
+    );
+
+    if (openTodayFilter) {
+      openTodayFilter.checked =
+        Boolean(
+          filterState.openToday
+        );
+    }
+  } catch (error) {
+    console.error(
+      "恢复筛选状态失败：",
+      error
+    );
+
+    sessionStorage.removeItem(
+      FILTER_STORAGE_KEY
+    );
+  }
+}
+
+/* =========================
    筛选事件
 ========================= */
 
@@ -1366,6 +1510,7 @@ function applyFilters() {
       ? openTodayFilter.checked
       : false;
 
+  saveFilterState();
 
   filteredPlaces =
     kanazawaPlaces.filter(
