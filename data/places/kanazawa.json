@@ -44,7 +44,7 @@
     "大泽瑠璃乃", "藤岛慈","安养寺姬芽"
   ],
   "navigation": "たい焼き工房土九 金沢駅あんと西店",
-  "businessHours": "9:00-20:00",
+  "businessHours": "09:00-20:00",
   "introduction": "在2024/05/06WxM中提到，mcp在黄金周去吃的鲷鱼烧。在2025/8发售的LLdaysるるぶ特别刊的P24也有提到。\n点单内容：瑠璃乃：五郎島金時；藤岛慈：能登大納言＆白玉入り抹茶クリーム；安养寺姬芽：りんごカスタード\n有q版角色标识以及部分日期联动；厨房内部也有很多莲之空相关物件，买了等做的时候可以看看\n【2026年更新：店内莲之空相关已消失】",
   "other": [],
   "website": "https://www.instagram.com/tsuchiku_antnishi/",
@@ -80,7 +80,7 @@
   "sources": [
     "其他"
   ],
-  "businessHours": "8:30-20:00, L.O. 19:30",
+  "businessHours": "08:30-20:00, L.O. 19:30",
   "introduction": "店内吧台附近以及货架上方有莲之空相关角色画，经常会更换",
    "images": [
       {
@@ -274,7 +274,7 @@
   "guideArea": "kanazawa-station",
   "address": "从金泽站出来乘电梯向下，沿着指示牌方向向A-6、7口走，签名色纸在上楼梯之前右转通道内",
   "navigation": "36.57770239266969, 136.64971788105436",
-  "category": "路边",
+  "category": "路过",
   "sources": [
     "其他"
   ],
@@ -299,6 +299,7 @@
   "nameJa": "ゲーム・パラダイス",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町5-1 アミューズメントスクエア3F",
+  "navigation": "ゲーム・パラダイス　金沢",
   "category": "娱乐",
   "sources": [
     "杂志"
@@ -317,6 +318,7 @@
   "nameJa": "うし重 てらおか",
   "guideArea": "musashigatsuji-omicho",
   "address": "石川県金沢市安江町12-4",
+  "navigation": "うし重 てらおか",
   "category": "正餐",
   "sources": [
     "准备莲"
@@ -339,6 +341,7 @@
   "nameJa": "水引アクセサリー工房 金澤くるみ",
   "guideArea": "musashigatsuji-omicho",
   "address": "石川県金沢市安江町1-15金澤表参道（新保屋内）",
+  "navigation": "水引アクセサリー工房 金澤くるみ",
   "category": "体验",
   "sources": [
     "准备莲"
@@ -361,6 +364,7 @@
   "nameJa": "ティーハウスサクラ",
   "guideArea": "musashigatsuji-omicho",
   "address": "石川県金沢市武蔵町9-15",
+  "navigation": "ティーハウスサクラ",
   "category": "咖啡馆",
   "sources": [
     "漫画"
@@ -383,6 +387,7 @@
   "nameJa": "加賀の薫香 香屋",
   "guideArea": "musashigatsuji-omicho",
   "address": "石川県金沢市武蔵町10-1",
+  "navigation": "香屋 金沢",
   "category": "体验",
   "sources": [
     "准备莲"
@@ -405,6 +410,7 @@
   "nameJa": "武蔵ヶ辻",
   "guideArea": "musashigatsuji-omicho",
   "category": "景点",
+  "navigation": "36.572058860511575, 136.65565568543443",
   "sources": [
     "活动记录"
   ],
@@ -430,6 +436,7 @@
   "nameJa": "かなざわはこまち",
   "guideArea": "musashigatsuji-omicho",
   "address": "石川県金沢市袋町1番1号 かなざわはこまち",
+  "navigation": "かなざわはこまち",
   "category": "商店",
   "sources": [
     "杂志"
@@ -464,7 +471,8 @@
   "name": "近江町市场M'za口",
   "nameJa": "近江町市場エムザ口",
   "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
+  "category": "路过",
+  "navigation": "36.57133130850214, 136.655345890293",
   "sources": [
     "活动记录"
   ],
@@ -489,7 +497,8 @@
   "name": "近江町市场买物通口",
   "nameJa": "近江町市場買物通り口",
   "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
+  "category": "路过",
+  "navigation": "36.57098000422291, 136.65720440420827",
   "sources": [
     "卡面"
   ],
@@ -517,7 +526,8 @@
   "name": "近江町市场停车场口",
   "nameJa": "近江町市場パーキング口",
   "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
+  "category": "路过",
+  "navigation": "36.57068488730758, 136.6563326862789",
   "sources": [
     "准备莲"
   ],
@@ -540,7 +550,8 @@
   "name": "近江町市场市场馆广场",
   "nameJa": "近江町市場 いちば館広場",
   "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
+  "category": "路过",
+  "navigation": "36.571562529214155, 136.65558060547292",
   "sources": [
     "联动"
   ],
@@ -557,11 +568,12 @@
   "nameJa": "川木商店",
   "guideArea": "musashigatsuji-omicho",
   "address": "石川県金沢市青草町88番地 近江町いちば館1F",
+  "navigation": "川木商店",
   "category": "甜食/酒水/饮料/小吃",
   "sources": [
     "PV/MV"
   ],
-  "businessHours": "9:00-17:00；卖完即止",
+  "businessHours": "09:00-17:00；卖完即止",
   "closedDays": [
     "周三"
   ],
@@ -594,7 +606,8 @@
        "村野沙耶香"
   ],
   "address": "石川県金沢市十間町42",
-  "businessHours": "9:00-18:00",
+  "navigation": "東出珈琲店",
+  "businessHours": "09:00-18:00",
   "closedDays": [
     "周三", "周日", "祝日"
   ],
@@ -608,7 +621,8 @@
   "name": "新通",
   "nameJa": "新通り",
   "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
+  "category": "路过",
+  "navigation": "36.57140551921298, 136.65590998753683",
   "sources": [
     "活动记录"
   ],
@@ -638,6 +652,7 @@
     "杂志"
   ],
   "address": "石川県金沢市下近江町24",
+  "navigation": "世界の食品ダイヤモンドLⅡ",
   "businessHours": "08:00-15:30",
   "closedDays": [
     "不定休"
@@ -660,7 +675,8 @@
     "村野沙耶香"
   ],
   "address": "石川県金沢市上近江町21-1",
-  "businessHours": "8:00-16:00；卖完即止",
+  "navigation": "大松水産株式会社",
+  "businessHours": "08:00-16:00；卖完即止",
   "closedDays": [
     "周三"
   ],
@@ -688,7 +704,8 @@
     "大泽瑠璃乃", "藤岛慈"
   ],
   "address": "石川県金沢市青草町88",
-  "businessHours": "8:00-17:30；可能会早关门",
+  "navigation": "牧果実店",
+  "businessHours": "08:00-17:30；可能会早关门",
   "closedDays": [
     "不定休"
   ],
@@ -709,6 +726,7 @@
     "大泽瑠璃乃", "藤岛慈"
   ],
   "address": "石川県金沢市青草町８８（近江町いちば館２F）",
+  "navigation": "近江町海鮮丼家ひら井 いちば館店",
   "businessHours": "11:00-17:00（周三11:00-15:30，土日祝10:30-17:00）",
   "closedDays": [
     "元日"
@@ -738,7 +756,8 @@
     "村野沙耶香", "夕雾缀理", "徒町小铃"
   ],
   "address": "石川県金沢市上近江町50",
-  "businessHours": "9:00-17:00",
+  "navigation": "近江町市場 金沢おでん いっぷくや",
+  "businessHours": "09:00-17:00",
   "closedDays": [
     "周二", "周三"
   ],
@@ -769,7 +788,7 @@
   "name": "近江町交流馆",
   "nameJa": "近江町ふれあい館",
   "guideArea": "musashigatsuji-omicho",
-  "category": "路边",
+  "category": "路过",
   "sources": [
     "联动"
   ],
@@ -777,6 +796,7 @@
        "村野沙耶香"
   ],
   "address": "石川県金沢市上近江町50-1",
+  "navigation": "近江町ふれあい館",
   "introduction": "石川县×莲之空第二次联动（加贺友禅第一次联动） 沙耶立牌所在地",
   "other": [],
   "updatedAt": "2024-04-05"
@@ -791,7 +811,8 @@
     "PV/MV"
   ],
   "address": "石川県金沢市上近江町32-6",
-  "businessHours": "8:30-20:00, L.O 19:30",
+  "navigation": "近江町市場寿し 支店",
+  "businessHours": "08:30-20:00, L.O 19:30",
   "closedDays": [
     "不定休"
   ],
@@ -816,7 +837,8 @@
   "sources": ["卡面", "准备莲","live相关", "歌曲"],
   "characters": ["日野下花帆", "乙宗梢", "百生吟子"],
   "address": "石川県金沢市尾山町11-1",
-  "businessHours": "9:00-17:00（御朱印受付）；神社境内24h开放",
+  "navigation": "尾山神社",
+  "businessHours": "09:00-17:00（御朱印受付）；神社境内24h开放",
   "introduction": "UR[莲之空歌留多] 百生吟子 卡面所在地\n准备莲104期#35中，cb前往尾山神社拍照+抽签\n石川大观光歌词中提及（夜间彩绘玻璃）\n4th live石川场问答中提到神门的屋顶上有日本最古老的避雷针",
   "images": [
        {"src": "images/places/kanazawa/oyama-kenroku/01.jpg",
@@ -834,10 +856,11 @@
   "name": "金泽中央观光案内所",
   "nameJa": "金沢中央観光案内所",
   "guideArea": "oyama-kenroku",
-  "category": "路边",
+  "category": "路过",
   "sources": ["联动", "活动记录"],
   "characters": ["大泽瑠璃乃", "藤岛慈", "塞拉斯·柳田·利林费尔德"],
   "address": "石川県金沢市南町4－1 金沢ニューグランドビル1F",
+  "navigation": "金沢中央観光案内所",
   "businessHours": "10:00-21:00",
   "introduction": "石川县×莲之空第一次联动 瑠璃乃立牌所在地；石川县×莲之空第二次联动（加贺友禅第一次联动）&石川县×莲之空第三次联动（传统工艺联动）慈立牌所在地；石川县×莲之空第四次联动（HASUNOSORA FANTASY）塞拉斯立牌所在地\n场内有声优签名海报（103期&104期）；活动记录105期第6话中也作为背景出现",
   "images": [{
@@ -857,7 +880,8 @@
   "sources": ["联动", "卡面"],
   "characters": ["夕雾缀理", "徒町小铃"],
   "address": "石川県金沢市南町5-7　小出南ビル1階",
-  "businessHours": "9:30-18:00",
+  "navigation": "加賀てまり 毬屋",
+  "businessHours": "09:30-18:00",
   "closedDays": ["周二", "周三"],
   "introduction": "石川县×莲之空第三次联动（传统工艺联动）缀理立牌所在地，石川县×莲之空第四次联动（HASUNOSORA FANTASY）小铃立牌所在地\n店内展柜内有一些dc谷展示\n UR[一生に夢が咲くように] 徒町小铃 卡面所在地",
   "images": [
@@ -880,6 +904,7 @@
   "sources": ["四格"],
   "characters": ["日野下花帆"],
   "address": "石川県金沢市南町6-12　国際ビジネス学院ビル1F",
+  "navigation": "カフェ ドゥ アッシュ",
   "businessHours": "10:00-18:00（L.O 17:30）",
   "closedDays": ["已停业"],
   "introduction": "四格（りんく！らいふ！ラブライブ！）103期#24第三格中的可丽饼店",
@@ -895,6 +920,7 @@
   "sources": ["杂志", "准备莲"],
   "characters": ["日野下花帆", "村野沙耶香", "百生吟子", "塞拉斯·柳田·利林费尔德"],
   "address": "石川県金沢市丸の内5-26 金沢城公園黒門口横",
+  "navigation": "金澤屋珈琲店",
   "businessHours": "09:00-17:00",
   "closedDays": ["周二", "周三"],
   "introduction": "LLdays（2025年9月号）中吟子喝咖啡的地方，点单内容：氷コーヒー\n准备莲105期#43中分小组也来了这里，点单内容：樱井阳菜：百万石咖啡+抹茶生麸馒头；榆井希实：焦糖拿铁+苹果挞（季节限定）；野中心菜：摩卡+热三明治；三宅美羽：焦糖拿铁+栗子挞（季节限定）\n柜台那边摆着成员签名和LLdays吟子的插图",
@@ -908,9 +934,10 @@
   "nameJa": "鼠多門",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "鼠多門",
   "sources": ["准备莲"],
   "characters": ["日野下花帆", "乙宗梢", "百生吟子"],
-  "businessHours": "-18:00，春秋季5点即可入园，夏季4点可入园，冬季6点可入园；偶尔可以夜间参观",
+  "businessHours": "3/1-10/15：-18:00；其他时期：-17:00；\n春秋季5点即可入园，夏季4点可入园，冬季6点可入园；\n偶尔可以夜间参观",
   "introduction": "准备莲104期#34中cb出金泽城的门",
   "other": [],
   "updatedAt": "2025-01-12"
@@ -921,9 +948,10 @@
   "nameJa": "玉泉院丸庭園",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "玉泉院丸庭園",
   "sources": ["准备莲"],
   "characters": ["日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽"],
-  "businessHours": "-18:00，春秋季5点即可入园，夏季4点可入园，冬季6点可入园；偶尔可以夜间参观",
+  "businessHours": "3/1-10/15：-18:00；其他时期：-17:00；\n春秋季5点即可入园，夏季4点可入园，冬季6点可入园；\n偶尔可以夜间参观",
   "introduction": "准备莲104期#34中全员开始地点",
   "other": [],
   "updatedAt": "2025-01-12"
@@ -934,9 +962,10 @@
   "nameJa": "新丸広場",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "新丸広場",
   "sources": ["活动记录", "杂志"],
   "characters": ["日野下花帆", "乙宗梢"],
-  "businessHours": "-18:00，春秋季5点即可入园，夏季4点可入园，冬季6点可入园；偶尔可以夜间参观",
+  "businessHours": "3/1-10/15：-18:00；其他时期：-17:00；\n春秋季5点即可入园，夏季4点可入园，冬季6点可入园；\n偶尔可以夜间参观",
   "introduction": "活动记录中的背景之一（例如活动记录103期14话part6）\n也是LLdays（2023年4月号）中梢和花帆在拉伸的地方",
   "images": [
        {"src": "images/places/kanazawa/oyama-kenroku/06.jpg",
@@ -952,13 +981,14 @@
 },
 {
   "id": "hishiyagura",
-  "name": "金泽城菱橹·五十间长屋外广场",
-  "nameJa": "菱櫓・五十間長屋",
+  "name": "金泽城菱橹·五十间长屋（三之丸广场）",
+  "nameJa": "菱櫓・五十間長屋（三の丸広場）",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "三の丸広場　金沢城",
   "sources": ["Fes×LIVE", "准备莲", "歌曲"],
   "characters": ["日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈"],
-  "businessHours": "-18:00，春秋季5点即可入园，夏季4点可入园，冬季6点可入园；偶尔可以夜间参观",
+  "businessHours": "3/1-10/15：-18:00；其他时期：-17:00；\n春秋季5点即可入园，夏季4点可入园，冬季6点可入园；\n偶尔可以夜间参观",
   "introduction": "103期11月Fes×Live会场\n准备莲104期#35中mcp拍照地点；菱櫓在石川大观光歌词中也有提到",
   "images": [
        {"src": "images/places/kanazawa/oyama-kenroku/08.jpg",
@@ -977,9 +1007,10 @@
   "nameJa": "鶴の丸休憩館",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "鶴の丸休憩館",
   "sources": ["联动"],
   "characters": ["乙宗梢", "大泽瑠璃乃"],
-  "businessHours": "3/1-10/15：7:00-18:00；其他时期：8:00-17:00",
+  "businessHours": "3/1-10/15：07:00-18:00；其他时期：08:00-17:00",
   "introduction": "石川县×莲之空第一次联动 梢立牌所在地；石川县×莲之空第二次联动（加贺友禅第一次联动）瑠璃立牌所在地",
   "other": [],
   "updatedAt": "2023-07-29"
@@ -990,9 +1021,10 @@
   "nameJa": "石川門",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "石川門",
   "sources": ["卡面", "准备莲", "歌曲"],
   "characters": ["大泽瑠璃乃"],
-  "businessHours": "-18:00，春秋季5点即可入园，夏季4点可入园，冬季6点可入园；偶尔可以夜间参观",
+  "businessHours": "3/1-10/15：-18:00；其他时期：-17:00；\n春秋季5点即可入园，夏季4点可入园，冬季6点可入园；\n偶尔可以夜间参观",
   "introduction": "UR[莲之空歌留多] 大泽瑠璃乃 卡面位置\n准备莲104期#35中mcp拍照地点\n石川大观光歌词中也有提到",
   "images": [
        {"src": "images/places/kanazawa/oyama-kenroku/10.jpg",
@@ -1011,6 +1043,7 @@
   "nameJa": "百間堀園地",
   "guideArea": "oyama-kenroku",
   "category": "景点",
+  "navigation": "36.56445879345485, 136.66112712803147",
   "sources": ["卡面"],
   "characters": ["日野下花帆", "大泽瑠璃乃"],
   "introduction": "SR[喫茶ハスノソラ] 大泽瑠璃乃 卡面所在地",
@@ -1022,7 +1055,289 @@
         "alt": "",
         "caption":"2024/9拍摄"}  
        ],
-  "other": ["具体位置约为(36.564442, 136.661154)"],
+  "other": [],
   "updatedAt": "2023-11-10"
+}, 
+{
+  "id": "kenroku-toro",
+  "name": "兼六园 徽轸灯笼",
+  "nameJa": "徽軫灯籠",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["卡面", "准备莲", "歌曲", "PV/MV"],
+  "characters": ["村野沙耶香"],
+  "navigation": "",
+  "businessHours": "3/1-10/15：07:00-18:00；其他时期：08:00-17:00；\n早朝入园：春秋季5点即可入园，夏季4点可入园，冬季6点可入园（早朝入园需在正式开园前出园）；\n偶尔可以夜间参观",
+  "admissionFee": "兼六园门票：成人：320日元；18岁以下：100日元", 
+  "introduction": "UR[莲之空歌留多] 村野沙耶香 卡面位置\n准备莲103期#27中和百万先生的集合地点（附近）；准备莲104期#35中dc拍照地点\n早期宣传PV出现地点\n石川大观光歌词中提及",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/14.jpg",
+        "alt": "",
+        "caption":"UR[莲之空歌留多] 村野沙耶香 卡面"},
+       {"src": "images/places/kanazawa/oyama-kenroku/15.jpg",
+        "alt": "",
+        "caption":"2025/2拍摄"} 
+       ],
+  "other": [],
+  "updatedAt": "2024-02-10"
+},
+{
+  "id": "kenroku-hanami",
+  "name": "兼六园 花见桥",
+  "nameJa": "花見橋",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["PV/MV"],
+  "navigation": "花見橋 兼六園",
+  "businessHours": "3/1-10/15：07:00-18:00；其他时期：08:00-17:00；\n早朝入园：春秋季5点即可入园，夏季4点可入园，冬季6点可入园（早朝入园需在正式开园前出园）；\n偶尔可以夜间参观",
+  "admissionFee": "兼六园门票：成人：320日元；18岁以下：100日元", 
+  "introduction": "石川大观光试听视频mv中出现",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/16.jpg",
+        "alt": "",
+        "caption":"石川大观光试听视频mv"} 
+       ],
+  "other": [],
+  "updatedAt": "2025-03-16"
+},
+{
+  "id": "kenroku-yamatotakeru",
+  "name": "兼六园 日本武尊之像",
+  "nameJa": "日本武尊の像",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["准备莲"],
+  "characters": ["日野下花帆", "乙宗梢"],
+  "navigation": "明治紀念之標 (日本武尊の像)",
+  "businessHours": "3/1-10/15：07:00-18:00；其他时期：08:00-17:00；\n早朝入园：春秋季5点即可入园，夏季4点可入园，冬季6点可入园（早朝入园需在正式开园前出园）；\n偶尔可以夜间参观",
+  "admissionFee": "兼六园门票：成人：320日元；18岁以下：100日元", 
+  "introduction": "准备莲103期#27中cb拍照地点",
+  "other": [],
+  "updatedAt": "2023-10-13"
+},
+{
+  "id": "kenroku-fountain",
+  "name": "兼六园 喷泉",
+  "nameJa": "噴水",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["live相关"],
+  "navigation": "噴水 兼六園",
+  "businessHours": "3/1-10/15：07:00-18:00；其他时期：08:00-17:00；\n早朝入园：春秋季5点即可入园，夏季4点可入园，冬季6点可入园（早朝入园需在正式开园前出园）；\n偶尔可以夜间参观",
+  "admissionFee": "兼六园门票：成人：320日元；18岁以下：100日元", 
+  "introduction": "4th live石川场小三角问答题中提到的“日本最古老的喷泉”",
+  "other": [],
+  "updatedAt": "2025-04-26"
+},
+{
+  "id": "kenroku-tei",
+  "name": "兼六亭",
+  "nameJa": "兼六亭",
+  "guideArea": "oyama-kenroku",
+  "category": "咖啡馆",
+  "sources": ["杂志"],
+  "characters": ["大泽瑠璃乃"],
+  "navigation": "兼六亭",
+  "admissionFee": "兼六园门票：成人：320日元；18岁以下：100日元", 
+  "businessHours": "09:30-16:00",
+  "closedDays": ["不定休"],
+  "introduction": "LLdays（2025年7月号）插图中瑠璃乃吃点心的地方\n点单内容：兼六園セット+兼六コーラ",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/17.jpg",
+        "alt": "",
+        "caption":"LLdays（2025年7月号）插图"} 
+       ],
+  "other": [],
+  "website": "https://kenrokutei.com/",
+  "updatedAt": "2025-05-30"
+},
+{
+  "id": "kenroku-kikuzakura",
+  "name": "兼六园菊樱",
+  "nameJa": "兼六園菊桜",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["杂志"],
+  "characters": ["日野下花帆", "藤岛慈"],
+  "navigation": "兼六園菊桜",
+  "admissionFee": "兼六园门票：成人：320日元；18岁以下：100日元", 
+  "businessHours": "3/1-10/15：07:00-18:00；其他时期：08:00-17:00；\n早朝入园：春秋季5点即可入园，夏季4点可入园，冬季6点可入园（早朝入园需在正式开园前出园）；\n偶尔可以夜间参观",
+  "introduction": "LLdays（2023年6月号）插图中慈和花帆赏花的地方",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/18.jpg",
+        "alt": "",
+        "caption":"LLdays（2023年6月号）插图"} 
+       ],
+  "other": [],
+  "updatedAt": "2023-04-28"
+},
+{
+  "id": "konyazaka",
+  "name": "绀屋坂",
+  "nameJa": "紺屋坂",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["卡面"],
+  "characters": ["夕雾缀理"],
+  "navigation": "36.56518046435263, 136.66283295861564",
+  "introduction": "SR[喫茶ハスノソラ] 夕雾缀理 卡面所在地",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/19.jpg",
+        "alt": "",
+        "caption":"SR[喫茶ハスノソラ] 夕雾缀理 卡面"}, 
+       {"src": "images/places/kanazawa/oyama-kenroku/20.jpg",
+        "alt": "",
+        "caption":"2024/9拍摄"} 
+       ],
+  "other": [],
+  "updatedAt": "2023-11-10"
+},
+{
+  "id": "ishikawa-souvenir",
+  "name": "石川县观光物产馆",
+  "nameJa": "石川県観光物産館",
+  "guideArea": "oyama-kenroku",
+  "category": "商店",
+  "sources": ["联动"],
+  "characters": ["村野沙耶香", "夕雾缀理"],
+  "address": "石川県金沢市兼六町２−２０",
+  "navigation": "石川県観光物産館",
+  "businessHours": "平日：09:30-18:00，周日&休日：09:00-18:00",
+  "closedDays": ["不定休"],
+  "introduction": "石川县×莲之空第一次联动 缀理立牌所在地；石川县×莲之空第四次联动（HASUNOSORA FANTASY） 沙耶立牌所在地 ",
+  "other": ["部分周二休息，详情见官网"],
+  "website": "https://www.instagram.com/ishikawakenkankoubussankan729",
+  "updatedAt": "2023-07-29"
+},
+{
+  "id": "kagayuzenkaikan",
+  "name": "加贺友禅会馆",
+  "nameJa": "加賀友禅会館",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["准备莲", "活动记录", "联动"],
+  "characters": ["日野下花帆", "乙宗梢", "村野沙耶香", "夕雾缀理", "大泽瑠璃乃", "藤岛慈", "百生吟子", "徒町小铃", "安养寺姬芽"],
+  "address": "石川県金沢市小将町8-8",
+  "navigation": "加賀友禅会館",
+  "businessHours": "09:00-17:00",
+  "admissionFee": "500円", 
+  "closedDays": ["周三"],
+  "introduction": "准备莲103期#26（展览位置有变化；声优签名以及作品展示在地下一楼，体验位置在三楼但大部分时间不开放）；准备莲104期#44（留言本背面有声优留言和插图）\n石川县×莲之空第三次联动（传统工艺联动）花帆立牌所在地，加贺友禅联动展览所在地\n活动记录104期4话part4中加贺友禅体验地点（地下一楼）",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/21.jpg",
+        "alt": "",
+        "caption":"活动记录104期4话"},
+       {"src": "images/places/kanazawa/oyama-kenroku/22.jpg",
+        "alt": "",
+        "caption":"2024/12拍摄"},
+       {"src": "images/places/kanazawa/oyama-kenroku/23.jpg",
+        "alt": "",
+        "caption":"准备莲103期#26声优加贺友禅体验"},
+       {"src": "images/places/kanazawa/oyama-kenroku/24.jpg",
+        "alt": "",
+        "caption":"2025/4拍摄，为庆祝4th石川live召开举办的为时3天的特殊展示"}  
+       ],
+  "other": [],
+  "website": "https://www.kagayuzen.or.jp/hall/",
+  "updatedAt": "2023-10-06"
+},
+{
+  "id": "shiinoki",
+  "name": "椎木迎宾馆",
+  "nameJa": "しいのき迎賓館",
+  "guideArea": "oyama-kenroku",
+  "category": "路过",
+  "sources": ["联动"],
+  "characters": ["夕雾缀理", "徒町小铃", "桂城泉"],
+  "address": "石川県金沢市広坂2-1-1",
+  "navigation": "石川県政記念しいのき迎賓館",
+  "businessHours": "09:00-22:00",
+  "introduction": "石川县×莲之空第二次联动（加贺友禅第一次联动）缀理立牌所在地；石川县×莲之空第三次联动（传统工艺联动）小铃立牌所在地；石川县×莲之空第四次联动（HASUNOSORA FANTASY）泉立牌所在地",
+  "other": ["年末年始定休"],
+  "website": "https://www.shiinoki-geihinkan.jp/about/information.html",
+  "updatedAt": "2024-04-05"
+},
+{
+  "id": "ishikawa-seikatsu-museum",
+  "name": "石川生活工艺博物馆（石川县立传统产业工艺馆）",
+  "nameJa": "いしかわ生活工芸ミュージアム（石川県立伝統産業工芸館）",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["联动"],
+  "characters": ["大泽瑠璃乃"],
+  "address": "金沢市兼六町1番1号",
+  "navigation": "石川県立伝統産業工芸館",
+  "businessHours": "09:00-17:00（最后入馆16:45）",
+  "admissionFee": "260円", 
+  "closedDays": ["周四"],
+  "introduction": "石川县×莲之空第三次联动（传统工艺联动）瑠璃乃立牌所在地",
+  "other": ["4月至11月，每月第三个周四定休；12月至3月，每周四定休，年末年始定休（祝日是周四的情况除外）"],
+  "website": "https://www.ishikawa-densankan.jp/information/",
+  "updatedAt": "2024-11-30"
+},
+{
+  "id": "kanazawa-shiyakusho",
+  "name": "金泽市役所第一本厅舍",
+  "nameJa": "金沢市役所第一本庁舎",
+  "guideArea": "oyama-kenroku",
+  "category": "路过",
+  "sources": ["活动记录"],
+  "characters": ["夕雾缀理"],
+  "address": "金沢市広坂1丁目1番1号",
+  "navigation": "金沢市役所",
+  "businessHours": "09:00-17:45",
+  "closedDays": ["周六", "周日"],
+  "introduction": "活动记录104期第8话part3中出现的吱吱狸职业体验地点（活动记录中背景处应该无法拍照）",
+  "other": [],
+  "updatedAt": "2024-11-05"
+},
+{
+  "id": "ishikawa-history-museum",
+  "name": "石川县立历史博物馆",
+  "nameJa": "石川県立歴史博物館",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["卡面", "联动"],
+  "characters": ["日野下花帆", "安养寺姬芽"],
+  "address": "石川県金沢市出羽町3-1",
+  "navigation": "石川県立歴史博物館",
+  "businessHours": "09:00-17:00（最后入馆16:30）",
+  "admissionFee": "一般：300円；大学生：240円", 
+  "closedDays": ["不定休"],
+  "introduction": "UR[莲之空歌留多] 日野下花帆 卡面所在地（进馆后的大楼梯）\n石川县×莲之空第四次联动（HASUNOSORA FANTASY）姬芽立牌所在地",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/25.jpg",
+        "alt": "",
+        "caption":"UR[莲之空歌留多] 日野下花帆 卡面"},
+       {"src": "images/places/kanazawa/oyama-kenroku/26.jpg",
+        "alt": "",
+        "caption":"2024/9拍摄"}  
+       ],
+  "other": ["休馆日请查询官网"],
+  "website": "https://ishikawa-rekihaku.jp/info/index.html",
+  "updatedAt": "2024-02-16"
+},
+{
+  "id": "ishiurajinja",
+  "name": "石浦神社",
+  "nameJa": "石浦神社",
+  "guideArea": "oyama-kenroku",
+  "category": "景点",
+  "sources": ["杂志", "其他"],
+  "characters": ["日野下花帆", "村野沙耶香", "大泽瑠璃乃", "百生吟子"],
+  "address": "金沢市本多町3丁目1番30号",
+  "navigation": "石浦神社",
+  "businessHours": "09:00-17:00（御朱印受付）；神社境内24h开放",
+  "introduction": "在2025/8发售的LLdaysるるぶ特别刊的P8-P9中chuke和小阳去的神社\n三连华三人在神社一起写了绘马",
+  "images": [
+       {"src": "images/places/kanazawa/oyama-kenroku/27.jpg",
+        "alt": "",
+        "caption":"三连华写的绘马正面"}, 
+       {"src": "images/places/kanazawa/oyama-kenroku/28.jpg",
+        "alt": "",
+        "caption":"绘马背面（画了校服领结和图标）"} 
+       ],
+  "other": [],
+  "updatedAt": "2025-08-15"
 }
 ]

@@ -405,6 +405,13 @@ function createInformationSection(place) {
       )
     ), 
 
+    createInformationRow(
+  "票价",
+  formatDisplayValue(
+    place.admissionFee
+  )
+),
+
        createWebsiteInformationRow(
       place.website
     )
