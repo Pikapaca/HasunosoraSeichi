@@ -269,7 +269,7 @@ function renderPlaceDetail(place) {
     place.updatedAt
       ? `
         <p class="detail-updated">
-          最后更新：
+          更新于：
           ${escapeHtml(
             formatDate(
               place.updatedAt
@@ -283,6 +283,16 @@ function renderPlaceDetail(place) {
   createNavigationLink(
     place.navigation
   );
+
+  const headerMeta =
+  updatedDate || navigationLink
+    ? `
+      <div class="detail-header-meta">
+        ${updatedDate}
+        ${navigationLink}
+      </div>
+    `
+    : "";
 
   const introductionSection =
     createIntroductionSection(
@@ -328,8 +338,7 @@ function renderPlaceDetail(place) {
       </h1>
 
       ${japaneseName}
-      ${updatedDate}
-      ${navigationLink}
+      ${headerMeta}
     </header>
 
     ${informationSection}
