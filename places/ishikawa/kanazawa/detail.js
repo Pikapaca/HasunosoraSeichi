@@ -21,7 +21,7 @@ const guideAreaLabels = {
   "musashigatsuji-omicho":
     "武藏辻・近江町市场区域",
 
-  "oyama-kkenroku":
+  "oyama-kenroku":
     "尾山神社、金泽城及兼六园周边",
 
   "korinbo-katamachi":
