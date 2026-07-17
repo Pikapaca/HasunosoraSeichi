@@ -215,6 +215,7 @@
   "nameJa": "イオンシネマ金沢フォーラス",
   "guideArea": "kanazawa-station",
   "address": "石川県金沢市堀川新町3−1 金沢フォーラス7F",
+  "navigation": "",
   "category": "娱乐",
   "sources": [
     "活动记录", "卡面"
@@ -233,6 +234,7 @@
   "nameJa": "鼓門",
   "guideArea": "kanazawa-station",
   "category": "景点",
+  "navigation": "金沢駅鼓門",
   "sources": [
     "四格", "活动记录", "PV/MV", "准备莲", "卡面", "歌曲", "CD封面"
   ],
@@ -271,6 +273,7 @@
   "nameJa": "金沢駅もてなしドーム地下広場地下道サイン色紙",
   "guideArea": "kanazawa-station",
   "address": "从金泽站出来乘电梯向下，沿着指示牌方向向A-6、7口走，签名色纸在上楼梯之前右转通道内",
+  "navigation": "36.57770239266969, 136.64971788105436",
   "category": "路边",
   "sources": [
     "其他"
