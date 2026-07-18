@@ -511,5 +511,86 @@
       "city": "kanazawa",
       "isFood": false,
       "updatedAt": "2025-08-15"
+    },
+    {
+      "id": "korinbo-starbucks",
+      "name": "香林坊星巴克",
+      "nameJa": "香林坊スターバックスコーヒー",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-12-15"
+    }, 
+    {
+      "id": "nagamachi-bukeya",
+      "name": "长町武家屋敷迹",
+      "nameJa": "長町武家屋敷跡",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2026-07-13"
+    }, 
+    {
+      "id": "nagamachi-murakami",
+      "name": "和菓子村上 长町店",
+      "nameJa": "和菓子村上 長町店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-03-21"
+    }, 
+    {
+      "id": "grill-otsuka",
+      "name": "Grill Otsuka",
+      "nameJa": "グリル オーツカ",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2023-10-13"
+    }, 
+    {
+      "id": "nodomeshi-itaru",
+      "name": "喉黑鱼饭本铺 ITARU",
+      "nameJa": "のど黒めし本舗 いたる",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2025-05-30"
+    }, 
+    {
+      "id": "tatemachi",
+      "name": "竖町商店街",
+      "nameJa": "竪町商店街",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-03-20"
+    }, 
+    {
+      "id": "belsel",
+      "name": "BELSEL",
+      "nameJa": "BELSEL",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-07-29"
+    }, 
+    {
+      "id": "akaneya",
+      "name": "茜屋",
+      "nameJa": "茜やアーカイブギャラリー",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2026-07-13"
+    }, 
+    {
+      "id": "oyoyo-bookstore",
+      "name": "OYOYO书林 新竖町店",
+      "nameJa": "オヨヨ書林 シンタテマチ店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-09-07"
     }
 ]
