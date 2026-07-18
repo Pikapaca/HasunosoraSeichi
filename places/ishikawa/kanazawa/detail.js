@@ -458,6 +458,16 @@ function createNavigationLink(
     destination
   );
 
+  url.searchParams.set(
+  "destination",
+  destination
+);
+
+url.searchParams.set(
+  "travelmode",
+  "transit"
+);
+
   return `
     <a
       class="detail-navigation-link"
