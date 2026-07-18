@@ -454,6 +454,11 @@ function createNavigationLink(
   );
 
   url.searchParams.set(
+  "origin",
+  "36.5781,136.6486"
+);
+
+  url.searchParams.set(
     "destination",
     destination
   );
