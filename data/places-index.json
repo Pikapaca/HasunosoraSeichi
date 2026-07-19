@@ -592,5 +592,50 @@
       "city": "kanazawa",
       "isFood": false,
       "updatedAt": "2023-09-07"
+    }, 
+    {
+      "id": "kurashino-museum",
+      "name": "金泽生活博物馆",
+      "nameJa": "金沢くらしの博物館",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-07-21"
+    },
+    {
+      "id": "coffee-bonjin",
+      "name": "Coffee House bonjin",
+      "nameJa": "コーヒーハウスぼんじん",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2024-06-08"
+    }, 
+    {
+      "id": "ishikawa-library",
+      "name": "石川县立图书馆",
+      "nameJa": "石川県立図書館",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2023-03-25"
+    },
+    {
+      "id": "kagashu-imai",
+      "name": "加贺绣IMAI",
+      "nameJa": "加賀繍IMAI",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": false,
+      "updatedAt": "2026-06-10"
+    },
+    {
+      "id": "nazoyacafe",
+      "name": "谜屋咖啡店 金泽杜之里店",
+      "nameJa": "謎屋珈琲店 金沢杜の里店",
+      "prefecture": "ishikawa",
+      "city": "kanazawa",
+      "isFood": true,
+      "updatedAt": "2026-02-27"
     }
 ]
