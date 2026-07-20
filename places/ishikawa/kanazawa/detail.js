@@ -625,7 +625,7 @@ function createGallerySection(place) {
   return `
     <section class="detail-section">
       <h2 class="detail-section-title">
-        现场图片
+        相关图片
       </h2>
 
       <div class="place-gallery">
